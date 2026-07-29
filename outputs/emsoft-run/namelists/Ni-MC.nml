@@ -1,0 +1,20 @@
+ &MCCLdata
+ mode = 'full'
+ xtalname = 'Ni.xtal',
+ numsx = 201,
+ sig = 70.0,
+ omega = 0.0,
+ num_el = 10,
+ platid = 1,
+ devid = 1,
+ globalworkgrpsz = 150,
+ totnum_el = 2000000,
+ multiplier = 1,
+ EkeV = 20.D0,
+ Ehistmin = 10.D0,
+ Ebinsize = 1.0D0,
+ depthmax = 100.D0,
+ depthstep = 1.0D0,
+ dataname = 'Ni-MCoutput.h5'
+ Notify = 'Off',
+ /

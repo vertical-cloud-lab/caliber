@@ -1,0 +1,577 @@
+===== superbuild_ninja.log (head) =====
+[1/48] Creating directories for 'CLFortran'
+[2/48] Creating directories for 'nlopt'
+[3/48] Creating directories for 'jsonfortran'
+[4/48] Creating directories for 'fftw'
+[5/48] Creating directories for 'bcls'
+[6/48] Creating directories for 'hdf5'
+[7/48] Performing download step (git clone) for 'CLFortran'
+[8/48] Performing download step (git clone) for 'bcls'
+[9/48] Performing update step for 'CLFortran'
+[10/48] No patch step for 'CLFortran'
+[11/48] Performing update step for 'bcls'
+[12/48] No patch step for 'bcls'
+[13/48] Performing download step (git clone) for 'nlopt'
+[14/48] Performing update step for 'nlopt'
+[15/48] Performing patch step for 'nlopt'
+[16/48] Performing configure step for 'CLFortran'
+[17/48] Performing download step (download, verify and extract) for 'fftw'
+[18/48] No update step for 'fftw'
+[19/48] No patch step for 'fftw'
+[20/48] Performing build step for 'CLFortran'
+[21/48] Performing install step for 'CLFortran'
+[22/48] Completed 'CLFortran'
+[23/48] Performing configure step for 'nlopt'
+[24/48] Performing configure step for 'bcls'
+[25/48] Performing configure step for 'fftw'
+[26/48] Performing build step for 'bcls'
+[27/48] Performing install step for 'bcls'
+[28/48] Completed 'bcls'
+[29/48] Performing build step for 'nlopt'
+[30/48] Performing install step for 'nlopt'
+[31/48] Completed 'nlopt'
+[32/48] Performing build step for 'fftw'
+[33/48] Performing install step for 'fftw'
+[34/48] Completed 'fftw'
+[35/48] Performing download step (git clone) for 'jsonfortran'
+[36/48] Performing update step for 'jsonfortran'
+[37/48] No patch step for 'jsonfortran'
+[38/48] Performing configure step for 'jsonfortran'
+[39/48] Performing build step for 'jsonfortran'
+[40/48] Performing install step for 'jsonfortran'
+... [trimmed] ...
+[16/48] Performing configure step for 'CLFortran'
+[17/48] Performing download step (download, verify and extract) for 'fftw'
+[18/48] No update step for 'fftw'
+[19/48] No patch step for 'fftw'
+[20/48] Performing build step for 'CLFortran'
+[21/48] Performing install step for 'CLFortran'
+[22/48] Completed 'CLFortran'
+[23/48] Performing configure step for 'nlopt'
+[24/48] Performing configure step for 'bcls'
+[25/48] Performing configure step for 'fftw'
+[26/48] Performing build step for 'bcls'
+[27/48] Performing install step for 'bcls'
+[28/48] Completed 'bcls'
+[29/48] Performing build step for 'nlopt'
+[30/48] Performing install step for 'nlopt'
+[31/48] Completed 'nlopt'
+[32/48] Performing build step for 'fftw'
+[33/48] Performing install step for 'fftw'
+[34/48] Completed 'fftw'
+[35/48] Performing download step (git clone) for 'jsonfortran'
+[36/48] Performing update step for 'jsonfortran'
+[37/48] No patch step for 'jsonfortran'
+[38/48] Performing configure step for 'jsonfortran'
+[39/48] Performing build step for 'jsonfortran'
+[40/48] Performing install step for 'jsonfortran'
+[41/48] Completed 'jsonfortran'
+[42/48] Performing download step (git clone) for 'hdf5'
+FAILED: [code=1] /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download 
+cd /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Source && /usr/local/bin/cmake -P /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake && /usr/local/bin/cmake -E touch /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download
+CMake Error at /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake:49 (message):
+  Command failed: 1
+
+   '/usr/local/bin/cmake' '-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE' '-P' '/opt/EMsoft_SDK/superbuild/hdf5-1.12.2/tmp/Release/hdf5-gitclone.cmake'
+
+  See also
+
+    /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-*.log
+
+
+ninja: build stopped: subcommand failed.
+
+===== superbuild_ninja2.log (head) =====
+[1/31] Performing update step for 'nlopt'
+[2/31] Performing update step for 'jsonfortran'
+[3/31] Performing patch step for 'nlopt'
+[4/31] No patch step for 'jsonfortran'
+[5/31] Performing configure step for 'jsonfortran'
+[6/31] Performing build step for 'jsonfortran'
+[7/31] Performing install step for 'jsonfortran'
+[8/31] Completed 'jsonfortran'
+[9/31] Performing configure step for 'nlopt'
+[10/31] Performing build step for 'nlopt'
+[11/31] Performing install step for 'nlopt'
+[12/31] Completed 'nlopt'
+[13/31] Performing update step for 'bcls'
+[14/31] Performing update step for 'CLFortran'
+[15/31] No patch step for 'bcls'
+[16/31] No patch step for 'CLFortran'
+[17/31] Performing configure step for 'CLFortran'
+[18/31] Performing build step for 'CLFortran'
+[19/31] Performing install step for 'CLFortran'
+[20/31] Completed 'CLFortran'
+[21/31] Performing configure step for 'bcls'
+[22/31] Performing build step for 'bcls'
+[23/31] Performing install step for 'bcls'
+[24/31] Completed 'bcls'
+[25/31] Performing download step (git clone) for 'hdf5'
+FAILED: [code=1] /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download 
+cd /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Source && /usr/local/bin/cmake -P /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake && /usr/local/bin/cmake -E touch /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download
+CMake Error at /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake:49 (message):
+  Command failed: 1
+
+   '/usr/local/bin/cmake' '-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE' '-P' '/opt/EMsoft_SDK/superbuild/hdf5-1.12.2/tmp/Release/hdf5-gitclone.cmake'
+
+  See also
+
+    /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-*.log
+
+
+ninja: build stopped: subcommand failed.
+... [trimmed] ...
+[1/31] Performing update step for 'nlopt'
+[2/31] Performing update step for 'jsonfortran'
+[3/31] Performing patch step for 'nlopt'
+[4/31] No patch step for 'jsonfortran'
+[5/31] Performing configure step for 'jsonfortran'
+[6/31] Performing build step for 'jsonfortran'
+[7/31] Performing install step for 'jsonfortran'
+[8/31] Completed 'jsonfortran'
+[9/31] Performing configure step for 'nlopt'
+[10/31] Performing build step for 'nlopt'
+[11/31] Performing install step for 'nlopt'
+[12/31] Completed 'nlopt'
+[13/31] Performing update step for 'bcls'
+[14/31] Performing update step for 'CLFortran'
+[15/31] No patch step for 'bcls'
+[16/31] No patch step for 'CLFortran'
+[17/31] Performing configure step for 'CLFortran'
+[18/31] Performing build step for 'CLFortran'
+[19/31] Performing install step for 'CLFortran'
+[20/31] Completed 'CLFortran'
+[21/31] Performing configure step for 'bcls'
+[22/31] Performing build step for 'bcls'
+[23/31] Performing install step for 'bcls'
+[24/31] Completed 'bcls'
+[25/31] Performing download step (git clone) for 'hdf5'
+FAILED: [code=1] /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download 
+cd /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Source && /usr/local/bin/cmake -P /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake && /usr/local/bin/cmake -E touch /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download
+CMake Error at /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-Release.cmake:49 (message):
+  Command failed: 1
+
+   '/usr/local/bin/cmake' '-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE' '-P' '/opt/EMsoft_SDK/superbuild/hdf5-1.12.2/tmp/Release/hdf5-gitclone.cmake'
+
+  See also
+
+    /opt/EMsoft_SDK/superbuild/hdf5-1.12.2/Stamp/Release/hdf5-download-*.log
+
+
+ninja: build stopped: subcommand failed.
+
+===== emsoft_configure.log (head) =====
+-- *******************************************************
+-- * EMsoft First Configuration Run                    *
+-- * EMsoft_SDK Loading from /opt/EMsoft_SDK  *
+-- *******************************************************
+-- The Current Build type being used is Release
+-- BUILD_SHARED_LIBS: OFF
+-- Support Lib Exists: /opt/EMsoft_SDK/jsonfortran-4.3.0-Release/lib/cmake/jsonfortran-gnu-4.3.0
+-- Support Lib Exists: /opt/EMsoft_SDK/bcls-0.1-Release/lib/cmake/bcls
+-- Support Lib Exists: /opt/EMsoft_SDK/CLFortran-0.0.1-Release/lib/cmake/CLFortran
+-- ********* STARTING EMsoft CONFIGURATION ***********************
+-- EMsoft_SDK Location: /opt/EMsoft_SDK
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- The Fortran compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/gfortran - skipped
+-- Populating shtfile
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/emsoft-build/EMsoftBuild/Release/SHTfile/shtfile-subbuild
+[1/9] Creating directories for 'shtfile-populate'
+[1/9] Performing download step (git clone) for 'shtfile-populate'
+Cloning into 'shtfile-src'...
+remote: Enumerating objects: 67, done.        
+remote: Counting objects:  14% (1/7)        remote: Counting objects:  28% (2/7)        remote: Counting objects:  42% (3/7)        remote: Counting objects:  57% (4/7)        remote: Counting objects:  71% (5/7)        remote: Counting objects:  85% (6/7)        remote: Counting objects: 100% (7/7)        remote: Counting objects: 100% (7/7), done.        
+remote: Compressing objects:  20% (1/5)        remote: Compressing objects:  40% (2/5)        remote: Compressing objects:  60% (3/5)        remote: Compressing objects:  80% (4/5)        remote: Compressing objects: 100% (5/5)        remote: Compressing objects: 100% (5/5), done.        
+Receiving objects:   1% (1/67)Receiving objects:   2% (2/67)Receiving objects:   4% (3/67)Receiving objects:   5% (4/67)Receiving objects:   7% (5/67)Receiving objects:   8% (6/67)Receiving objects:  10% (7/67)Receiving objects:  11% (8/67)Receiving objects:  13% (9/67)Receiving objects:  14% (10/67)Receiving objects:  16% (11/67)Receiving objects:  17% (12/67)Receiving objects:  19% (13/67)Receiving objects:  20% (14/67)Receiving objects:  22% (15/67)Receiving objects:  23% (16/67)Receiving objects:  25% (17/67)Receiving objects:  26% (18/67)Receiving objects:  28% (19/67)Receiving objects:  29% (20/67)remote: Total 67 (delta 3), reused 2 (delta 2), pack-reused 60 (from 1)        
+Receiving objects:  31% (21/67)Receiving objects:  32% (22/67)Receiving objects:  34% (23/67)Receiving objects:  35% (24/67)Receiving objects:  37% (25/67)Receiving objects:  38% (26/67)Receiving objects:  40% (27/67)Receiving objects:  41% (28/67)Receiving objects:  43% (29/67)Receiving objects:  44% (30/67)Receiving objects:  46% (31/67)Receiving objects:  47% (32/67)Receiving objects:  49% (33/67)Receiving objects:  50% (34/67)Receiving objects:  52% (35/67)Receiving objects:  53% (36/67)Receiving objects:  55% (37/67)Receiving objects:  56% (38/67)Receiving objects:  58% (39/67)Receiving objects:  59% (40/67)Receiving objects:  61% (41/67)Receiving objects:  62% (42/67)Receiving objects:  64% (43/67)Receiving objects:  65% (44/67)Receiving objects:  67% (45/67)Receiving objects:  68% (46/67)Receiving objects:  70% (47/67)Receiving objects:  71% (48/67)Receiving objects:  73% (49/67)Receiving objects:  74% (50/67)Receiving objects:  76% (51/67)Receiving objects:  77% (52/67)Receiving objects:  79% (53/67)Receiving objects:  80% (54/67)Receiving objects:  82% (55/67)Receiving objects:  83% (56/67)Receiving objects:  85% (57/67)Receiving objects:  86% (58/67)Receiving objects:  88% (59/67)Receiving objects:  89% (60/67)Receiving objects:  91% (61/67)Receiving objects:  92% (62/67)Receiving objects:  94% (63/67)Receiving objects:  95% (64/67)Receiving objects:  97% (65/67)Receiving objects:  98% (66/67)Receiving objects: 100% (67/67)Receiving objects: 100% (67/67), 42.63 KiB | 8.53 MiB/s, done.
+Resolving deltas:   0% (0/36)Resolving deltas:   2% (1/36)Resolving deltas:   5% (2/36)Resolving deltas:   8% (3/36)Resolving deltas:  11% (4/36)Resolving deltas:  13% (5/36)Resolving deltas:  16% (6/36)Resolving deltas:  19% (7/36)Resolving deltas:  22% (8/36)Resolving deltas:  25% (9/36)Resolving deltas:  27% (10/36)Resolving deltas:  30% (11/36)Resolving deltas:  33% (12/36)Resolving deltas:  36% (13/36)Resolving deltas:  38% (14/36)Resolving deltas:  41% (15/36)Resolving deltas:  44% (16/36)Resolving deltas:  47% (17/36)Resolving deltas:  50% (18/36)Resolving deltas:  52% (19/36)Resolving deltas:  55% (20/36)Resolving deltas:  58% (21/36)Resolving deltas:  61% (22/36)Resolving deltas:  63% (23/36)Resolving deltas:  66% (24/36)Resolving deltas:  69% (25/36)Resolving deltas:  72% (26/36)Resolving deltas:  75% (27/36)Resolving deltas:  77% (28/36)Resolving deltas:  80% (29/36)Resolving deltas:  83% (30/36)Resolving deltas:  86% (31/36)Resolving deltas:  88% (32/36)Resolving deltas:  91% (33/36)Resolving deltas:  94% (34/36)Resolving deltas:  97% (35/36)Resolving deltas: 100% (36/36)Resolving deltas: 100% (36/36), done.
+... [trimmed] ...
+-- EMsoft_RELEASE_TYPE: Development
+-- EMsoft_VERSION: 5.0.4.
+-- Adding Unit test: HDFtextfile
+-- Adding Unit test: HDFinteger
+-- Adding Unit test: HDFchar
+-- Adding Unit test: HDFfloat
+-- Adding Unit test: HDFdouble
+-- Adding Unit test: HDFhyperslab
+-- Adding Unit test: HDFstack
+-- Adding Unit test: MODcrystal
+-- Adding Unit test: MODMuellerCalculus
+-- Adding Unit test: MODRotations
+-- Adding Unit test: Image
+-- Using 4 CPU Cores for tests
+-- Adding Unit Test: EMsoft_1_DIWorkflowTestPrep
+-- Adding Unit Test: EMsoft_2_EMMCOpenCL
+-- Adding Unit Test: EMsoft_3_EMEBSDmaster
+-- Adding Unit Test: EMsoft_4_EMEBSD
+-- Adding Unit Test: EMsoft_5_EMgetADP
+-- Adding Unit Test: EMsoft_6_EMEBSDDIpreview
+-- Adding Unit Test: EMsoft_7_EMEBSDDI
+-- Adding Unit Test: EMsoft_8_EMFitOrientation
+-- *******************************************************************************
+-- * EMsoft Configuration Summary
+-- * BUILD_TYPE: Release
+-- * System: Linux
+-- * Version: 6.17.0-1020-azure
+-- * Processor: x86_64
+-- * EMsoft_VER_MAJOR: 5
+-- * EMsoft_VER_MINOR: 0
+-- * EMsoft_VER_PATCH: 20260729
+-- * EMsoft_VERSION_TWEAK: 
+-- * EMsoft_VERSION: 5.0.20260729.
+-- * CMAKE_Fortran_COMPILER: /usr/bin/gfortran
+-- * EMsoft_SHORT_GIT_HASH: 
+-- * EMsoft Git committed: 
+-- *******************************************************************************
+-- Configuring done (4.3s)
+-- Generating done (0.3s)
+-- Build files have been written to: /tmp/emsoft-build/EMsoftBuild/Release
+
+===== emsoft_ninja.log (head) =====
+[1/687] Building C object EMsoftLib/CMakeFiles/EMsoftLib_C.dir/msleep.c.o
+[2/687] Building C object EMsoftLib/CMakeFiles/EMsoftLib_C.dir/bclsf90wrapper.c.o
+[3/687] Building C object EMsoftLib/CMakeFiles/EMsoftLib_C.dir/cs_malloc.c.o
+[4/687] Building C object EMsoftLib/CMakeFiles/EMsoftLib_C.dir/cs_util.c.o
+[5/687] Generating StringConstants files....
+[6/687] 
+[7/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/bmp.f90-pp.f90
+[8/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/bobyqa_refinement.f90-pp.f90
+[9/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/configmod.f90-pp.f90
+[10/687] Building C object EMsoftLib/CMakeFiles/EMsoftLib_C.dir/denoise.c.o
+[11/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/bobyqa.f90-pp.f90
+[12/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/defectmodule.f90-pp.f90
+[13/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/constants.f90-pp.f90
+[14/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/crystal.f90-pp.f90
+[15/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/dictmod.f90-pp.f90
+[16/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/detectors.f90-pp.f90
+[17/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/diffraction.f90-pp.f90
+[18/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/diffractionQC.f90-pp.f90
+[19/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/distortion.f90-pp.f90
+[20/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/ECCImod.f90-pp.f90
+[21/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/error.f90-pp.f90
+[22/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/EMdymod.f90-pp.f90
+[23/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/eispack.f90-pp.f90
+[24/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/fftw3mod.f90-pp.f90
+[25/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/files.f90-pp.f90
+[26/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/filters.f90-pp.f90
+[27/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/GBmod.f90-pp.f90
+[28/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/graphics.f90-pp.f90
+/tmp/emsoft-build/EMsoft/Source/EMsoftLib/graphics.f90:1942:20:
+
+ 1942 | !            |   / \
+      |                     
+Warning: backslash and newline separated by space
+/tmp/emsoft-build/EMsoft/Source/EMsoftLib/graphics.f90:1944:22:
+
+ 1944 | !            | /  tb \
+      |                       
+Warning: backslash and newline separated by space
+[29/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/gvectors.f90-pp.f90
+[30/687] Building Fortran preprocessed EMsoftLib/CMakeFiles/EMsoftLib.dir/gvectorsQC.f90-pp.f90
+... [trimmed] ...
+[671/687] Linking CXX executable Bin/PFInversion
+[672/687] Linking CXX executable Bin/EMsoftinit
+[673/687] Linking CXX executable Bin/HDFtextfileTest
+[674/687] Linking CXX executable Bin/EMLaueSlit
+[675/687] Linking CXX executable Bin/EMLauemaster
+[676/687] Linking CXX executable Bin/EMLaue
+[677/687] Linking CXX executable Bin/HDFdoubleTest
+[678/687] Linking CXX executable Bin/HDFintegerTest
+[679/687] Linking CXX executable Bin/HDFcharTest
+[680/687] Linking CXX executable Bin/HDFfloatTest
+[681/687] Linking CXX executable Bin/HDFhyperslabTest
+[682/687] Linking CXX executable Bin/HDFstackTest
+[683/687] Linking CXX executable Bin/DIWorkflowTestPrep
+[684/687] Linking CXX executable Bin/MODMuellerCalculusTest
+[685/687] Linking CXX executable Bin/ImageTest
+[686/687] Linking CXX executable Bin/MODcrystalTest
+[687/687] Linking CXX executable Bin/MODRotationsTest
+	Command being timed: "ninja"
+	User time (seconds): 1082.68
+	System time (seconds): 27.74
+	Percent of CPU this job got: 394%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:41.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 608196
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 74
+	Minor (reclaiming a frame) page faults: 6467369
+	Voluntary context switches: 7652
+	Involuntary context switches: 371606
+	Swaps: 0
+	File system inputs: 6392
+	File system outputs: 1725056
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+===== emsoftoo_configure.log (head) =====
+-- *******************************************************
+-- * EMsoft First Configuration Run                    *
+-- * EMsoft_SDK Loading from /opt/EMsoft_SDK  *
+-- *******************************************************
+-- The Current Build type being used is Release
+-- BUILD_SHARED_LIBS: OFF
+-- Support Lib Exists: /opt/EMsoft_SDK/jsonfortran-4.3.0-Release/lib/cmake/jsonfortran-gnu-4.3.0
+-- Support Lib Exists: /opt/EMsoft_SDK/bcls-0.1-Release/lib/cmake/bcls
+-- Support Lib Exists: /opt/EMsoft_SDK/CLFortran-0.0.1-Release/lib/cmake/CLFortran
+-- ********* STARTING EMsoft CONFIGURATION ***********************
+-- EMsoftOO_SDK Location: /opt/EMsoft_SDK
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- The Fortran compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/gfortran - skipped
+-- EMsoftOO   Git Hash: committed on 
+-- Populating shtfile
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/emsoft-build/EMsoftOOBuild/Release/SHTfile/shtfile-subbuild
+[1/9] Creating directories for 'shtfile-populate'
+[1/9] Performing download step (git clone) for 'shtfile-populate'
+Cloning into 'shtfile-src'...
+remote: Enumerating objects: 67, done.        
+remote: Counting objects:  14% (1/7)        remote: Counting objects:  28% (2/7)        remote: Counting objects:  42% (3/7)        remote: Counting objects:  57% (4/7)        remote: Counting objects:  71% (5/7)        remote: Counting objects:  85% (6/7)        remote: Counting objects: 100% (7/7)        remote: Counting objects: 100% (7/7), done.        
+remote: Compressing objects:  20% (1/5)        remote: Compressing objects:  40% (2/5)        remote: Compressing objects:  60% (3/5)        remote: Compressing objects:  80% (4/5)        remote: Compressing objects: 100% (5/5)        remote: Compressing objects: 100% (5/5), done.        
+Receiving objects:   1% (1/67)Receiving objects:   2% (2/67)Receiving objects:   4% (3/67)Receiving objects:   5% (4/67)Receiving objects:   7% (5/67)Receiving objects:   8% (6/67)Receiving objects:  10% (7/67)Receiving objects:  11% (8/67)Receiving objects:  13% (9/67)Receiving objects:  14% (10/67)Receiving objects:  16% (11/67)Receiving objects:  17% (12/67)Receiving objects:  19% (13/67)Receiving objects:  20% (14/67)Receiving objects:  22% (15/67)Receiving objects:  23% (16/67)Receiving objects:  25% (17/67)Receiving objects:  26% (18/67)Receiving objects:  28% (19/67)Receiving objects:  29% (20/67)remote: Total 67 (delta 3), reused 2 (delta 2), pack-reused 60 (from 1)        
+Receiving objects:  31% (21/67)Receiving objects:  32% (22/67)Receiving objects:  34% (23/67)Receiving objects:  35% (24/67)Receiving objects:  37% (25/67)Receiving objects:  38% (26/67)Receiving objects:  40% (27/67)Receiving objects:  41% (28/67)Receiving objects:  43% (29/67)Receiving objects:  44% (30/67)Receiving objects:  46% (31/67)Receiving objects:  47% (32/67)Receiving objects:  49% (33/67)Receiving objects:  50% (34/67)Receiving objects:  52% (35/67)Receiving objects:  53% (36/67)Receiving objects:  55% (37/67)Receiving objects:  56% (38/67)Receiving objects:  58% (39/67)Receiving objects:  59% (40/67)Receiving objects:  61% (41/67)Receiving objects:  62% (42/67)Receiving objects:  64% (43/67)Receiving objects:  65% (44/67)Receiving objects:  67% (45/67)Receiving objects:  68% (46/67)Receiving objects:  70% (47/67)Receiving objects:  71% (48/67)Receiving objects:  73% (49/67)Receiving objects:  74% (50/67)Receiving objects:  76% (51/67)Receiving objects:  77% (52/67)Receiving objects:  79% (53/67)Receiving objects:  80% (54/67)Receiving objects:  82% (55/67)Receiving objects:  83% (56/67)Receiving objects:  85% (57/67)Receiving objects:  86% (58/67)Receiving objects:  88% (59/67)Receiving objects:  89% (60/67)Receiving objects:  91% (61/67)Receiving objects:  92% (62/67)Receiving objects:  94% (63/67)Receiving objects:  95% (64/67)Receiving objects:  97% (65/67)Receiving objects:  98% (66/67)Receiving objects: 100% (67/67)Receiving objects: 100% (67/67), 42.63 KiB | 5.33 MiB/s, done.
+... [trimmed] ...
+-- Looking for CL_VERSION_3_0
+-- Looking for CL_VERSION_3_0 - found
+-- Found OpenCL: /usr/lib/x86_64-linux-gnu/libOpenCL.so (found version "3.0")
+-- OpenCL_FOUND: TRUE
+-- OpenCL_VERSION_STRING: 3.0
+-- OpenCL has CPP bindings:: NO
+-- CLFortran Found: CLFortran_LIB_PATH-NOTFOUND
+-- HDF5_VERSION_MAJOR: 1.12
+-- EMsoftOO: Enabling public CTEMbook Modality
+-- EMsoftOO: Enabling public Demag Modality
+-- EMsoftOO: Enabling public DictionaryIndexing Modality
+-- EMsoftOO: Enabling public GBs Modality
+-- EMsoftOO: Enabling public OM Modality
+-- EMsoftOO: Enabling public SEM Modality
+-- EMsoftOO: Enabling public Shapes Modality
+-- EMsoftOO: Enabling public TEM Modality
+-- EMsoftOO: Enabling public SphInx Modality
+-- EMsoftOO: Enabling public QC Modality
+-- EMsoftOO: Enabling public Utilities Modality
+-- EMsoftOO: Enabling public TestPrograms Modality
+-- EMsoftOO: Enabling public XRay Modality
+-- EMsoftOO_RELEASE_TYPE: Development
+-- EMsoftOO_VERSION: 6.0.0.0
+-- *******************************************************************************
+-- * EMsoft Configuration Summary
+-- * BUILD_TYPE: Release
+-- * System: Linux
+-- * Version: 6.17.0-1020-azure
+-- * Processor: x86_64
+-- * EMsoft_VER_MAJOR: 6
+-- * EMsoft_VER_MINOR: 0
+-- * EMsoft_VER_PATCH: 20260729
+-- * EMsoft_VERSION_TWEAK: 0
+-- * EMsoft_VERSION: 6.0.0.0
+-- * CMAKE_Fortran_COMPILER: /usr/bin/gfortran
+-- * EMsoft_SHORT_GIT_HASH: 
+-- * EMsoft Git committed: 
+-- Configuring done (4.3s)
+-- Generating done (0.3s)
+-- Build files have been written to: /tmp/emsoft-build/EMsoftOOBuild/Release
+
+===== emsoftoo_ninja3.log (head) =====
+[1/590] Generating StringConstants files....
+[2/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_KRdihedral.f90.o
+[3/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_KRcyclic.f90.o
+[4/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_KRtetrahedral.f90.o
+[5/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_platformsupport.f90.o
+[6/590] Generating Fortran dyndep file EMOpenCLLib/CMakeFiles/EMOpenCLLib.dir/Fortran.dd
+[7/590] Building Fortran preprocessed DictionaryIndexing/CMakeFiles/EMdpmerge.dir/EMdpmerge.f90-pp.f90
+[8/590] Building Fortran preprocessed DictionaryIndexing/CMakeFiles/EMdpextract.dir/EMdpextract.f90-pp.f90
+[9/590] Building Fortran preprocessed GBs/CMakeFiles/EMGBO.dir/EMGBO.f90-pp.f90
+[10/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/stringconstants.f90.o
+[11/590] Building Fortran preprocessed GBs/CMakeFiles/EMoSLERP.dir/EMoSLERP.f90-pp.f90
+[12/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_KRicosahedral.f90.o
+[13/590] Building Fortran preprocessed GBs/CMakeFiles/EMGBOanalysis.dir/EMGBOanalysis.f90-pp.f90
+[14/590] Building Fortran object EMsoftOOLib/CMakeFiles/EMsoftOOLib.dir/mod_KRoctahedral.f90.o
+[15/590] Building Fortran preprocessed OM/CMakeFiles/EMCPLMmaster.dir/EMCPLMmaster.f90-pp.f90
+[16/590] Building Fortran preprocessed OM/CMakeFiles/EMCPLM.dir/EMCPLM.f90-pp.f90
+[17/590] Building Fortran preprocessed SEM/CMakeFiles/EMMCGPU.dir/EMMCGPU.f90-pp.f90
+[18/590] Building Fortran preprocessed SEM/CMakeFiles/EMMCOpenCL.dir/EMMCGPU.f90-pp.f90
+[19/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDmaster.dir/EMEBSDmaster.f90-pp.f90
+[20/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDFull.dir/EMEBSDFull.f90-pp.f90
+[21/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDNBeams.dir/EMEBSDNBeams.f90-pp.f90
+[22/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDdepthmaster.dir/EMEBSDdepthmaster.f90-pp.f90
+[23/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDdefect.dir/EMEBSDdefect.f90-pp.f90
+[24/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSD.dir/EMEBSD.f90-pp.f90
+[25/590] Building Fortran preprocessed SEM/CMakeFiles/EMKossel.dir/EMKossel.f90-pp.f90
+[26/590] Building Fortran preprocessed SEM/CMakeFiles/EM4DEBSD.dir/EM4DEBSD.f90-pp.f90
+[27/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDPCA.dir/EMEBSDPCA.f90-pp.f90
+[28/590] Building Fortran preprocessed SEM/CMakeFiles/EMBSE.dir/EMBSE.f90-pp.f90
+[29/590] Building Fortran preprocessed SEM/CMakeFiles/EMISE.dir/EMISE.f90-pp.f90
+[30/590] Building Fortran preprocessed SEM/CMakeFiles/EMreflectors.dir/EMreflectors.f90-pp.f90
+[31/590] Building Fortran preprocessed SEM/CMakeFiles/EMEBSDkin.dir/EMEBSDkin.f90-pp.f90
+[32/590] Building Fortran preprocessed SEM/CMakeFiles/EMECP.dir/EMECP.f90-pp.f90
+[33/590] Building Fortran preprocessed SEM/CMakeFiles/EMISEmaster.dir/EMISEmaster.f90-pp.f90
+[34/590] Building Fortran preprocessed SEM/CMakeFiles/EMECPmaster.dir/EMECPmaster.f90-pp.f90
+[35/590] Building Fortran preprocessed SEM/CMakeFiles/EMECCI.dir/EMECCI.f90-pp.f90
+[36/590] Building Fortran preprocessed SEM/CMakeFiles/EMKosselmaster.dir/EMKosselmaster.f90-pp.f90
+[37/590] Building Fortran preprocessed SEM/CMakeFiles/EMppEBSD.dir/EMppEBSD.f90-pp.f90
+[38/590] Building Fortran preprocessed SEM/CMakeFiles/EMgetMP.dir/EMgetMP.f90-pp.f90
+[39/590] Building Fortran preprocessed SEM/CMakeFiles/EMHREBSDDIC.dir/EMHREBSDDIC.f90-pp.f90
+[40/590] Building Fortran preprocessed SEM/CMakeFiles/EMTKD.dir/EMTKD.f90-pp.f90
+... [trimmed] ...
+[569/590] Linking Fortran executable Bin/EMppEBSD
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[570/590] Linking Fortran executable Bin/EMTKDmaster
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[571/590] Linking Fortran executable Bin/EMHREBSDDIC
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[572/590] Linking Fortran executable Bin/EMMPoverlap
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[573/590] Linking Fortran executable Bin/EMCBED
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[574/590] Linking Fortran executable Bin/EMhh4
+[575/590] Linking Fortran executable Bin/EMShapeAmplitude
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[576/590] Linking Fortran executable Bin/EMPEDkin
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[577/590] Linking Fortran executable Bin/EMLACBED
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[578/590] Linking Fortran executable Bin/EMSRdefect
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[579/590] Linking Fortran executable Bin/EMPEDZA
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[580/590] Linking Fortran executable Bin/EMGPUinfo
+[581/590] Linking Fortran executable Bin/EMSTEMDCI
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[582/590] Linking Fortran executable Bin/EMOpenCLinfo
+[583/590] Linking Fortran executable Bin/EMQCmkxtal
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[584/590] Linking Fortran executable Bin/EMSphInx
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[585/590] Linking Fortran executable Bin/EMLauemaster
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[586/590] Linking Fortran executable Bin/EMLaue
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[587/590] Linking Fortran executable Bin/testMCOpenCLWrapper
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[588/590] Linking Fortran executable Bin/play
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[589/590] Linking Fortran executable Bin/EMLaueDCT
+/usr/bin/ld: warning: mod_math.f90.o: requires executable stack (because the .note.GNU-stack section is executable)
+[590/590] Linking Fortran executable Bin/play2
+
+===== bspline_build2.log (head) =====
+[1/21] Building Fortran preprocessed CMakeFiles/bspline-fortran.dir/src/bspline_oo_module.f90-pp.f90
+[2/21] Building Fortran preprocessed CMakeFiles/bspline-fortran-static.dir/src/bspline_oo_module.f90-pp.f90
+[3/21] Generating Fortran dyndep file CMakeFiles/bspline-fortran.dir/Fortran.dd
+[4/22] Generating Fortran dyndep file CMakeFiles/bspline-fortran-static.dir/Fortran.dd
+[5/23] Building Fortran object CMakeFiles/bspline-fortran.dir/src/bspline_oo_module.f90.o
+[6/23] Building Fortran object CMakeFiles/bspline-fortran.dir/src/bspline_module.f90.o
+[7/23] Linking Fortran shared library lib/libbspline-fortran.so
+[8/23] Building Fortran object CMakeFiles/bspline-fortran-static.dir/src/bspline_oo_module.f90.o
+[9/23] Building Fortran object CMakeFiles/bspline-fortran-static.dir/src/bspline_module.f90.o
+[10/23] Building Fortran object CMakeFiles/test_integrate.dir/test/test_integrate.f90.o
+[11/23] Linking Fortran static library lib/libbspline-fortran.a
+[12/23] Linking Fortran executable test_integrate
+[13/23] Building Fortran object CMakeFiles/stack_size_test_oo.dir/test/stack_size_test_oo.f90.o
+[14/23] Building Fortran object CMakeFiles/test_regrid.dir/test/test_regrid.f90.o
+[15/23] Linking Fortran executable stack_size_test_oo
+[16/23] Linking Fortran executable test_regrid
+[17/23] Building Fortran object CMakeFiles/test_oo.dir/test/test_oo.f90.o
+[18/23] Linking Fortran executable test_oo
+[19/23] Building Fortran object CMakeFiles/bspline_test.dir/test/bspline_test.f90.o
+[20/23] Linking Fortran executable bspline_test
+[21/23] Building Fortran object CMakeFiles/bspline_test_2.dir/test/bspline_test_2.f90.o
+[22/23] Linking Fortran executable bspline_test_2
+[22/23] Install the project...
+-- Install configuration: "Release"
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.so
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_blas_module.mod
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_sub_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_kinds_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_defc_module.mod
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_oo_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.so
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_blas_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_sub_module.mod
+... [trimmed] ...
+[5/23] Building Fortran object CMakeFiles/bspline-fortran.dir/src/bspline_oo_module.f90.o
+[6/23] Building Fortran object CMakeFiles/bspline-fortran.dir/src/bspline_module.f90.o
+[7/23] Linking Fortran shared library lib/libbspline-fortran.so
+[8/23] Building Fortran object CMakeFiles/bspline-fortran-static.dir/src/bspline_oo_module.f90.o
+[9/23] Building Fortran object CMakeFiles/bspline-fortran-static.dir/src/bspline_module.f90.o
+[10/23] Building Fortran object CMakeFiles/test_integrate.dir/test/test_integrate.f90.o
+[11/23] Linking Fortran static library lib/libbspline-fortran.a
+[12/23] Linking Fortran executable test_integrate
+[13/23] Building Fortran object CMakeFiles/stack_size_test_oo.dir/test/stack_size_test_oo.f90.o
+[14/23] Building Fortran object CMakeFiles/test_regrid.dir/test/test_regrid.f90.o
+[15/23] Linking Fortran executable stack_size_test_oo
+[16/23] Linking Fortran executable test_regrid
+[17/23] Building Fortran object CMakeFiles/test_oo.dir/test/test_oo.f90.o
+[18/23] Linking Fortran executable test_oo
+[19/23] Building Fortran object CMakeFiles/bspline_test.dir/test/bspline_test.f90.o
+[20/23] Linking Fortran executable bspline_test
+[21/23] Building Fortran object CMakeFiles/bspline_test_2.dir/test/bspline_test_2.f90.o
+[22/23] Linking Fortran executable bspline_test_2
+[22/23] Install the project...
+-- Install configuration: "Release"
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.so
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_blas_module.mod
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_sub_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_kinds_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_defc_module.mod
+-- Installing: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_oo_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.so
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_blas_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.a
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_sub_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_kinds_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_defc_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/bspline_oo_module.mod
+-- Up-to-date: /opt/EMsoft_SDK/bspline-fortran-Release/lib/libbspline-fortran.so
+

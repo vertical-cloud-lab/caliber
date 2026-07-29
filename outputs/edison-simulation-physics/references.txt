@@ -1,0 +1,31 @@
+1. (zhang2025comparisonofkikuchi pages 1-6): Tian-cang Zhang, Lukas Berners, Jakub Holzer, and T. B. Britton. Comparison of kikuchi diffraction geometries in the scanning electron microscope. Apr 2025. URL: https://doi.org/10.1016/j.matchar.2025.114853, doi:10.1016/j.matchar.2025.114853. This article has 14 citations and is from a peer-reviewed journal.
+
+2. (kaufmann2020phasemappingin pages 1-2): Kevin Kaufmann, Chaoyi Zhu, Alexander S. Rosengarten, Daniel Maryanovsky, Haoren Wang, and Kenneth S. Vecchio. Phase mapping in ebsd using convolutional neural networks. Microscopy and Microanalysis, 26:458-468, May 2020. URL: https://doi.org/10.1017/s1431927620001488, doi:10.1017/s1431927620001488. This article has 34 citations and is from a peer-reviewed journal.
+
+3. (zhang2025comparisonofkikuchi pages 15-20): Tian-cang Zhang, Lukas Berners, Jakub Holzer, and T. B. Britton. Comparison of kikuchi diffraction geometries in the scanning electron microscope. Apr 2025. URL: https://doi.org/10.1016/j.matchar.2025.114853, doi:10.1016/j.matchar.2025.114853. This article has 14 citations and is from a peer-reviewed journal.
+
+4. (susi2019efficientfirstprinciples pages 1-3): Toma Susi, Jacob Madsen, Ursula Ludacka, Jens Jørgen Mortensen, Timothy J. Pennycook, Zhongbo Lee, Jani Kotakoski, Ute Kaiser, and Jannik C. Meyer. Efficient first principles simulation of electron scattering factors for transmission electron microscopy. Ultramicroscopy, 197:16-22, Mar 2019. URL: https://doi.org/10.48550/arxiv.1803.05338, doi:10.48550/arxiv.1803.05338. This article has 40 citations and is from a peer-reviewed journal.
+
+5. (madsen2021theabtemcode pages 3-5): Jacob Madsen and Toma Susi. The abtem code: transmission electron microscopy from first principles. Open Research Europe, 1:24, May 2021. URL: https://doi.org/10.12688/openreseurope.13015.2, doi:10.12688/openreseurope.13015.2. This article has 351 citations and is from a peer-reviewed journal.
+
+6. (madsen2021theabtemcode pages 1-3): Jacob Madsen and Toma Susi. The abtem code: transmission electron microscopy from first principles. Open Research Europe, 1:24, May 2021. URL: https://doi.org/10.12688/openreseurope.13015.2, doi:10.12688/openreseurope.13015.2. This article has 351 citations and is from a peer-reviewed journal.
+
+7. (madsen2021theabtemcode pages 10-12): Jacob Madsen and Toma Susi. The abtem code: transmission electron microscopy from first principles. Open Research Europe, 1:24, May 2021. URL: https://doi.org/10.12688/openreseurope.13015.2, doi:10.12688/openreseurope.13015.2. This article has 351 citations and is from a peer-reviewed journal.
+
+8. (madsen2021theabtemcode pages 12-15): Jacob Madsen and Toma Susi. The abtem code: transmission electron microscopy from first principles. Open Research Europe, 1:24, May 2021. URL: https://doi.org/10.12688/openreseurope.13015.2, doi:10.12688/openreseurope.13015.2. This article has 351 citations and is from a peer-reviewed journal.
+
+9. (madsen2021theabtemcode pages 15-17): Jacob Madsen and Toma Susi. The abtem code: transmission electron microscopy from first principles. Open Research Europe, 1:24, May 2021. URL: https://doi.org/10.12688/openreseurope.13015.2, doi:10.12688/openreseurope.13015.2. This article has 351 citations and is from a peer-reviewed journal.
+
+10. (kaufmann2020phasemappingin pages 2-3): Kevin Kaufmann, Chaoyi Zhu, Alexander S. Rosengarten, Daniel Maryanovsky, Haoren Wang, and Kenneth S. Vecchio. Phase mapping in ebsd using convolutional neural networks. Microscopy and Microanalysis, 26:458-468, May 2020. URL: https://doi.org/10.1017/s1431927620001488, doi:10.1017/s1431927620001488. This article has 34 citations and is from a peer-reviewed journal.
+
+11. (kaufmann2021efficientfewshotmachine pages 2-3): Kevin Kaufmann, Hobson Lane, Xiao Liu, and Kenneth S. Vecchio. Efficient few-shot machine learning for classification of ebsd patterns. Scientific Reports, Apr 2021. URL: https://doi.org/10.1038/s41598-021-87557-5, doi:10.1038/s41598-021-87557-5. This article has 52 citations and is from a peer-reviewed journal.
+
+12. (kaufmann2021efficientfewshotmachine pages 3-4): Kevin Kaufmann, Hobson Lane, Xiao Liu, and Kenneth S. Vecchio. Efficient few-shot machine learning for classification of ebsd patterns. Scientific Reports, Apr 2021. URL: https://doi.org/10.1038/s41598-021-87557-5, doi:10.1038/s41598-021-87557-5. This article has 52 citations and is from a peer-reviewed journal.
+
+13. (kaufmann2021efficientfewshotmachine pages 10-11): Kevin Kaufmann, Hobson Lane, Xiao Liu, and Kenneth S. Vecchio. Efficient few-shot machine learning for classification of ebsd patterns. Scientific Reports, Apr 2021. URL: https://doi.org/10.1038/s41598-021-87557-5, doi:10.1038/s41598-021-87557-5. This article has 52 citations and is from a peer-reviewed journal.
+
+14. (kaufmann2021efficientfewshotmachine pages 9-9): Kevin Kaufmann, Hobson Lane, Xiao Liu, and Kenneth S. Vecchio. Efficient few-shot machine learning for classification of ebsd patterns. Scientific Reports, Apr 2021. URL: https://doi.org/10.1038/s41598-021-87557-5, doi:10.1038/s41598-021-87557-5. This article has 52 citations and is from a peer-reviewed journal.
+
+15. (zhang2025comparisonofkikuchi pages 25-30): Tian-cang Zhang, Lukas Berners, Jakub Holzer, and T. B. Britton. Comparison of kikuchi diffraction geometries in the scanning electron microscope. Apr 2025. URL: https://doi.org/10.1016/j.matchar.2025.114853, doi:10.1016/j.matchar.2025.114853. This article has 14 citations and is from a peer-reviewed journal.
+
+16. (zhang2025comparisonofkikuchi pages 30-35): Tian-cang Zhang, Lukas Berners, Jakub Holzer, and T. B. Britton. Comparison of kikuchi diffraction geometries in the scanning electron microscope. Apr 2025. URL: https://doi.org/10.1016/j.matchar.2025.114853, doi:10.1016/j.matchar.2025.114853. This article has 14 citations and is from a peer-reviewed journal.

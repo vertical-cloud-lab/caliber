@@ -1,0 +1,41 @@
+{
+  "monte_carlo": {
+    "total_incident_electrons": 2000000,
+    "total_BSE": 1151576,
+    "backscatter_yield": 0.575788,
+    "accum_e_shape": [
+      201,
+      201,
+      11
+    ],
+    "energy_bins_keV": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "master_pattern": {
+    "mLPNH_shape": [
+      1,
+      11,
+      401,
+      401
+    ],
+    "masterSPNH_shape": [
+      11,
+      401,
+      401
+    ],
+    "method": "Bloch-wave many-beam dynamical + Bethe perturbation",
+    "npx": 200,
+    "dmin_nm": 0.05
+  }
+}

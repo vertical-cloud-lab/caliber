@@ -1,0 +1,14 @@
+ &EBSDmastervars
+ dmin = 0.05,
+ npx = 200,
+ nthreads = 4,
+ doLegendre = .FALSE.,
+ energyfile = 'Ni-MCoutput.h5',
+ BetheParametersFile = 'BetheParameters.nml',
+ Notify = 'Off',
+ copyfromenergyfile = 'undefined',
+ h5copypath = 'undefined',
+ restart = .FALSE.,
+ uniform = .FALSE.,
+ useEnergyWeighting = .FALSE.,
+ /
