@@ -2,9 +2,12 @@
 # (Apreo SEM, EDAX Octane Plus, 5 kV, live time 327.7 s, takeoff 35.1 deg).
 #
 # k-factors are sensitivity factors valid ONLY for the exact acquisition
-# conditions (kV, detector, geometry) AND the exact fitting procedure that
-# produced the calibration intensities. Calibrate them once against a spectrum
-# of KNOWN composition, then reuse on other spectra measured the same way.
+# conditions (kV, detector, geometry), the exact fitting procedure that
+# produced the calibration intensities, AND compositions near the calibrant:
+# on a bulk sample they embed its matrix (ZAF) effects, which change with
+# composition, and eXSpy has no bulk matrix correction (quantification() is
+# TEM-only; no ZAF/phi-rho-z). Calibrate them once against a spectrum of
+# KNOWN composition, then reuse on other spectra measured the same way.
 # Replace KNOWN_WT with certified-standard values for standards-based numbers;
 # the vendor eZAF result is used here only as a placeholder reference.
 import numpy as np
