@@ -1,5 +1,7 @@
 # 2026 MSA Strategic Initiatives
 
+> **Superseded:** the active cycle is now the **2027 call** (deadline: November 1, 2026, 11:59 PM ET), which adds a sixth area of emphasis on collection/preservation of microscopy knowledge. Full draft: [`2027_msa_strategic_initiatives_proposal.md`](2027_msa_strategic_initiatives_proposal.md).
+
 Working document for a CALIBER proposal to the [Microscopy Society of America (MSA) Strategic Initiatives program](https://microscopy.org/strategic-initiatives) 2026 call. The call funds bold, innovative new programs (not continuations of established ones) that increase or disseminate knowledge in the science and practice of microscopy, imaging, and compositional analysis, or in related instrumentation.
 
 ## 2026 areas of emphasis (from the call)
