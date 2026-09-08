@@ -1,0 +1,33 @@
+1. (tong2026towardsstandardisationof pages 5-10): Vivian Tong, Hannah Zhang, Jacopo Del Gaudio, Ken Mingard, and A. Gholinia. Towards standardisation of average grain size measurement of additively manufactured microstructures using ebsd. ArXiv, May 2026. URL: https://doi.org/10.48550/arxiv.2605.28852, doi:10.48550/arxiv.2605.28852. This article has 0 citations.
+
+2. (tong2026towardsstandardisationof pages 20-24): Vivian Tong, Hannah Zhang, Jacopo Del Gaudio, Ken Mingard, and A. Gholinia. Towards standardisation of average grain size measurement of additively manufactured microstructures using ebsd. ArXiv, May 2026. URL: https://doi.org/10.48550/arxiv.2605.28852, doi:10.48550/arxiv.2605.28852. This article has 0 citations.
+
+3. (tong2026towardsstandardisationof pages 16-20): Vivian Tong, Hannah Zhang, Jacopo Del Gaudio, Ken Mingard, and A. Gholinia. Towards standardisation of average grain size measurement of additively manufactured microstructures using ebsd. ArXiv, May 2026. URL: https://doi.org/10.48550/arxiv.2605.28852, doi:10.48550/arxiv.2605.28852. This article has 0 citations.
+
+4. (tong2026towardsstandardisationof pages 10-16): Vivian Tong, Hannah Zhang, Jacopo Del Gaudio, Ken Mingard, and A. Gholinia. Towards standardisation of average grain size measurement of additively manufactured microstructures using ebsd. ArXiv, May 2026. URL: https://doi.org/10.48550/arxiv.2605.28852, doi:10.48550/arxiv.2605.28852. This article has 0 citations.
+
+5. (mingard2012determinationofgrain pages 23-26): KP Mingard, PN Quested, and MS Peck. Determination of grain size by ebsd-report on a round robin measurement of equiaxed titanium. Unknown journal, 2012.
+
+6. (tong2026towardsstandardisationof pages 1-5): Vivian Tong, Hannah Zhang, Jacopo Del Gaudio, Ken Mingard, and A. Gholinia. Towards standardisation of average grain size measurement of additively manufactured microstructures using ebsd. ArXiv, May 2026. URL: https://doi.org/10.48550/arxiv.2605.28852, doi:10.48550/arxiv.2605.28852. This article has 0 citations.
+
+7. (mingard2012determinationofgrain pages 30-32): KP Mingard, PN Quested, and MS Peck. Determination of grain size by ebsd-report on a round robin measurement of equiaxed titanium. Unknown journal, 2012.
+
+8. (mingard2012determinationofgrain pages 1-9): KP Mingard, PN Quested, and MS Peck. Determination of grain size by ebsd-report on a round robin measurement of equiaxed titanium. Unknown journal, 2012.
+
+9. (rohrer2010derivinggrainboundary pages 2-4): G. S. Rohrer, J. Li, S. Lee, A. D. Rollett, M. Groeber, and M. D. Uchic. Deriving grain boundary character distributions and relative grain boundary energies from three-dimensional ebsd data. Materials Science and Technology, 26:661-669, Jun 2010. URL: https://doi.org/10.1179/026708309x12468927349370, doi:10.1179/026708309x12468927349370. This article has 131 citations and is from a peer-reviewed journal.
+
+10. (britton2018understandingdeformationwith pages 1-3): T B Britton and J L R Hickey. Understanding deformation with high angular resolution electron backscatter diffraction (hr-ebsd). IOP Conference Series: Materials Science and Engineering, 304:012003, Jan 2018. URL: https://doi.org/10.1088/1757-899x/304/1/012003, doi:10.1088/1757-899x/304/1/012003. This article has 78 citations.
+
+11. (britton2018understandingdeformationwith pages 3-6): T B Britton and J L R Hickey. Understanding deformation with high angular resolution electron backscatter diffraction (hr-ebsd). IOP Conference Series: Materials Science and Engineering, 304:012003, Jan 2018. URL: https://doi.org/10.1088/1757-899x/304/1/012003, doi:10.1088/1757-899x/304/1/012003. This article has 78 citations.
+
+12. (currier2024towardsanintegrated pages 9-12): Ryan M. Currier, Tushar Mittal, and Paulo J. Hidalgo. Towards an integrated texture toolkit, 1: unveiling the complex relationship between crystal shape and fabric in ebsd data. Contributions to Mineralogy and Petrology, Apr 2024. URL: https://doi.org/10.1007/s00410-024-02128-x, doi:10.1007/s00410-024-02128-x. This article has 3 citations and is from a domain leading peer-reviewed journal.
+
+13. (currier2024towardsanintegrated pages 1-3): Ryan M. Currier, Tushar Mittal, and Paulo J. Hidalgo. Towards an integrated texture toolkit, 1: unveiling the complex relationship between crystal shape and fabric in ebsd data. Contributions to Mineralogy and Petrology, Apr 2024. URL: https://doi.org/10.1007/s00410-024-02128-x, doi:10.1007/s00410-024-02128-x. This article has 3 citations and is from a domain leading peer-reviewed journal.
+
+14. (rohrer2010derivinggrainboundary pages 4-5): G. S. Rohrer, J. Li, S. Lee, A. D. Rollett, M. Groeber, and M. D. Uchic. Deriving grain boundary character distributions and relative grain boundary energies from three-dimensional ebsd data. Materials Science and Technology, 26:661-669, Jun 2010. URL: https://doi.org/10.1179/026708309x12468927349370, doi:10.1179/026708309x12468927349370. This article has 131 citations and is from a peer-reviewed journal.
+
+15. (timberlake2026effectsofsem pages 14-17): D. M. Timberlake and E. J. Payton. Effects of sem distortions on ebsd grain size measurements. Metallography, Microstructure, and Analysis, 15:489-505, Feb 2026. URL: https://doi.org/10.1007/s13632-026-01317-3, doi:10.1007/s13632-026-01317-3. This article has 0 citations.
+
+16. (mingard2012determinationofgrain pages 9-11): KP Mingard, PN Quested, and MS Peck. Determination of grain size by ebsd-report on a round robin measurement of equiaxed titanium. Unknown journal, 2012.
+
+17. (muirhead2001themorphologicalcharacterisation pages 37-43): JJ Muirhead. The morphological characterisation of grains and grain boundaries. Unknown journal, 2001.

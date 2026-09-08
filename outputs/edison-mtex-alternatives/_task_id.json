@@ -1,0 +1,5 @@
+{
+  "task_id": "f55d0bdd-87d8-4cf2-8d86-23309987262a",
+  "job": "job-futurehouse-paperqa3",
+  "query": "What are the open-source, Python-native software packages for electron backscatter diffraction (EBSD) post-processing that serve as alternatives to the MATLAB-based MTEX toolbox? Focus on capabilities for grain reconstruction/segmentation from orientation maps, crystallographic texture analysis (ODF, pole figures, inverse pole figures), and misorientation-derived metrics such as kernel average misorientation (KAM) and geometrically necessary dislocation (GND) density. Discuss packages such as kikuchipy, orix, DefDAP, DREAM.3D/DREAM3D-NX (simplnx), pyxem, and any others, including their maturity, peer-reviewed references, and how their grain-reconstruction and texture-analysis capabilities compare with MTEX. Context: an automated Python pipeline (indexing via kikuchipy/PyEBSDIndex on additively manufactured AlSi10Mg) that needs the downstream grain-characterization stage to run without MATLAB."
+}
