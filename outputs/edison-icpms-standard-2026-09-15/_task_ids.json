@@ -1,0 +1,22 @@
+{
+  "issue": 12,
+  "submitted_utc": "2026-09-15T23:12Z",
+  "job_type": "LITERATURE",
+  "tasks": [
+    {
+      "slug": "q1-lpbf-mg-evaporation-loss",
+      "task_id": "bf8a0279-dc7c-49e8-a3d0-8b0c092228e4",
+      "query": "In laser powder bed fusion (LPBF / selective laser melting) of AlSi10Mg, how does the chemical composition of the as-built part differ from the feedstock powder composition? Specifically: what magnitude of magnesium loss by selective evaporation during laser melting has been reported (absolute wt% or relative %), how does it depend on process parameters such as volumetric energy density, and are silicon or aluminum contents measurably changed? Cite quantitative studies that measured both the powder and the as-built chemical composition (e.g., by ICP-OES, ICP-MS, or wet chemistry). Is Zn also lost? Given this, can the feedstock powder composition be assumed identical to the printed part composition for calibration or reference-material purposes at the 0.05 wt% level?"
+    },
+    {
+      "slug": "q2-which-sample-to-certify",
+      "task_id": "85e1c861-1aff-45cb-be99-8761dc161e62",
+      "query": "A laboratory is creating a matrix-matched SEM-EDS quantification standard from AlSi10Mg: a laser powder bed fusion (3D printed) specimen will be mounted, polished, and used as the standard, and its bulk composition will be certified by ICP-MS. Should the ICP-MS analysis be performed on (a) the virgin gas-atomized AlSi10Mg feedstock powder, or (b) material sectioned from the printed specimen itself? Discuss: the metrological principle that a reference material's certified composition must correspond to the exact material that will be analyzed; bulk homogeneity of LPBF builds (e.g., composition gradients along build height due to Mg evaporation) versus particle-to-particle composition variation in gas-atomized powder; representative sampling and recommended sample mass and replicates for solid alloy versus powder digestion; and contamination risks when sectioning solid samples (e.g., Fe pickup from cutting or grinding tools)."
+    },
+    {
+      "slug": "q3-agilent8900-alsi10mg-digestion",
+      "task_id": "6799f13c-23ef-47ad-89c9-fd8ab2c1833a",
+      "query": "Best practices for quantifying Si (~9-11 wt%), Mg (~0.2-0.5 wt%), Fe, Cu, Zn, Mn, Ti, and trace elements in an AlSi10Mg aluminum alloy by ICP-MS on an Agilent 8900 triple-quadrupole instrument: (1) acid digestion protocols for aluminum-silicon alloys - is HF required for complete Si dissolution, what is the risk of Si loss as volatile SiF4 or of silicic acid precipitation, and are alternatives like NaOH fusion used; (2) differences in digestion completeness, speed, or contamination between fine gas-atomized powder and solid pieces cut from a consolidated part; (3) spectral interference management for 24Mg, 27Al, 28Si (e.g., 12C12C+, 14N14N+) using He KED or H2/O2 reaction gas in MS/MS mode, and required dilution factors for percent-level analytes; (4) whether ICP-OES is preferable to ICP-MS for the major elements Al and Si, with ICP-MS reserved for minor and trace elements; (5) achievable accuracy and precision for major and minor elements in metal alloy digests."
+    }
+  ]
+}
