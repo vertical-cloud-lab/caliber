@@ -1,0 +1,37 @@
+{
+  "issue": 12,
+  "submitted_utc": "2026-09-15T08:16Z",
+  "job_type": "LITERATURE",
+  "tasks": [
+    {
+      "slug": "q1-carbon-coated-mgo",
+      "task_id": "5b6199cc-5a44-48bd-89b6-bb7161008f18",
+      "query": "In SEM-EDS / EPMA microanalysis, MgO (periclase) is used as a standard for Mg and O. If the MgO standard must be carbon-coated for conductivity: (1) does the coating itself add a C K-alpha peak to every spectrum, making a coated sample unusable as a carbon standard or for measuring sample carbon? (2) Roughly how much are O K-alpha (0.525 keV) and Mg K-alpha (1.254 keV) intensities attenuated by a 10-25 nm evaporated carbon coat at a 35-40 degree take-off angle? (3) What is best practice when the standard is coated but the unknowns are uncoated conductive metals - match the coating, or correct for it in software such as NIST DTSA-II?"
+    },
+    {
+      "slug": "q2-powder-epoxy-standards",
+      "task_id": "2ff80981-d967-430f-89c7-db36779a1ba8",
+      "query": "Is it accepted practice in SEM-EDS / electron microprobe analysis to prepare quantification standards by mounting high-purity metal powders or granules in epoxy and polishing cross-sections? How large must particles be relative to the electron interaction volume at 15-20 kV, and what artifacts limit accuracy compared with bulk polished standards (surface oxide films at particle boundaries, porosity, smearing of soft metals such as tin, edge effects)?"
+    },
+    {
+      "slug": "q3-zr-ce-li-problem-elements",
+      "task_id": "dd9eb478-85bc-4dcc-b4e0-1ded9c026db2",
+      "query": "For pure-element X-ray microanalysis (EDS/WDS) standards: (a) commercial zirconium is typically Grade 702 containing up to about 4.5 wt% hafnium - does this Hf content introduce significant quantification error when used as a Zr standard, and is low-Hf (crystal bar) zirconium required? (b) Is cerium metal practical as a microanalysis standard given its rapid oxidation in air, or is CeO2 the preferred Ce standard? (c) Can lithium be detected or quantified with conventional silicon drift detector EDS using polymer windows, and what techniques are actually required to measure Li in aluminum alloys?"
+    },
+    {
+      "slug": "q4-vpsem-quant",
+      "task_id": "a8ede654-3ad7-4b0a-8ae3-434ae052639b",
+      "query": "In variable-pressure (low-vacuum / environmental) SEM, how do chamber gas and water vapor affect quantitative EDS analysis: electron beam skirt formation, spurious oxygen signal, and absorption of soft X-rays by the gas? Can EDS standards measured under variable pressure be transferred to high-vacuum analyses, or must standards and unknowns be measured under the same vacuum conditions?"
+    },
+    {
+      "slug": "q5-dtsa2-map-standard-snr",
+      "task_id": "975a2688-dbc1-4013-8ece-fbf8569bcae7",
+      "query": "In NIST DTSA-II, creating a quantification standard from a measured EDS spectrum requires adequate counting statistics. Why would a spectrum extracted or summed from an EDS spectrum-image (X-ray map) of an AlSi10Mg alloy fail signal-to-noise or precision checks even for major elements like Al and Si? What total counts or dose are recommended for standard spectra, and is the recommended practice to acquire several long point/raster spectra (e.g. four 60-second acquisitions), check for outliers, and sum them?"
+    },
+    {
+      "slug": "q6-matrix-matched-trace-mg",
+      "task_id": "21ff2174-1cd3-4116-88b5-41fa5c2b8ae3",
+      "query": "For quantifying a minor element at 0.2-0.5 wt% (e.g. Mg in an Al-10Si-0.4Mg alloy, AlSi10Mg) by SEM-EDS, is a matrix-matched standard whose bulk composition was certified by ICP-MS preferable to pure-element standards? How large are matrix (ZAF) correction and standardless-quantification errors at such concentrations, and what accuracy and detection limits can standards-based EDS achieve for minor/trace elements?"
+    }
+  ]
+}
