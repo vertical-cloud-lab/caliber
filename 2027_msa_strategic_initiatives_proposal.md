@@ -35,7 +35,18 @@ $20,000 over two years *(scale to $15,000 / one year by dropping Year 2 items if
 
 Quantitative microscopy lives or dies by acquisition parameters. Physical standards can hold SEM-EDS to roughly ±5% relative uncertainty while standardless analysis can err by ±30%, with normalization hiding the damage [1]; raising EBSD collection speed from 54 to 154 patterns per second dropped correct indexing from 34.9% to 9.3% [2]; and supplying a 12-phase candidate list instead of the correct two caused *zero* patterns to index correctly despite ideal beam settings [3]. Our own LPBF AlSi10Mg work mirrors this: standardless EDS over-reported trace Mg several-fold, and indexing yield swung from 40% to 80% on beam-current and phase-list corrections alone. The rationale behind "recommended" settings — why standards demand overvoltage ≥ 1.8, where defaults break down — is scattered across decades of literature, standards whose derivations are rarely documented, vendor-proprietary software, and the memory of senior microscopists; when they retire, it leaves with them [1,15].
 
-We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-source release of **CALIBER**, a retrieval-augmented, uncertainty-aware recommender that suggests literature- and physics-grounded SEM, EDS, EBSD, and XRF acquisition parameters for a stated sample and analysis goal, and (2) a curated, versioned, citable knowledge base that collects and preserves *why* parameters are chosen — technical procedures, underlying physics, and the derivations behind standard settings — cross-linked to MSA's own archives, where much of this knowledge already sits unorganized [12,13]. An open benchmark campaign on novel alloys fills a documented evidence gap (no controlled factorial acquisition studies exist for LPBF AlSi10Mg [1,3]), students earn stipends curating entries under expert review, and results flow through M&M tutorials, a Microscopy Today article, and MSA's web presence. The award funds a community resource, not our lab's research program.
+We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-source release of **CALIBER**, a retrieval-augmented, uncertainty-aware recommender that suggests literature- and physics-grounded SEM, EDS, EBSD, and XRF acquisition parameters for a stated sample and analysis goal, and (2) a curated, versioned, citable knowledge base that collects and preserves *why* parameters are chosen — technical procedures, underlying physics, and the derivations behind standard settings — cross-linked to MSA's own archives, where much of this knowledge already sits unorganized [12,13]. An open benchmark campaign on novel alloys fills a documented evidence gap (no controlled factorial acquisition studies exist for LPBF AlSi10Mg [1,3]), students earn stipends curating entries under expert review, and results flow to members and the wider imaging community through M&M tutorials, open webinars, a Microscopy Today article, and MSA's web presence. The award funds a community resource, not our lab's research program — one scoped deliberately to MSA's mission of fostering research, innovation, advancement, and promotion of microscopy.
+
+## Alignment with the MSA mission
+
+MSA's stated mission is to be "a collaborative community dedicated to fostering research, innovation, advancement, and promotion of microscopy" ([Mission and Vision](https://microscopy.org/mission-and-vision)). The initiative is built to serve all four commitments, not only the two call areas it targets:
+
+- **Fostering research** — the open factorial benchmark (O3) creates validation data the literature demonstrably lacks [1,3], and every lab that adopts validated parameters gets more trustworthy measurements (roughly ±5% standards-based vs. ±30% standardless relative uncertainty in SEM-EDS [1]).
+- **Innovation** — a retrieval-augmented, uncertainty-aware acquisition recommender (O1) is a new kind of open microscopy tool: connective infrastructure over HyperSpy, kikuchipy, and the rest of an ecosystem that analyzes data but does not guide acquisition [8,11,13].
+- **Advancement** — the Parameter Commons (O2) converts scattered, retirement-vulnerable expertise into versioned, DOI-citable records [15], raising everyday practice for expert and non-expert operators alike.
+- **Promotion of microscopy** — open webinars, M&M tutorials, a Microscopy Today article, and a recommender whose every suggestion cites the primary microscopy literature carry MSA's name, and the case for rigorous microscopy, to students and to adjacent communities (additive manufacturing, materials, geoscience) that use these instruments daily but rarely engage with the Society (O4).
+
+The "collaborative community" framing is taken literally: Commons records are contributed and reviewed by members, curated by a paid student corps, and governed by an MSA body from Year 2 onward (see Sustainability).
 
 ## Alignment with the 2027 areas of emphasis
 
@@ -60,7 +71,7 @@ We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-sourc
 1. **O1 — MSA-branded open-source CALIBER release.** Public repository (permissive license) containing the retrieval-augmented recommender, uncertainty-aware feedback loop, and corpus-building tools; MSA branding and hosting arrangement agreed with Council; built to interoperate with the existing open ecosystem (HyperSpy/kikuchipy data models, NeXus/NXem metadata [9]) rather than replace it. *Deliverables: v0.1 (Y1Q2), v1.0 (Y2Q2); documentation and install-free web demo.*
 2. **O2 — The Microanalysis Parameter Commons.** A public, versioned knowledge base of parameter-rationale records (per modality × parameter × material class: the recommended range, the physics behind it, the primary sources, and known failure modes), with DOIs per release, a contribution/review workflow, and cross-links into MSA archives (M&M proceedings, Microscopy Today). *Deliverables: schema + 50 seed records (Y1Q2), 150+ records spanning SEM, EDS, EBSD, XRF (Y2Q4).*
 3. **O3 — Open validation benchmark.** A published benchmark on novel alloy samples (laser powder bed fusion Al-Si and the broader alloy campaign) that fills the documented absence of controlled factorial acquisition studies [1,3]: raw spectra/patterns archived and re-analyzed offline outside vendor software, so recommended vs. naive parameters can be compared reproducibly; early-stopping quality heuristics (e.g., EBSD confidence-index screening after partial scans) evaluated and reported. *Deliverables: open dataset with FAIR metadata per MaRDA recommendations [9] (Y2Q1); benchmark report.*
-4. **O4 — Dissemination and training.** M&M tutorial/workshop, a Microscopy Today article, and a student curation corps designed around what makes trainee curation sustainable: bounded tasks, structured mentorship and review, version control, and visible credit on DOI'd releases [15,16,17]. *Deliverables: workshop at M&M `[2027 and/or 2028]`; 6–10 student curators trained.*
+4. **O4 — Dissemination, training, and promotion of microscopy.** M&M tutorial/workshop, a Microscopy Today article, and a student curation corps designed around what makes trainee curation sustainable: bounded tasks, structured mentorship and review, version control, and visible credit on DOI'd releases [15,16,17]. Two open webinars — run through MSA's online channels and open to non-members — and course-ready tutorial notebooks point the resource outward, toward students and adjacent communities (additive manufacturing, materials, geoscience) that depend on SEM/EDS/EBSD/XRF but rarely interact with MSA; because every recommendation cites the literature behind it, each use of the tool is itself an introduction to microscopy scholarship. *Deliverables: workshop at M&M `[2027 and/or 2028]`; two open webinars (Y1Q4, Y2Q3); tutorial notebooks; 6–10 student curators trained.*
 
 ## Work plan and timeline (two years)
 
@@ -69,10 +80,10 @@ We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-sourc
 | Y1 Q1 | MSA branding/hosting agreement; Commons record schema; seed extraction for the highest-impact parameters (EDS: accelerating voltage + `[TODO: second parameter under evaluation]`; EBSD: beam current, voltage, phase list; SEM imaging baseline set) |
 | Y1 Q2 | CALIBER v0.1 open-source release; Commons alpha with 50 seed records; student curator recruitment |
 | Y1 Q3 | Validation campaign 1 (LPBF Al-Si): archived raw data, offline re-analysis, uncertainty-aware feedback loop on recommended settings |
-| Y1 Q4 | Public beta; M&M tutorial submission; Microscopy Today article draft |
+| Y1 Q4 | Public beta; M&M tutorial submission; Microscopy Today article draft; first open webinar |
 | Y2 Q1 | Benchmark dataset release (FAIR metadata, DOI); community contribution workflow opens |
 | Y2 Q2 | CALIBER v1.0; XRF modality coverage; 100+ records |
-| Y2 Q3 | M&M workshop; assessment against success metrics |
+| Y2 Q3 | M&M workshop; second open webinar; assessment against success metrics |
 | Y2 Q4 | 150+ records; sustainability handoff to `[TODO: MSA committee/FIG]`; final report to Council |
 
 ## Budget (draft — $20,000 over two years)
@@ -83,7 +94,7 @@ We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-sourc
 | Instrument time for the open validation benchmark (SEM/EDS/EBSD/XRF sessions) | $6,000 |
 | Hosting, compute, and DOI/archiving costs (2 yr) | $2,000 |
 | M&M tutorial/workshop materials and costs | $2,500 |
-| Dissemination (open-access fees, Microscopy Today piece) | $1,500 |
+| Dissemination (open-access fees, Microscopy Today piece, webinar production) | $1,500 |
 | **Total** | **$20,000** |
 
 `[TODO: adjust to institutional rates; confirm no overhead applies; detailed justification per MSA form]`
@@ -91,8 +102,9 @@ We propose an MSA-branded **Microanalysis Parameter Commons**: (1) an open-sourc
 ## Benefit to MSA and success metrics
 
 - Positions MSA as the home of *preserved, citable* microanalysis practice — knowledge that currently evaporates with retirements [15] — under its own brand (Areas 2 and 6), following the model of societies that built trusted open resources (rOpenSci, MolSSI, ELIXIR) [16,18].
+- Carries MSA's brand — and the case for rigorous, literature-grounded microscopy — into adjacent research communities that run these instruments daily without engaging the Society; the open webinars and the tool's cite-the-source design make this a standing visibility and recruitment channel, directly serving the mission's promotion of microscopy.
 - A concrete, recurring member benefit: shorter time-to-reliable-data on unfamiliar samples.
-- Metrics: number of published Commons records (target 150+); tool users/downloads and web-demo sessions; benchmark dataset downloads; workshop attendance; student curators trained; records cross-linked to MSA archived material; new/retained members reporting use `[TODO: baseline survey mechanism]`.
+- Metrics: number of published Commons records (target 150+); tool users/downloads and web-demo sessions; benchmark dataset downloads; workshop and webinar attendance, including the non-member share reached; student curators trained; records cross-linked to MSA archived material; new/retained members reporting use `[TODO: baseline survey mechanism]`.
 
 ## Sustainability
 
