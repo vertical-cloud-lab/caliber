@@ -1,0 +1,706 @@
+% =====================================================================
+% EDS Acquisition Parameters for CALIBER - compiled ideas & rationale
+% Source of truth for the PDF docs/eds_parameter_ideas.pdf
+% Build: pdflatex -interaction=nonstopmode eds_parameter_ideas.tex (x2)
+% To request an update: tag @claude on the PR holding this file (or any
+% PR/issue) with the info to add; a new revision row is added per update.
+% =====================================================================
+\documentclass[11pt]{article}
+\usepackage[margin=0.95in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+% ------- attribution tags -------
+\definecolor{cR}{RGB}{23,111,44}    % Ronnie - green
+\definecolor{cC}{RGB}{28,80,158}    % Claude - blue
+\definecolor{cRC}{RGB}{0,110,110}   % Ronnie -> Claude - teal
+\definecolor{cCR}{RGB}{110,45,150}  % Claude -> Ronnie - violet
+\definecolor{cMS}{RGB}{160,82,10}   % Mike Standing via Ronnie - brown
+\newcommand{\tR}{\textcolor{cR}{\textbf{[Ronnie]}}}
+\newcommand{\tC}{\textcolor{cC}{\textbf{[Claude]}}}
+\newcommand{\tRC}{\textcolor{cRC}{\textbf{[Ronnie $\to$ Claude]}}}
+\newcommand{\tCR}{\textcolor{cCR}{\textbf{[Claude $\to$ Ronnie]}}}
+\newcommand{\tMS}{\textcolor{cMS}{\textbf{[Mike Standing $\to$ Ronnie]}}}
+
+% ------- provenance link helpers -------
+\newcommand{\pr}[1]{\href{https://github.com/vertical-cloud-lab/caliber/pull/#1}{PR~\##1}}
+\newcommand{\prc}[2]{\href{https://github.com/vertical-cloud-lab/caliber/pull/#1\#issuecomment-#2}{PR~\##1 c-#2}}
+\newcommand{\issc}[1]{\href{https://github.com/vertical-cloud-lab/caliber/issues/1\#issuecomment-#1}{issue~\#1 c-#1}}
+\newcommand{\basis}[1]{\par\nopagebreak{\footnotesize\emph{Basis / provenance:} #1\par}}
+
+\setlist[itemize]{itemsep=5pt, topsep=3pt, leftmargin=1.4em}
+
+\title{\textbf{EDS Acquisition Parameters for CALIBER}\\[4pt]
+\large Compiled ideas, attributions, and the reasoning behind them\\
+\normalsize Beam energy \,\textperiodcentered\, Acquisition time \,\textperiodcentered\, Beam current --- AlSi10Mg first campaign}
+\author{Compiled by Claude from \pr{11}, \pr{13}, \pr{15}, and the
+\href{https://github.com/vertical-cloud-lab/caliber/issues/1}{issue~\#1} discussion\\
+\texttt{vertical-cloud-lab/caliber}}
+\date{September 16, 2026 --- rev.\ 1.0}
+
+\begin{document}
+\maketitle
+
+\section{How to read this document}
+
+This document collects every idea voiced in the EDS parameter threads --- \pr{11}
+(parameter 1, beam energy), \pr{13} (parameter 2, counts / acquisition time),
+\pr{15} (parameter 3, beam current) --- plus ideas proposed by Claude that Ronnie
+confirmed for the program. ``Ideas'' means the reasons that go into choosing the
+\emph{initial} optimal value of each parameter, and the reasons that govern
+\emph{optimizing it afterwards}. Each idea carries an attribution tag, the physical
+reasoning or paper behind it, and a link to where it was said.
+
+\subsection*{Attribution legend}
+\begin{itemize}[itemsep=1pt]
+  \item \tR{} --- idea voiced by Ronnie Guymon.
+  \item \tC{} --- idea contributed by Claude.
+  \item \tRC{} --- idea originated by Ronnie, then quantified, refined, or verified by Claude.
+  \item \tCR{} --- proposed by Claude, then confirmed or adopted by Ronnie for the program.
+  \item \tMS{} --- advice from Mike Standing (BYU SEM specialist), relayed through Ronnie's notes.
+\end{itemize}
+
+\subsection*{Living document}
+\noindent\fbox{\parbox{0.965\textwidth}{\small
+The LaTeX source \texttt{docs/eds\_parameter\_ideas.tex} lives next to this PDF in the
+repository, so any \texttt{@claude} session can extend it and recompile. To add
+material, tag \texttt{@claude} with the info and say it is for the \emph{EDS parameter
+ideas PDF} --- ideally on the pull request that holds this file (updates then land on
+the same branch), but a ping from any other PR or issue works too. Every update adds
+a row to the revision table below.}}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+rev. & date & change \\
+\midrule
+1.0 & 2026-09-16 & Initial compilation from PRs \#11, \#13, \#15 and issue \#1. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The optimization framing these parameters live in}
+
+\begin{itemize}
+\item \tR{} (with Xavier Zaitzeff) \textbf{Objective function.} Minimize
+$(\mathrm{EDX} - \mathrm{ICPMS})^2$: EDS-measured composition judged against an
+ICP-MS ground truth. Search space from the planning outline: beam energy/voltage
+$\{5, 10, 15, 20\}$~kV; acquisition time $[1~\mathrm{min},\, 30~\mathrm{min}]$;
+beam current $[20~\mathrm{pA},\, 10~\mathrm{mA}]$ (range marked with a ``?'' ---
+to be verified against the instrument, see \S\ref{sec:current}); 16 Sobol samples
+for the initial design; a Gaussian-process chain (microscope parameters
+$\to \mathrm{GP}_1 \to Y_1 \to \mathrm{GP}_2$ with post-processing $\to$ objective);
+later, tests on other alloys.
+\basis{Whiteboard outline by Ronnie and Xavier, committed as
+\href{https://github.com/vertical-cloud-lab/caliber/blob/46140a4/CALIBER_Outline.jpg}{\texttt{CALIBER\_Outline.jpg}}.}
+
+\item \tR{} (with Xavier; Gage and Dr.\ Rappleye arranging) \textbf{One-time ICP-MS
+ground truth.} Run ICP-MS once on the tensile sample to obtain the ``truth'' value
+that all EDS measurements are compared against --- the yardstick for judging whether
+parameter optimization is actually improving accuracy.
+\basis{\issc{5574532841}; Claude had earlier suggested an ICP referee measurement
+(ICP-OES) when the 0.94 vs 0.5--0.7 wt\% gap appeared \tC{}. Expected truth window
+for Mg: powder certificate
+0.5--0.7~wt\% (the earlier 0.05--0.07 figure was a typo, corrected by Ronnie);
+Edison literature task on Mg evaporation in LPBF predicts near-complete retention
+under Ar, so $\approx$0.45--0.70~wt\% as-built
+(\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/issue-1-mg-evaporation/answer.md}{Edison artifacts}).}
+
+\item \tCR{} \textbf{Standards-based, un-normalized quantification is the measurement
+backbone.} Vendor standardless output is normalized to 100\%, which entangles every
+element's error with every other's (the bogus 8.1~wt\% O row at 15~kV dragged Si
+down); an un-normalized analytical total (98--102\% = healthy) is itself a QC check.
+Claude argued the physics; Ronnie adopted the DTSA-II standards route and verified a
+manual k-ratio pass himself (Mg $\approx$ 0.9~wt\%).
+\basis{Newbury, Swyt \& Myklebust [11] on standardless risk; Newbury \& Ritchie [2]
+for the k-ratio protocol; \prc{11}{5481281979} \S3; Ronnie's DTSA-II pass
+\prc{11}{5373657846}.}
+\end{itemize}
+
+% =====================================================================
+\section{Parameter 1 --- Beam energy (accelerating voltage, $E_0$)}
+
+\subsection{Why this parameter dominates}
+
+\tR{} Ronnie's synthesis (\issc{5496243634}), verbatim:
+
+\begin{quote}\small
+``The parameter that seems to have the largest impact is the beam energy, since it
+effects spatial resolution, the amount of correction needed to filter through the
+background noise, intensity of the x-ray spectra lines, absorption (from path length
+and elemental edge absorption), peak crowding, and homogeneity.''
+\end{quote}
+
+Claude's additions to that axis list: \textbf{surface-film weighting} (the main force
+pushing \emph{against} low kV), \textbf{count rate / dead-time management}, and
+\textbf{standards logistics per voltage}. One consolidation \tC{}: ``edge absorption''
+and ``path-length absorption'' are one correction with two knobs, not two corrections
+--- attenuation is $\exp[-(\mu/\rho)\,(\rho z/\sin\psi)]$, where the absorption edges
+set $\mu/\rho$ (chemistry only; kV never touches it) and kV sets the depth $\rho z$.
+They multiply inside the same exponent.
+\basis{\prc{11}{5481278418} (Ronnie's list); \prc{11}{5481281979} \S4 (additions).}
+
+\subsection{Choosing the initial voltage}
+
+\begin{itemize}
+\item \tRC{} \textbf{The slant-path absorption criterion --- the core CALIBER rule.}
+Ronnie's proposal: choose a voltage whose interaction volume, at its farthest point
+from the surface, is shorter than the absorption path length of Si. Claude's two
+refinements: (a) the photon exits along the detector direction, so the comparison is
+\emph{exit path} = depth $\times \csc\psi$ = depth $\times 1.74$ at the Apreo's
+$\psi = 35.1^\circ$ take-off, not the depth itself; (b) use the X-ray
+\emph{production} depth (Kanaya--Okayama range with $E_0^{1.67} \to E_0^{1.67} -
+E_c^{1.67}$, since electrons below the edge energy $E_c$ produce nothing), not the
+full electron range. The rule:
+\[ (\text{deepest production depth}) \times \csc\psi \;\le\; (\text{$1/e$ attenuation length}) \]
+equivalently $f(\chi) \gtrsim 0.75$ for the worst quantified line. It pins every
+photon's absorption probability below 63.2\%; the spectrum-average absorption at the
+cap is only about 25\%. The slant factor is load-bearing: with it the AlSi10Mg cap is
+\textbf{7.6~kV} (only 5~kV passes on the fixed menu); without it, 10.3~kV would just
+admit 10~kV.
+\basis{Ronnie's proposal \prc{11}{5481278418}; Claude's computation and refinement
+\prc{11}{5481281979} \S4 and \prc{11}{5498155829}; Kanaya \& Okayama [6]; Philibert
+$f(\chi)$ with Elam MACs [7]; independently recomputed in
+\texttt{scripts/eds\_voltage\_predictions.py} (\pr{13}), reproducing all values.}
+
+\item \tRC{} \textbf{What the rule protects: correction size, not counts.} Ronnie
+asked how impactful the rule is to counts; the counterintuitive answer is that it
+\emph{costs} counts --- escaped Si~K$\alpha$ per unit dose still rises with kV
+($\times$3.6 / 5.6 / 6.9 at 10/15/20~kV relative to 5~kV). What it bounds is the
+absorption (A) correction: every absorbed count is arithmetically re-created using
+mass absorption coefficients that are themselves uncertain at the 5--25\% level, so
+the absorbed fraction is the part of the answer that is \emph{computed rather than
+measured}. A $\pm$20\% MAC error moves reported Si by 2.6\% at 5~kV versus 16\% at
+20~kV. Counts are the resource in surplus; correction accuracy is the one that is not.
+\basis{\prc{11}{5498155829}; MAC sensitivity columns in
+\texttt{eds\_voltage\_predictions.csv} (\pr{13}).}
+
+\item \tRC{} \textbf{Low-energy lines magnify absorption error.} Ronnie's hypothesis
+(``the lower energy the line, the greater the A-factor will magnify error present''
+--- flagged for double-checking): confirmed. Softer lines have shorter attenuation
+lengths, so the same model/MAC uncertainty leverages harder. O~K$\alpha$'s cap is
+\textbf{4.6~kV} --- it fails even at 5~kV --- which is the criterion independently
+rediscovering Statham's advice not to quantify lines below 1~keV.
+\basis{Ronnie's hypothesis, \issc{5496243634}; Statham [3]; per-line caps in
+\S\ref{sec:voltagetable}.}
+
+\item \tR{} \textbf{Overvoltage floor.} A line must be excited at all
+($U_0 = E_0/E_c > 1$), and Ronnie's rule: define an absolute lower bound --- if
+$U_0 \lesssim 1.5$, move to the next voltage on the menu. His worked example:
+Mn~K$\alpha$ (5.898~keV) gives $U_0 = 1.695$ at 10~kV --- to be evaluated whether
+that suffices. Limiting case: Fe~K$\alpha$ has $U_0 = 0.70$ at 5~kV --- physically
+absent (prediction P2).
+\basis{\prc{11}{5482266968}; ionization cross-section peaks near $U \approx 2$--3,
+behind the classic ``$E_0 \approx 2\times$ the highest line energy'' rule of thumb
+(Goldstein [1]), \tC{} in the original issue-\#1 answer.}
+
+\item \tR{} \textbf{Line-menu constraints from the element roadmap.} Planned alloying
+elements: Al, Mn, Cr, Zr, Mg, Si, Cu, Ti, Fe, Ni, Ce, Sc, Li, Er, Zn, Sn. Sticking to
+the below-1-keV exclusion forces K$\alpha$ for Ti/Cr/Mn (their L$\alpha$ lines sit
+under 1~keV), which demands high kV; Li~K$\alpha$ at 52~eV is unquantifiable by EDS
+--- a different technique is needed if Li enters the roadmap.
+\basis{\prc{11}{5481972819} (roadmap), \prc{11}{5482266968} (K-line forcing, Li).}
+
+\item \tC{} \textbf{Trace heavy elements on L lines at 5~kV do not work.} A 3d-metal
+L$\alpha$ at 5~kV runs 5--10$\times$ weaker per unit concentration with 1.5--3$\times$
+more background under it: detection limit of order 0.3--1~wt\% at the current dose ---
+workable for \emph{minor} constituents, not trace. Statham's quantitative version
+(located by Ronnie in the assigned reading): 0.001 mass fraction via L lines at 5~kV
+demands background accuracy near 1\%, versus near 10\% for K lines at conventional kV
+--- ``possible but ten times harder.'' This is the concrete case for a second,
+higher-kV condition once heavy alloying elements arrive.
+\basis{\prc{11}{5481281979} \S5; Statham [3] p.~3 (Ronnie's find,
+\prc{11}{5445481577}); Currie framework [4].}
+
+\item \tR{} \textbf{Background mass fraction and peak crowding at low kV.} From
+Statham p.~3: at low kV the bremsstrahlung background is a much larger mass fraction
+of the spectrum, so background-correction errors and competing peaks hurt more. And a
+0--5~keV display range crowds all peaks into a window 3--4$\times$ smaller than a
+15--20~kV range, raising overlap likelihood.
+\basis{\prc{11}{5445481577}; Statham [3].}
+
+\item \tC{} \textbf{Surface-film weighting is the main counter-pressure against low
+kV.} At 5~kV the Kanaya--Okayama range in Al is 0.42~$\mu$m (vs 2.6~$\mu$m at 15~kV),
+so carbon contamination, native oxide, and any Mg-enriched oxide skin are
+over-weighted in the sampled volume (the Aug run's C 1.99 / O 1.68~wt\% prove the
+layer is there). A colloidal-silica final polish leaves embedded SiO$_2$ that reads
+as extra Si + O precisely at this depth --- record the final polishing step.
+Mitigation adopted \tR{} (with Gage): prepare a freshly polished sample and store it
+in the vacuum chamber between polish and session.
+\basis{Claude's warning quoted, with Ronnie's mitigation, in \prc{11}{5374055623};
+\prc{11}{5481281979} \S4; Goldstein [1] ch.~3 for ranges.}
+
+\item \tRC{} \textbf{Interaction volume vs.\ microstructural homogeneity.} Ronnie
+(from Goldstein \S3.3.3.1: interaction-volume size is a strong function of beam
+energy) explored running \emph{all} readings at one high voltage so every element and
+standard shares an interaction volume. Claude's counterpoint for LPBF AlSi10Mg: the
+alloy is heterogeneous at the sub-$\mu$m cellular-segregation scale, so 5~kV
+(0.42~$\mu$m $\approx$ cell scale) resolves Si-rich vs Al-rich phases while 15--20~kV
+averages them --- which element segregates (here Si, with Mg tracking it into the
+eutectic network) determines what the averaging volume does to a map. Phase-contrast
+collapse with kV is prediction P4.
+\basis{\prc{11}{5441452199}; Goldstein [1] \S3.3.3.1; Aug phase split (17.3 vs
+7.5~wt\% Si) in \texttt{docs/eds\_parameter\_summary.md} \S2.}
+
+\item \tC{} \textbf{Proposed long-term menu: two points, 5 + 20~kV} (status:
+proposed, pending the element-roadmap conversation). 5~kV as the light-element /
+small-correction / high-resolution leg; 20~kV as the transition-metal-K$\alpha$ /
+trace-detection leg, knowingly outside the absorption criterion --- the accepted
+trade when the only usable line needs the energy, and exactly where measured
+standards earn their keep. 15~kV underexcites Cu and Zn K ($U_0$ = 1.67 / 1.55 vs
+2.23 / 2.07 at 20~kV); 10~kV adds little the endpoints do not span. Cost is small:
+a three-item standards block is about 15 minutes per additional voltage, but DTSA-II
+binds every standard to detector + beam energy ($\pm$1\%), so each menu voltage needs
+its own bundle set --- Ronnie's related note: new elements may mean standards at each
+of 5/10/15/20~kV.
+\basis{\prc{11}{5481281979} \S6; Ronnie's standards-burden note \prc{11}{5481278418};
+fixed-menu constraint $\{5,10,15,20\}$~kV \tR{} \prc{11}{5481700165}.}
+\end{itemize}
+
+\subsection{The criterion quantified for AlSi10Mg}
+\label{sec:voltagetable}
+
+Take-off $\psi = 35.1^\circ$ ($\csc\psi = 1.74$), $\rho = 2.67$~g/cm$^3$, Elam MACs.
+Values from the \pr{13} prediction script's CSV
+(\texttt{eds\_voltage\_predictions.csv}), which reproduced the \pr{11} \S4
+derivation exactly.
+
+\begin{center}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+line & $E$ (keV) & atten.\ length ($\mu$m) & cap (kV) &
+$f(\chi)$@5 & @10 & @15 & @20 \\
+\midrule
+O K$\alpha$  & 0.525 & 0.61 & 4.6  & 0.72 & 0.42 & 0.25 & 0.15 \\
+Mg K$\alpha$ & 1.254 & 5.60 & 17.1 & 0.96 & 0.88 & 0.79 & 0.70 \\
+Al K$\alpha$ & 1.487 & 8.43 & 21.9 & 0.98 & 0.92 & 0.85 & 0.78 \\
+Si K$\alpha$ & 1.740 & 1.32 & \textbf{7.6} & 0.87 & 0.64 & 0.45 & 0.32 \\
+Fe K$\alpha$ & 6.404 & 38.1 & ($U_0{=}0.70$ at 5~kV) & --- & 0.99 & 0.97 & 0.95 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Si~K$\alpha$ is the binding line (the ``nasty coincidence'': its energy sits just
+above the Al K absorption edge, so the Al matrix absorbs it strongly --- attenuation
+length only 1.32~$\mu$m). On the fixed menu, \textbf{only 5~kV complies}; O~K$\alpha$
+complies nowhere.
+
+\subsection{Optimizing / validating the voltage afterwards}
+
+\begin{itemize}
+\item \tR{} \textbf{The falsification experiment.} ``For the first AlSi10Mg
+standards-based run, I want to do EDS at 5, 10, 15, and 20~kV and see if I can
+actually see the effects that theoretically should come from different voltages
+\ldots\ Test this hypothesis and if CALIBER worked right.'' The first standards-based
+test of a CALIBER recommendation --- the recommendation must be falsifiable, not just
+plausible.
+\basis{\issc{5496243634}; executed as the pre-registered plan in
+\href{https://github.com/vertical-cloud-lab/caliber/blob/a68e0c6/docs/eds_voltage_series_plan.md}{\texttt{docs/eds\_voltage\_series\_plan.md}} (\pr{13}).}
+
+\item \tC{} \textbf{Pre-registered predictions P1--P7} (stated before data exist):
+P1 --- kV-invariance is the core test: true composition cannot depend on kV, so any
+drift in standards-based wt\% across 5$\to$20~kV is systematic error; the $\pm$20\%
+MAC band widens $\pm$2\% $\to$ $\pm$16\% relative. P2 --- Fe~K$\alpha$ physically
+absent at 5~kV. P3 --- apparent surface C/O diluted about 10$\times$ by 20~kV
+(production depth 0.34 $\to$ 4.1~$\mu$m). P4 --- phase contrast collapses with kV.
+P5 --- dead time climbs with kV at fixed current; each kV gets its own current for
+the target band. P6 --- Duane--Hunt endpoint equals set kV (charging check). P7 ---
+Mg/Al net-intensity ratio falls $\times$0.86 from 5$\to$15~kV. The graded stress
+test: at 10~kV only Si fails (criterion ratio 1.6); at 15~kV Si fails at 3.3$\times$
+and Mg turns marginal; at 20~kV Si is at 5.5$\times$ and Mg fails too --- if error
+grows in that order, the criterion captures the right physics.
+\basis{Plan \S2--3 (\pr{13}); prediction bands from
+\texttt{eds\_voltage\_predictions.csv}.}
+
+\item \tC{} \textbf{Pre-registered decision rules H1/H2/H3} --- the update rule is
+written down before the data arrive: H1 criterion validated $\to$ CALIBER encodes
+$f(\chi) \ge 0.75$ as-is; H2 too conservative (results kV-invariant even at
+$f(\chi) = 0.32$ because $\varphi(\rho z)$ absorbs the physics) $\to$ relax the
+floor and higher kV wins on rate, Fe access, surface robustness; H3 wrong axis
+(5~kV \emph{least} accurate because surface films bias the shallow volume more than
+absorption uncertainty biases the deep one) $\to$ add a surface-film weighting term.
+Any of the three outcomes is useful.
+\basis{Plan \S5 (\pr{13}).}
+
+\item \tRC{} \textbf{The physics consistency check as a data-quality tool.} For the
+same sample, net-intensity ratios must track generation + absorption physics when
+only kV changes. Applied to Apr (15~kV) vs Aug (5~kV): Si/Al $\times$0.71 measured
+vs $\times$0.66 predicted (tracks); Mg/Al $\times$1.52 vs $\times$0.86 (1.8$\times$
+excess --- fails); O/Al $\times$1.33 vs $\times$0.29 (fails). Ronnie's O-normalization
+hypothesis --- the bogus O row soaking up mass in the 100\%-normalization --- was
+quantified as about half of the apparent 15~kV Si ``improvement''; the rest fails the
+consistency check. One element moving nearer nominal while another moves 2$\times$
+farther is the signature of compensating errors, not better physics. The later
+dead-time reinterpretation (both sessions ran the processor $\approx$97\% idle, so
+the pile-up explanation weakened) leaves the $\times$1.52 anomaly standing for P7 to
+adjudicate.
+\basis{\prc{11}{5481281979} \S2--3 (Ronnie's hypothesis in \prc{11}{5481278418});
+dead-time reinterpretation \prc{13}{5574393906}.}
+\end{itemize}
+
+% =====================================================================
+\section{Parameter 2 --- Acquisition time (live time / counts)}
+
+\subsection{Choosing the initial acquisition time}
+
+\begin{itemize}
+\item \tR{} \textbf{Count more instead of raising voltage.} ``Instead of increasing
+voltage to get more counts, we just count more.'' The rate lost by honoring the 5~kV
+criterion is bought back with time and current --- not by re-raising kV.
+\basis{\prc{13}{5500446306}.}
+
+\item \tRC{} \textbf{Peak vs.\ background growth --- the corrected version.} Ronnie
+and Mike both reasoned that the Mg peak should grow faster than the background,
+making it more prominent. Claude's correction: peak and bremsstrahlung background are
+\emph{both} proportional to delivered dose, so the peak-to-background \emph{ratio} is
+fixed by kV and matrix. What longer counting improves is the peak against the
+background's statistical \emph{scatter} ($\sqrt{B}$): significance and detection
+limit improve as $1/\sqrt{t}$. Mg ``pops out'' in the sense of significance, not as
+a cleaner ratio. Likewise the Al~K$\alpha$ tail under Mg~K$\alpha$ is a fixed
+fraction of Al counts --- tripling live time triples both; the tail-model bias is
+systematic and does not average away. That is what standards fix, not time.
+\basis{\prc{13}{5500449993}; Mike's version in his notes, \issc{5513720218};
+Ziebold [5].}
+
+\item \tMS{} + \tC{} \textbf{The 3$\sigma$ detection criterion.} Mike: a trace
+element needs to be 3 standard deviations above the background to be trusted.
+Claude's formalization (Currie): decision limit $L_C = 2.33\sqrt{B}$, detection limit
+$L_D = 2.71 + 4.65\sqrt{B}$ ($\approx 3.29\sqrt{B}$), with the common EDS shorthand
+net $> 3\sqrt{2B}$; reliable \emph{quantification} conventionally wants
+$\approx$10$\sigma$. Status for this program: the Aug 5~kV spectrum already has
+Mg~K$\alpha$ at 28.2$\sigma$ with $L_D \approx 0.06$~wt\% --- detection was never
+the problem; precision and accuracy are.
+\basis{Mike's notes via Ronnie, \issc{5513720218} and \prc{13}{5516384978};
+Currie [4]; fit numbers from \texttt{scripts/eds\_kfactor\_quant.py} (\pr{11}).}
+
+\item \tRC{} \textbf{Count targets from the textbook, translated to this alloy.}
+Ronnie located the Goldstein passage: $>10^6$ total counts enable
+standards-based accuracy for major/minor constituents \emph{even under severe peak
+interference}; $>10^7$ for clean 200-ppm trace work; $>10^8$ for trace under
+interference. Claude's interpretation: ``interference'' means spectral peak overlap
+(not VPSEM gas) --- and Mg~K$\alpha$ under the Al~K$\alpha$ tail at a 100--200:1
+concentration ratio is the textbook's exact scenario, so the Mg quant lives in the
+$>10^6$ tier. Unit conversion: $\ge 10^4$ net Mg~K$\alpha$ counts ($\approx$1\%
+counting precision) $\Leftrightarrow$ $\approx$1.5M total counts at 5~kV
+$\Leftrightarrow$ $\approx$12.5~min live at the Aug rate (2.0~kcps) or
+$\approx$75~s at the rate a proper beam current delivers. Neither session reached
+$10^7$ (best: 4.4M) \tR{}.
+\basis{Ronnie's textbook find \prc{13}{5574391518}; Goldstein [1]; translation
+\prc{13}{5574393906}.}
+
+\item \tR{} \textbf{The cost axis.} Do not count excessively --- microscope time is
+the budget; find where more data stops helping.
+\basis{\prc{13}{5516384978}.}
+
+\item \tC{} \textbf{Diminishing-returns math and a stop rule.} Benefit scales as
+$\sqrt{t}$, cost as $t$: halving the statistical error costs 4$\times$ the time.
+Stop when Poisson error is small next to the systematic floor (standards, matrix
+correction, tail model --- realistically 1--2\% relative). Operational test: when
+spot-to-spot scatter exceeds the fit-reported Poisson $\sigma$, more counting is
+pure cost. Pre-registrable CALIBER rule: $\sigma_{\mathrm{stat}} \le
+\tfrac{1}{3}\sigma_{\mathrm{syst}}$.
+\basis{\prc{13}{5500449993}; Ziebold [5].}
+
+\item \tC{} \textbf{Live time, not real time, is the statistics clock.} Acquisitions
+are specified in live time (dead-time-corrected); real time = live time /
+$(1 - \mathrm{DT})$. Counts = (input rate) $\times$ (live time) at any amp time.
+\basis{\texttt{docs/eds\_daq.md} (\pr{6}, via \pr{15}); \prc{13}{5574393906}.}
+
+\item \tRC{} \textbf{The Apr-vs-Aug lesson: rate, not time, drove the count gap.}
+Ronnie compiled the sessions (Apr 15~kV: 4{,}435{,}734 counts / 460.8~s live /
+1.92~$\mu$s amp; Aug 5~kV: 652{,}397 / 327.7~s / 7.68~$\mu$s) and asked why 130
+extra seconds gave 3.8M extra counts. It did not --- the rates differ 4.8$\times$
+(9{,}626 vs 1{,}991 cps, set by the kV: overvoltage and continuum range), times
+1.41$\times$ live time = the 6.8$\times$ count ratio exactly. Plan time budgets
+per kV from rate, not habit.
+\basis{\prc{13}{5547583835} (Ronnie's data); \prc{13}{5574393906} (arithmetic).}
+\end{itemize}
+
+\subsection{Optimizing acquisition time afterwards}
+
+\begin{itemize}
+\item \tR{} (agreed with Paul, Mike, and Felipe; executing with Xavier)
+\textbf{1M-count baseline and a doubling ladder.} Baseline of $10^6$ total counts;
+collect spectra at 1M, then increase by factors of 2 (1M $\to$ 2M $\to$ 4M \ldots)
+to locate the point of diminishing returns, judged against a standard --- and
+ultimately against the ICP-MS truth to measure how much accuracy actually increases
+with counts. First session (2026-09-17): 1/2/4M at 5~kV on the old sample, also
+gauging how much carbon deposition grows as acquisition time increases.
+\basis{\prc{13}{5609952233}, \prc{13}{5691161176}; converges with the Goldstein
+$>10^6$ tier above.}
+
+\item \tCR{} \textbf{Replicates instead of one long acquisition.} $5 \times 60$~s
+summed is statistically identical to $1 \times 300$~s (Poisson counts add) and
+retires the four real downsides of long runs: systematic-error floor, probe-current
+drift, spatial drift ($\approx$10~nm/min walks a 0.3~$\mu$m probe a probe-width in
+30~min), and calibration drift. Ronnie's adopted version adds a twist: multiple
+shorter scans on \emph{different areas close to one another}, compiled together ---
+which also spreads the carbon dose, especially valuable at low kV. DTSA-II automates
+the compilation: the bundle wizard sums replicates with correct dose bookkeeping
+(live times add; current becomes the live-time-weighted average) plus per-spectrum
+outlier scores and a Duane--Hunt charging check; the quant wizard returns mean
+$\pm$ SD across unknowns.
+\basis{Claude's replicate case \prc{11}{5517130995} and \prc{11}{5515608000};
+Ronnie's adoption \prc{13}{5534896987}; DTSA-II mechanics in
+\texttt{docs/eds\_parameter\_summary.md} \S4.}
+
+\item \tMS{} \textbf{Contamination management makes longer total acquisition viable.}
+Longer acquisition helps statistics; the carbon-deposition cost is contained with the
+facility's plasma cleaner and bake-out oven --- bake samples 2--3~h and load them into
+the microscope hot. The cleaning only helps so much: cleanliness discipline starts
+right after polishing.
+\basis{Mike's notes via Ronnie, \issc{5513720218}.}
+
+\item \tC{} \textbf{Measure the carbon budget instead of assuming it.} Consecutive
+short spectra on one spot; watch the C~K$\alpha$ slope and Mg/Al drift. The
+dose-per-spot that keeps that drift below the counting error is the third
+pre-registrable CALIBER number. (C~K$\alpha$ is also where short amp times bite
+hardest --- keep 7.68~$\mu$s for carbon-budget spectra.)
+\basis{\prc{13}{5500449993}; amp-time caveat \prc{13}{5593623759}.}
+
+\item \tR{} \textbf{TEAM operation.} Spectrum Only $\to$ Collect Spectrum appears to
+support a counts-based stop (possibly capped near 1.1M --- Mike to confirm); the
+EDAX engine's ``Limit By'' options are live time / clock time / ROI counts \tC{},
+so an ROI over Mg~K$\alpha$ with a $10^4$ stop would automate the net-count target
+directly. Map duration is pixels $\times$ dwell $\times$ frames, not a typed time.
+\basis{\prc{13}{5593650379} (Ronnie); \prc{13}{5574393906} \S4 (TEAM references).}
+\end{itemize}
+
+% =====================================================================
+\section{Parameter 3 --- Beam current (and its partner knob, amp time)}
+\label{sec:current}
+
+\subsection{Choosing the initial current}
+
+\begin{itemize}
+\item \tR{} \textbf{The framing.} ``Increasing the beam current is important, we
+would just need to find the balance between a low (but not too low) dead time and
+lowest possible carbon deposition.''
+\basis{\prc{13}{5500446306}.}
+
+\item \tC{} \textbf{Dose bookkeeping.} Counts track dose = current $\times$ live
+time. For a fixed count target the dose is fixed --- current only sets how fast it
+is delivered (real time = live time / $(1-\mathrm{DT})$) and where the electronics
+operate. Refinement of the carbon coupling: carbon scales with dose per spot, so
+faster delivery does \emph{not} add carbon --- the levers are cleanliness and fresh
+spots, not lower current.
+\basis{\prc{13}{5500449993}; \texttt{docs/eds\_parameter\_summary.md} \S5.}
+
+\item \tC{} \textbf{The dead-time band --- and the open tension CALIBER must
+settle.} The voltage-series plan operates at 25--30\% dead time (prediction P5 logs
+the current achieving it per kV) --- the throughput-optimal band. The NIST
+standards-based protocol (Newbury \& Ritchie) recommends $\le$10\%, stricter for
+trace work, because coincidence/pile-up artifacts grow above $\approx$15\%. These
+are in genuine tension: throughput says the Aug session used a tenth of the
+detector's appetite ($\ge 10^4$ net Mg in $\approx$75~s instead of $\approx$12~min
+at 10$\times$ the rate); the artifact argument says a nearly idle processor is the
+cheapest insurance for a 0.5~wt\% element under a major peak. Standards themselves
+need only \emph{in-range} dead time, not matched (the live-time clock corrects it).
+\basis{Plan \S4 (\pr{13}); Newbury \& Ritchie [2] via the Edison best-practices
+task
+(\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/eds-standards-best-practices/answer.md}{artifacts});
+\texttt{docs/eds\_parameter\_summary.md} \S5.}
+
+\item \tC{} \textbf{Throughput physics.} The SDD chain is paralyzable: stored rate
+$=$ input rate $\times e^{-\,\mathrm{input} \cdot \tau}$, so beyond the optimum,
+\emph{more} current stores \emph{fewer} counts; the amp time sets $\tau$. Dead time
+is the busy fraction --- the observable that tells you where on the curve you sit.
+\basis{\texttt{docs/eds\_daq.md} (\pr{6}); Amptek DPP theory [9].}
+
+\item \tC{} \textbf{Measured current, not displayed current.} The set point
+(``3.2~nA'') is a knob label --- it was never cup-verified. Faraday cup +
+picoammeter routine: park in cup $\to$ read $\to$ acquire $\to$ read again; a close
+pair proves stability and the average goes into the spectrum's probe-current field
+(\texttt{\#PROBECUR} in \texttt{.msa} / DTSA-II properties). The k-ratio divides by
+recorded dose, so \emph{known} current differences between standard and unknown
+cancel exactly; \emph{unknown} ones become full-size wt\% errors. Warnings: display
+vs cup off by tens of percent $\to$ aperture contamination / gun retune;
+before/after differing $>$1\% $\to$ source drifted (use the mean; re-shoot
+standards). Without a cup, a QC spectrum on a stable material (Si wafer) is the dose
+proxy via count rate. \tR{} Mike confirmed the facility has both picoammeters and a
+Faraday cup.
+\basis{\prc{11}{5484533976} (routine; Ronnie's question \prc{11}{5484355320});
+facility confirmation \prc{11}{5495597642}; Goldstein [1] ch.~16 / Newbury \&
+Ritchie [2].}
+
+\item \tR{} (with Xavier) \textbf{Search range to verify.} The outline's beam-current
+range [20~pA, 10~mA] carries a ``?'' --- the instrument's real, cup-measured ladder
+must bound the optimization space before any BO run uses it.
+\basis{\texttt{CALIBER\_Outline.jpg}; open question 1 below.}
+\end{itemize}
+
+\subsection{Optimizing the current afterwards --- the open questions}
+
+All six pre-staged in \pr{15} \tC{}, building on the framing above:
+
+\begin{enumerate}[itemsep=2pt]
+\item Map the Apreo's current ladder: cup-measured nA per preset, per menu kV.
+\item Dead time vs current curve at 5~kV / 7.68~$\mu$s: which preset lands 25--30\%?
+Which lands $\le$10\%? Verify the predicted $\approx$10$\times$ rate headroom over
+the Aug session.
+\item Pile-up onset: Al+Al sum-peak amplitude at 2.97~keV and Mg/Al net-ratio
+stability as dead time climbs --- locate the artifact threshold for \emph{this}
+detector and pick the CALIBER dead-time band from data (this simultaneously
+adjudicates the P7 $\times$1.52 anomaly).
+\item Stability: bracketing cup readings around each replicate --- drift per hour
+and per session (a free QC drift chart).
+\item The amp-time A/B (below), since amp time and current jointly set (dead time,
+resolution).
+\item Candidate CALIBER rule to validate: \emph{fix amp time at the
+resolution-friendly setting; set current to the empirically chosen dead-time band;
+measure it with the cup; record measured current $\times$ live time per spectrum.}
+\end{enumerate}
+\basis{\texttt{docs/eds\_parameter\_summary.md} \S5 (\pr{15}).}
+
+\subsection{Amp (process) time --- partner knob, not a standalone parameter}
+
+\begin{itemize}
+\item \tR{} \textbf{The proposal.} After EDAX's ``under 4~eV'' resolution cost
+between the slowest and fastest settings, Ronnie proposed treating amp time as
+another parameter and testing 0.96 vs 7.68~$\mu$s to see whether slimming the Al and
+Mg peaks helps noticeably.
+\basis{\prc{13}{5593621690}; EDAX ladder 0.96/1.92/3.84/7.68~$\mu$s.}
+
+\item \tC{} \textbf{The verdict --- worth one cheap A/B, not a parameter.} Direction
+check first: \emph{longer} amp time = slimmer peaks, and 7.68~$\mu$s is already the
+slim end --- 0.96~$\mu$s broadens, not slims. The ``4~eV'' is measured at Mn~K$\alpha$
+(5.9~keV) and does not transfer: electronic noise is a constant-eV adder while the
+Fano floor shrinks with photon energy, so Mg~K$\alpha$ broadens +10--25\%
+(69 $\to$ 76--86~eV) and C~K$\alpha$ +20--47\%. Width was never the Al$\to$Mg lever
+anyway --- the separation is 3.2 Al-FWHM, and the counts under Mg are continuum plus
+the Al low-energy \emph{tail} (incomplete charge collection --- a peak-shape
+property; short amp times risk ballistic deficit, making tails equal-or-worse). The
+real trade is the count-rate ceiling: at 25--30\% dead time, $\approx$14~kcps stored
+at 7.68~$\mu$s vs $\approx$81~kcps at 0.96~$\mu$s (5.7$\times$), with 1.92~$\mu$s a
+good middle (+2~eV at Mg, 3.5$\times$ ceiling) --- but the ceiling only matters once
+beam current rises to feed it. Hence: partner knob of probe current. The A/B runs as
+an appendix block in the 5~kV session with pre-registered predictions A1--A4 (width
+transfer; dose-invariance of net Mg; tail flat-or-worse; ceiling ratio
+$\approx$5.7$\times$), kept out of the voltage series, which freezes amp time at
+7.68~$\mu$s.
+\basis{\prc{13}{5593623759}; EDAX dead-time tips sheet [8] (Fig.~1: Mn~K$\alpha$
+124.1 $\to$ 128.0~eV); Fiori--Newbury FWHM scaling (Goldstein [1]).}
+\end{itemize}
+
+% =====================================================================
+\section{Cross-cutting decisions the three parameters plug into}
+
+\begin{itemize}
+\item \tRC{} \textbf{Physical standards, purchased and vetted.} Order 13279
+(approved 2026-09-08): high-purity Al evaporation pellet (Kurt J.\ Lesker; needs
+polishing), Si chips, MgO~(100) wafer 10$\times$10$\times$0.5~mm (MTI). Claude
+sourced candidate vendors and ran Edison vetting; Ronnie evaluated options, made the
+selections, and purchased. MgO is why Mg gets a compound standard (pure Mg surfaces
+poorly).
+\basis{\prc{11}{5484853198}, \prc{11}{5485228187}, \prc{11}{5495597642};
+\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/eds-standards-material-vetting/answer.md}{Edison vetting artifacts}.}
+
+\item \tRC{} \textbf{Standard reuse rules.} Ronnie asked whether one standard with
+given settings serves all future samples. Answer: a standard is defined by
+(element/line, kV, detector, process time) and is reusable \emph{indefinitely} given
+per-session QC --- energy calibration, FWHM, counts per nA$\cdot$s on a QC material,
+Duane--Hunt endpoint. Acquisition parameters split into: \emph{identical} (detector,
+kV set point, process time, geometry/working distance, coating scheme);
+\emph{measured every acquisition} (probe current, live time --- the dose); and
+\emph{in-range, not matched} (dead time, count rate).
+\basis{\prc{11}{5481700165} (question), \prc{11}{5481703178} (rules);
+Newbury \& Ritchie [2]; Goldstein [1] ch.~16.}
+
+\item \tMS{} \textbf{Geometry discipline: ``focusing to Z height.''} Acquire
+standards at a specific stage height, then acquire every unknown at exactly the same
+height (item to walk through with Mike). Physics behind it \tC{}: working distance
+sets the take-off angle, and the absorption path scales as $1/\sin\psi$ --- the
+matrix correction is calibrated for one geometry. \tR{} Corollary: keep everything at
+the 10~mm eucentric height --- which rules out dual EDS/EBSD sessions (EBSD needs
+15~mm and a $70^\circ$ tilt).
+\basis{Mike's notes \issc{5513720218}; Ronnie's eucentric-height reasoning
+\prc{11}{5441452199}.}
+
+\item \tMS{} \textbf{Type standards from characterized samples.} Once a sample is
+well-characterized against the pure-element standards or by ICP-MS/XRF, use it as
+the working standard for other samples of the same alloy --- cheaper sessions, same
+traceability.
+\basis{Mike's notes \issc{5513720218}.}
+
+\item \tMS{} \textbf{Honest limits.} EDS has a floor; Mike agreed the standards +
+matched-conditions path is the best available route to high-accuracy wt\% for
+sub-1-wt\% constituents. Where a number really matters, the ICP referee decides.
+\basis{Mike's notes \issc{5513720218}.}
+
+\item \tRC{} \textbf{Software chain.} DTSA-II for wt\% (reads \texttt{.msa}
+natively, $\varphi(\rho z)$ matrix correction, bundle/quant wizards) --- adopted by
+Ronnie after Claude's assessment that eXSpy has no bulk-SEM matrix correction (its
+quantification is TEM thin-film only) and that CalcZAF consumes k-ratios, not
+spectra. DTSA-II also runs programmatically/headless (verified in CI), so the
+pipeline can be automated. To do \tR{}: identify the facility's EDAX detector model
+and import its detector definition into DTSA-II.
+\basis{\issc{5359231847}; Edison tools comparison
+(\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/edison_eds_tools_comparison/answer.md}{artifacts});
+headless proof \issc{5629977539}; detector-import note \issc{5534375327}.}
+
+\item \tRC{} \textbf{Charging and coating for the MgO standard.} MgO is an insulator
+and needs a carbon coat; the BYU coater is in storage until end of October. VPSEM is
+\emph{not} an acceptable quantitative workaround (the beam skirt scatters a
+pressure-dependent fraction of current hundreds of $\mu$m off-probe) --- Claude/Edison
+concluded it, and Ronnie independently double-checked the literature and concurred.
+Ronnie's exploratory idea on charging mitigation: a grounded conductive layer placed
+below the X-ray production depth but within electron range. Per-spectrum charging
+check either way: the Duane--Hunt endpoint (P6).
+\basis{\prc{11}{5515514463}, \prc{11}{5534844556};
+\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/vpsem-low-vacuum-eds/answer.md}{Edison VPSEM artifacts},
+\href{https://github.com/vertical-cloud-lab/caliber/blob/d6c29d1/outputs/insulator-charging-depth-grounding/answer.md}{charging-depth artifacts}.}
+\end{itemize}
+
+% =====================================================================
+\section*{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=2pt]
+\item Goldstein, Newbury, Michael, Ritchie, Scott \& Joy, \emph{Scanning Electron
+Microscopy and X-Ray Microanalysis}, 4th ed., Springer (2018). Interaction volume
+\S3.3.3.1; QC ch.~16; k-ratio procedure ch.~19--20; the SDD count-target passage
+($>10^6$/$10^7$/$10^8$) quoted by Ronnie in \prc{13}{5574391518}.
+\item Newbury \& Ritchie, ``Performing elemental microanalysis with high accuracy
+and high precision by SEM/SDD-EDS,'' \emph{J.\ Mater.\ Sci.} 50:493--518 (2015).
+\href{https://doi.org/10.1007/s10853-014-8685-2}{doi:10.1007/s10853-014-8685-2}.
+The program's core protocol paper.
+\item Statham, ``Limitations to Accuracy in Extracting Characteristic Line
+Intensities From X-Ray Spectra,'' \emph{J.\ Res.\ NIST} 107:531 (2002).
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4863855/}{open access}.
+\item Currie, ``Limits for qualitative detection and quantitative determination,''
+\emph{Anal.\ Chem.} 40:586 (1968).
+\href{https://doi.org/10.1021/ac60259a007}{doi:10.1021/ac60259a007}.
+\item Ziebold, ``Precision and sensitivity in electron microprobe analysis,''
+\emph{Anal.\ Chem.} 39:858 (1967).
+\href{https://doi.org/10.1021/ac60252a028}{doi:10.1021/ac60252a028}.
+\item Kanaya \& Okayama, ``Penetration and energy-loss theory of electrons in solid
+targets,'' \emph{J.\ Phys.\ D} 5:43 (1972). Used with the production-depth
+refinement $E_0^{1.67} \to (E_0^{1.67} - E_c^{1.67})$.
+\item Philibert absorption model / $f(\chi)$, with Elam mass-absorption
+coefficients via \texttt{xraydb} --- as implemented in
+\texttt{scripts/eds\_voltage\_predictions.py} (\pr{13}).
+\item EDAX, ``Dead Time Optimization for High Productivity Data Analysis''
+(tips sheet) --- amp-time ladder, measured resolution/throughput trade.
+\item Amptek application notes: ``Digital Pulse Processors --- Theory of
+Operation'' and the SDD note --- basis of \texttt{docs/eds\_daq.md} (\pr{6}).
+\item Ritchie, NIST DTSA-II,
+\href{https://www.cstl.nist.gov/div837/837.02/epq/dtsa2/index.html}{cstl.nist.gov/div837/837.02/epq/dtsa2}.
+\item Newbury, Swyt \& Myklebust, ``Standardless quantitative electron probe
+microanalysis with EDS: is it worth the risk?'' \emph{Anal.\ Chem.} 67:1866 (1995).
+\href{https://doi.org/10.1021/ac00107a017}{doi:10.1021/ac00107a017}.
+\item Edison Scientific literature tasks committed under
+\href{https://github.com/vertical-cloud-lab/caliber/tree/claude/issue-1-20260909-0027/outputs}{\texttt{outputs/}}
+on the \pr{15} branch: parameter derivations, standards protocol and best
+practices, material vetting, reading list, insulator charging, VPSEM, tools
+comparison, Mg evaporation.
+\end{enumerate}
+
+\end{document}
