@@ -1,0 +1,20 @@
+| Parameter | Value | Source/Notes |
+|---|---:|---|
+| New commercial razor-blade tip radius | ≈50 nm (0.05 μm) | Reported achievable radius for commercial razor blades (pqac-00000018) |
+| Electrosharpened razor-blade edge radius | ≈40 nm (0.04 μm) | Demonstrated on electrochemically sharpened blades; not necessarily representative of ordinary single-edge utility blades (pqac-00000023) |
+| Used/worn or rolled edge | ≈20–24 μm reported rolled-edge scale; dull edge ≈30 times the sharp-edge radius in one SEM comparison | Wear is nonuniform, so no universal used-blade radius exists; rolling, chipping, and abrasion may dominate rather than simple circular rounding (pqac-00000000, pqac-00000007) |
+| Razor/scalpel double-bevel angle | ≈15° total included angle | A thin, delicate cutting geometry; angle alone does not define sharpness because apex radius remains decisive (pqac-00000035) |
+| Typical meat/kitchen-knife double-bevel angle | ≈40° total included angle | More durable but less acute than a razor or scalpel (pqac-00000035) |
+| Hard-crystal cleaver cutting angle | φcut ≈42° | Schmid cleaver also used φclear ≈−6°; point contact rather than full-line contact facilitated cleavage (pqac-00000024) |
+| KIC, NaCl {100} | ≈0.17 MPa·m^1/2 | Very low cleavage toughness (pqac-00000039, pqac-00000042) |
+| KIC, LiF {100} | ≈0.31–0.50 MPa·m^1/2 | Literature values vary with specimen and method; {100} is the preferred cleavage plane (pqac-00000039, pqac-00000040) |
+| KIC, MgO {100} | ≈0.81 MPa·m^1/2 | Higher than NaCl and LiF but still characteristic of easy single-crystal cleavage (pqac-00000039) |
+| MgO intrinsic surface energy | 1.15 ± 0.08 J·m^−2 | Converted from 1150 ± 80 erg·cm^−2; cleavage-associated plastic work adds only several percent at room temperature (pqac-00000009, pqac-00000025) |
+| MgO room-temperature Knoop hardness, reported orientation 1 | 4.5 ± 0.5 GPa | Strongly orientation- and load-dependent; source reports the value for one in-plane indenter orientation on cleaved (001) MgO (pqac-00000020, pqac-00000038) |
+| MgO room-temperature Knoop hardness, reported orientation 2 | 11.0 ± 0.5 GPa | Demonstrates large indentation anisotropy; check the original source before assigning these two values to a specific crystallographic direction (pqac-00000020, pqac-00000038) |
+| Hardened martensitic razor-steel hardness | Common engineering estimate ≈6–8 GPa, roughly 600–800 HV or HRC ≈58–64 | Retrieved source verifies that razor blades use very hard, brittle quenched martensite but does not supply a blade-specific numerical hardness; this range is an approximate conversion (pqac-00000045) |
+| Diamond-wheel or sawn-notch root scale | ≈20 μm for a specially dressed wheel; ordinary saw-cut roots commonly tens of μm and may be substantially larger | A 50 μm saw-blade width is not automatically a 50 μm root radius; broad starter notches 0.1–0.2 mm wide were subsequently sharpened (pqac-00000030, pqac-00000031, pqac-00000032) |
+| Razor blade plus diamond-paste notch radius | ≈2 μm in favorable fine-grained material; ≈15 μm reported for medium-grained alumina | Much sharper than the starter saw cut, but limited by abrasive size and microstructure (pqac-00000030, pqac-00000032) |
+| Laser-produced V-notch radius | <1 μm; representative values ≈0.5–0.8 μm | Approximately 0.7 μm was produced without observed root microcracking in one study (pqac-00000014, pqac-00000033, pqac-00000034) |
+| SEVNB critical notch radius, ρc | Material-dependent; reported range ≈1.5–61 μm | Below ρc, measured toughness becomes effectively radius-independent; above it, apparent KIC rises. Examples include ≈1.5 μm for fine 5Y-TZP and much larger values for some aluminas (pqac-00000010, pqac-00000014, pqac-00000015) |
+| General SEVNB sharpness guideline | ρ < 3d, where d is mean grain size; preferably also ρ < ac, the material's critical flaw size | The 3d rule may be overly restrictive or insufficient depending on strength, toughness, R-curve behavior, and microstructure; ISO-related guidance also specifies a V-notch angle below about 30° (pqac-00000010, pqac-00000011, pqac-00000015) |
