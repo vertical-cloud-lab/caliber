@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "id": 29546512,
+      "data_storage_id": "6a4e1aeb-ef8d-4b54-bb49-a563893872d1",
+      "operation": "create",
+      "actor_id": "9c464786-f61c-42ae-976d-44c5d22f854c",
+      "actor_type": "trajectory",
+      "timestamp": "2026-10-09T22:06:38.900320Z",
+      "data_storage": {
+        "name": "pqa:docs:9c464786-f61c-42ae-976d-44c5d22f854c",
+        "description": null,
+        "is_collection": false,
+        "status": "active",
+        "content": null,
+        "embedding": null,
+        "user_id": "6B7I3jBq2AMkM6FDioM4NfRp3PU2",
+        "label": "02818f1f101b",
+        "parent_id": null,
+        "dataset_id": "a3aca350-cd6c-4cd2-8d26-e5c5009a8ec1",
+        "project_id": null,
+        "share_status": "private",
+        "short_alias": null,
+        "id": "6a4e1aeb-ef8d-4b54-bb49-a563893872d1",
+        "path": "02818f1f101b",
+        "created_at": "2026-10-09T22:06:38.818497Z",
+        "modified_at": "2026-10-09T22:06:41.423956Z",
+        "tags": null,
+        "file_path": "/tmp/tmpuc1r0kts.pkl",
+        "metadata": {
+          "size": 56430826
+        },
+        "trajectory_id": null,
+        "project_name": null,
+        "project_description": null,
+        "is_kosmos_project": null
+      }
+    },
+    {
+      "id": 29546479,
+      "data_storage_id": "d106fb8e-f0fb-4f89-8373-cdebd41c4f0b",
+      "operation": "create",
+      "actor_id": "9c464786-f61c-42ae-976d-44c5d22f854c",
+      "actor_type": "trajectory",
+      "timestamp": "2026-10-09T22:04:24.875917Z",
+      "data_storage": {
+        "name": "Cleavage Sharpness Quantitative Summary",
+        "description": "Quantitative comparison of blade geometry, ionic-crystal fracture properties, hardness, and ceramic-notch sharpness. The table distinguishes directly reported measurements from approximate engineering estimates and material-dependent criteria.",
+        "is_collection": false,
+        "status": "active",
+        "content": null,
+        "embedding": null,
+        "user_id": "6B7I3jBq2AMkM6FDioM4NfRp3PU2",
+        "label": "cbf15183f498",
+        "parent_id": null,
+        "dataset_id": "9604a632-8b96-4b69-bb37-c0cc7f045fb7",
+        "project_id": null,
+        "share_status": "private",
+        "short_alias": null,
+        "id": "d106fb8e-f0fb-4f89-8373-cdebd41c4f0b",
+        "path": "cbf15183f498",
+        "created_at": "2026-10-09T22:04:24.823752Z",
+        "modified_at": "2026-10-09T22:04:24.823752Z",
+        "tags": null,
+        "file_path": null,
+        "metadata": {
+          "session_id": "9c464786-f61c-42ae-976d-44c5d22f854c",
+          "artifact_id": "7b0d415c-16c0-4654-a7f9-091d8bb49826",
+          "state_artifact_id": "artifact-00",
+          "artifact_type": "table",
+          "artifact_title": "Cleavage Sharpness Quantitative Summary",
+          "artifact_caption": "Quantitative comparison of blade geometry, ionic-crystal fracture properties, hardness, and ceramic-notch sharpness. The table distinguishes directly reported measurements from approximate engineering estimates and material-dependent criteria."
+        },
+        "trajectory_id": null,
+        "project_name": null,
+        "project_description": null,
+        "is_kosmos_project": null
+      }
+    }
+  ]
+}
