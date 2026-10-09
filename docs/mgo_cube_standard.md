@@ -36,9 +36,10 @@ Likely contributors (not confirmed; the video can't be played from the agent run
    razor steel is about 620–850 HV ([US5433801A](https://patents.google.com/patent/US5433801A/en),
    [US9032628B2](https://patents.google.com/patent/US9032628B2/en)). A blade that has been
    struck on, scraped across, or used to saw MgO is no longer sharp.
-2. **Line contact on a hard oxide.** Two vacuum-cleaver papers report that a straight edge
-   loading a hard rock-salt oxide along a line cleaves poorly, while loading a single point
-   works with less force (Schmid 2006 on NiO, Sander 2022 on MgO; table below).
+2. **Line contact on a hard oxide.** Two vacuum-cleaver papers favor loading a single point
+   over a straight edge for hard rock-salt oxides: Schmid 2006 found razor-blade line contact
+   on NiO "rather difficult", and Sander 2022 says point loading suits MgO and needs less
+   force (table below).
 3. **The notch.** A sawed groove is blunt (root tens to hundreds of µm), not crack-like. It
    only helps once its root is sharpened (see "What sharp means").
 4. **Geometry.** SPI gives 2 mm as the practical slab limit for its razor method; Futagami &
