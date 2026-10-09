@@ -29,22 +29,103 @@ blade parallel to an existing edge and tap lightly. From the note:
 > obtaining a perfectly cleaved (100) block is not easy without first some practice and
 > certainly it is not easy doing the cleaving without generating at least some "chips".
 
-Likely contributors (inferred, not confirmed):
+Likely contributors (not confirmed; the video can't be played from the agent runner):
 
-1. **Blade edge.** Periclase (MgO) is [Mohs 6](http://webmineral.com/data/Periclase.shtml),
-   about as hard as the steel blade, so sawing a notch with a steel edge dulls it quickly
-   and leaves a blunt groove rather than a sharp crack starter. A dull blade is the one
-   failure mode SPI names.
-2. **Slab thickness.** The earlier advice in #12 was to take off a 1–2 mm slab per cleave.
-   SPI puts 2 mm as the practical minimum. With the blade near an edge, the crack tends to
-   curve out to the near face and chip; splitting the cube in half keeps the loading
-   symmetric so the crack runs straight.
-3. **Support.** A compliant support absorbs a light tap. If the strike was on the textured
-   rubber bench mat seen in the video, much of the tap went into the mat.
+1. **Blade edge.** A dull blade is the one failure mode SPI names. This cube is harder than
+   the blade: SPI lists [Vickers 910, Mohs 5.8](https://www.2spi.com/item/01845-ab/), and
+   razor steel is about 620–850 HV ([US5433801A](https://patents.google.com/patent/US5433801A/en),
+   [US9032628B2](https://patents.google.com/patent/US9032628B2/en)). A blade that has been
+   struck on, scraped across, or used to saw MgO is no longer sharp.
+2. **Line contact on a hard oxide.** Two vacuum-cleaver papers report that a straight edge
+   loading a hard rock-salt oxide along a line cleaves poorly, while loading a single point
+   works with less force (Schmid 2006 on NiO, Sander 2022 on MgO; table below).
+3. **The notch.** A sawed groove is blunt (root tens to hundreds of µm), not crack-like. It
+   only helps once its root is sharpened (see "What sharp means").
+4. **Geometry.** SPI gives 2 mm as the practical slab limit for its razor method; Futagami &
+   Akashi took 1 mm slabs off 7 mm blocks with a chisel. Splitting in half is the most
+   forgiving: "the pressure is distributed equally to both parts of the crystal"
+   ([McCrone, on KBr](https://www.mccrone.com/how-to-cleave-polish-use-kbr-crystals/)).
+5. **Support.** SPI asks for a clean, lint-free surface; Langdon & Pask (via Edison) cleave
+   MgO "on a soft pad of tissue paper" to avoid micro-cracks. That a thick rubber mat soaks
+   up the tap is inference only.
 
-If one more try is wanted before sawing (a fresh blade and a few minutes): new GEM blade
-(not the one used for the notch), hard flat bench with a lint-free wipe, blade across the
-middle of a face parallel to an edge, one light tap.
+### Sources
+
+| Source | What it says |
+|---|---|
+| [SPI note](https://www.2spi.com/catalog/documents/MgO_substrates_cleaving.pdf) (rev. 2/16) | Quoted above; the only vendor procedure found |
+| Futagami & Akashi, [Rep. Res. Inst. Appl. Mech. Kyushu Univ. 20, 21 (1973)](https://doi.org/10.5109/7172625) | 7 mm MgO blocks "cleaved into specimens of 1 mm thickness at room temperature by a chisel with a sharp knife edge", by "a blow on the chisel" |
+| Schmid, Renner & Giessibl, [Rev. Sci. Instrum. 77, 036101 (2006)](https://doi.org/10.1063/1.2166670) ([arXiv](https://arxiv.org/abs/cond-mat/0511325)) | "cleaving NiO with a razor blade that touches the sample along a line is rather difficult, while cleaving it with a wire cutter is simple and requires little force even for large cross sections" (2 × 4 mm²) |
+| Sander et al., [Rev. Sci. Instrum. 93, 053703 (2022)](https://doi.org/10.1063/5.0088802) ([accepted ms](https://zenodo.org/record/6510004)) | A 30° tungsten carbide blade loads a single point, "more suitable for cleaving hard crystals such as MgO ... the cleavage requires less force" (crystals of a few mm) |
+| Yang et al., [Environ. Sci. Technol. 59, 3484 (2025)](https://www.osti.gov/servlets/purl/2538136) | SPI MgO "cleaved with a razor blade along the (100) surface immediately before reaction"; debris blown off with N2 |
+| Langdon & Pask (1968); Preuss et al., [J. Eur. Ceram. Soc. 46, 117905 (2026)](https://doi.org/10.1016/j.jeurceramsoc.2025.117905) | Edison citations, not read: tissue-paper pad; diamond-wire notches in MgO sharpened "using a sharp razor blade and 1 µm diamond paste" |
+
+### What "sharp" means
+
+No standard defines it for cleaving. Reference numbers:
+
+- **New blades:** SEM edge width of a Gillette razor blade 0.35–0.45 µm
+  ([Verhoeven 2004](https://northarmknives.com/wp-content/uploads/2016/01/knifeshexps.pdf));
+  utility blades, including Olfa, under 200 nm
+  ([Science of Sharp](https://scienceofsharp.com/2014/05/28/a-comparison-of-several-manufactured-blades/));
+  an unused scalpel about 1 µm radius, with > 5 µm called "unrealistically blunt"
+  ([McCarthy et al. 2010](https://northarmknives.com/wp-content/uploads/2016/09/gilchrist_part2.pdf)).
+  No measurement of GEM blades was found.
+- **Dull blades:** edges fail mostly by chipping, not uniform rounding
+  ([MIT News 2020](https://news.mit.edu/2020/why-shaving-dulls-razors-0806), on Roscioli et
+  al., *Science*).
+- **Notches:** in ceramic fracture tests, a notch acts like a crack only when its root is
+  below about 10–20 µm ([Kübler 2000](https://gruppofrattura.it/ocs/index.php/esis/ECF13/paper/download/8516/4958),
+  [NASA/TM-2006-214090](https://ntrs.nasa.gov/api/citations/20060007571/downloads/20060007571.pdf)).
+  Diamond-disk and diamond-wire notches measured 250 and 70–80 µm; a razor blade with
+  diamond paste brought them to 5–7 µm
+  ([Palacios et al.](https://scipub.euro-fusion.org/wp-content/uploads/eurofusion/WPMATPR15_13757_submitted.pdf), in tungsten).
+
+Practical check: hold the blade edge-on under a bright lamp. A sharp edge is "an almost
+invisibly smooth black line", and any glints are "dull, bent or chipped areas"
+([Peachey 2016](https://jeffpeachey.com/2016/10/04/twelve-ways-of-testing-knife-sharpness/)).
+A 10–50× loupe shows chips and rolled spots. Blades are cheap: use one straight from the pack
+for every attempt.
+
+### Edison check
+
+Two `LITERATURE_HIGH` queries; answers, tables, and trajectories are in
+[`outputs/edison_mgo_cleaving/`](../outputs/edison_mgo_cleaving/).
+
+- [Procedure](../outputs/edison_mgo_cleaving/q1_procedure/answer.md): blade (or chisel) and tap is
+  standard practice for MgO and "generally reliable" for a 10 mm cube, since the {100} cleavage
+  toughness is low (0.81 MPa·m½, [Schultz et al. 1994](https://doi.org/10.1007/bf00012370)).
+  It is not guaranteed: chips, steps from several crack origins, slip under a blunt edge, and
+  subgrains. Recommends a fresh blade, a split near the middle, one light sharp tap, and a
+  thin compliant pad.
+- [Sharpness](../outputs/edison_mgo_cleaving/q2_sharpness/answer.md): the edge radius is what
+  matters; a steel edge can dull on MgO, so treat blades as consumables; sawed notches are
+  too blunt to act as cracks.
+- Caveats: Edison found no success rate for 10 mm cubes, and its claim that pre-scoring
+  "generally helps" rests on notches that were then sharpened.
+
+### Video and SOP
+
+- **Video:** none found of MgO being cleaved (YouTube searched in English, Japanese, Chinese,
+  and German; also Vimeo, JoVE, and paper supplements). Closest:
+  - Schmid et al. (2006) published movies of KBr and NiO cleaving with their point-contact
+    cleaver (EPAPS E-RSINAK-77-209602, not opened).
+  - Blade-and-hammer demos on rock salt (NaCl), the same method on a crystal that cleaves
+    far more easily (0.17 vs. 0.81 MPa·m½): [Science Museum, Tokyo](https://www.youtube.com/watch?v=EUjdhXIKVUY),
+    [ASNR](https://www.youtube.com/watch?v=Znv1LMo2ffw). Checked by title and thumbnails only.
+- **SOP:** none found for MgO cubes beyond SPI's note. The SPI note and the Futagami & Akashi
+  methods paragraph are the closest; the steps below combine them.
+
+### If trying again before sawing
+
+1. Single-edge blade straight from the pack, checked edge-on under a lamp. A new blade for
+   each try, never one that has touched MgO.
+2. Hard, flat bench with a lint-free wipe as the pad, not the rubber mat.
+3. Blade across the middle of an undamaged face, parallel to an edge, so the cube splits in half.
+4. One light, sharp tap with a small hammer.
+5. If line contact keeps failing, point contact is what worked in the hard-oxide papers
+   (wire cutter, single-point blade). Those cleaved cross sections of a few mm; this cube is
+   10 × 10 mm.
 
 ## 2. Plan: diamond saw → Bakelite → water-free polish
 
