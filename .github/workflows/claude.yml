@@ -67,6 +67,9 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       EDISON_PLATFORM_API_KEY: ${{ secrets.EDISON_PLATFORM_API_KEY }}
+      # Read-only access to the sgbaird/agent-staging drop box, for files staged
+      # from other repos (see CLAUDE.md, "Receiving files from other repos").
+      GH_READ_PAT_STAGING: ${{ secrets.GH_READ_PAT_STAGING }}
 
       # Allow long-blocking foreground commands (e.g., Edison polling)
       BASH_DEFAULT_TIMEOUT_MS: "900000" # 15 min default per Bash call
