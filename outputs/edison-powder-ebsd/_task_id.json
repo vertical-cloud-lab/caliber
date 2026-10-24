@@ -1,0 +1,6 @@
+{
+ "task_id": "1eb1bfad-6709-47e6-9ce0-fbe9a07b6e05",
+ "job_name": "LITERATURE",
+ "submitted_at_utc": "2026-10-07T06:17:56.810011+00:00",
+ "query": "Is electron backscatter diffraction (EBSD) routinely performed on metal powders, such as gas-atomized, water-atomized, plasma- or ultrasonically atomized powders used for additive manufacturing (especially aluminum alloys such as Al-Si, AlSi10Mg, 4047, 6061/6063)? How are powder particles prepared for EBSD (conductive or epoxy mounting and cross-section polishing, vibratory or colloidal-silica final polishing, broad ion beam milling, FIB cross-sections, as-received particle surfaces), and what per-particle information does EBSD provide (number of grains per particle, grain size versus particle size, dendrite/cell orientation, phase identification and spatial distribution of eutectic Si, orientation relationships, misorientation/deformation from atomization or satellites)? When is powder X-ray diffraction preferred or complementary instead (phase identification, phase fractions by Rietveld refinement, aluminum lattice parameter as a measure of Si in supersaturated solid solution, crystallite size, microstrain/residual stress), and what are each technique's detection limits and sampling statistics (number of particles probed)? Give concrete examples with citations and DOIs."
+}
