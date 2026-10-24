@@ -1,0 +1,36 @@
+{
+  "n_patterns": 4900,
+  "dictionary_size": 52607,
+  "dictionary_resolution_deg": 2.5,
+  "pc_bruker": [
+    0.531,
+    0.3204,
+    0.7338
+  ],
+  "hough": {
+    "s_per_map": 10.6,
+    "ci_gt_0.1": 0.9927,
+    "median_ci": 0.672,
+    "median_fit_deg": 0.514
+  },
+  "di_al": {
+    "s_projection": 13.0,
+    "s_indexing": 48.4,
+    "s_refinement": 87.3,
+    "median_ncc_di": 0.221,
+    "median_ncc_refined": 0.285
+  },
+  "agreement_hough_vs_di": {
+    "median_misorientation_deg": 0.78,
+    "frac_within_2deg": 0.794,
+    "frac_within_5deg": 0.831,
+    "median_misori_where_ci_lt_0.1": 41.42,
+    "n_ci_lt_0.1": 36
+  },
+  "phase_test_al_vs_si": {
+    "median_ncc_al": 0.285,
+    "median_ncc_si": 0.209,
+    "frac_al_wins": 0.991,
+    "median_delta_ncc": 0.073
+  }
+}
