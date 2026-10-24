@@ -1,0 +1,17 @@
+| Property | Value / description | Relevance to cleavage | Source |
+|---|---:|---|---|
+| Crystal structure | Rock-salt (NaCl type), space group Fm3̅m | Cubic symmetry provides three mutually perpendicular {100} cleavage-plane families. | (pqac-00000009, pqac-00000025, pqac-00000029) |
+| Preferred cleavage plane | {100} | (100), (010), and (001) are symmetry-equivalent, readily cleaved planes. | (pqac-00000003, pqac-00000025, pqac-00000028) |
+| {100} cleavage toughness, Kᵢc | 0.81 MPa·m¹ᐟ² | Indicates brittle, rapid crack propagation once a suitable flaw is initiated. | (pqac-00000022, pqac-00000026) |
+| {100} surface energy—Gilman | 1.20 J·m⁻² = 1200 erg·cm⁻² | Experimental monocrystal-cleavage value; reported repeatability was approximately 15% for three measurements. | (pqac-00000031, pqac-00000034, pqac-00000050) |
+| {100} surface energy—Westwood and Goldheim | Approximately 1.04–1.15 J·m⁻² = 1040–1150 erg·cm⁻² | Independent experimental range supporting a cleavage-surface energy near 1 J·m⁻². | (pqac-00000034, pqac-00000047) |
+| Literature-average {100} surface energy | 1.26 J·m⁻² | Average of published values excluding an outlier; useful as a representative value for fresh {100} cleavage. | (pqac-00000048, pqac-00000050) |
+| Calculated {100} surface energy | 0.89 J·m⁻² = 890 erg·cm⁻² | Boffi–Ricci lattice-dynamical result; markedly below their calculated (110) value of 2.591 J·m⁻². | (pqac-00000034, pqac-00000047) |
+| Random-particle fracture energy | 2.37 J·m⁻² | Includes surface creation and dissipative work and may sample planes other than {100}; it is not the ideal {100} surface energy. | (pqac-00000031, pqac-00000049, pqac-00000050) |
+| Random-particle measured surface energy | 1.79 J·m⁻² | Higher than the {100} literature average because randomly oriented cracks may include higher-energy planes such as {110}. | (pqac-00000031, pqac-00000048, pqac-00000049) |
+| Mohs hardness | 5.5 | MgO can damage or blunt an ordinary steel edge, reinforcing the need for a fresh, sharp blade. | (pqac-00000030) |
+| Knoop hardness on cleaved {100}, indenter aligned with ⟨100⟩ | Approximately 11.0 ± 0.5 GPa | Demonstrates substantial penetration resistance and indentation anisotropy despite low cleavage toughness. | (pqac-00000045) |
+| Shallow nanoindentation hardness | Up to 35 GPa at approximately 40 nm depth | Strong indentation-size and tip-geometry effects make this unsuitable as a bulk hardness value. | (pqac-00000043, pqac-00000044) |
+| Young’s modulus along ⟨100⟩ | Approximately 250 GPa | High stiffness combined with low cleavage toughness favors rapid, unstable cracking after initiation. | (pqac-00000025, pqac-00000027) |
+| Primary room-temperature slip system | {110}⟨1̅10⟩, equivalently ½⟨110⟩{110} dislocations | Shear beneath a blade can activate slip, generate dislocations, dissipate energy, deflect the crack, and produce damaged or stepped cleavage. | (pqac-00000006, pqac-00000008, pqac-00000009, pqac-00000036) |
+| Typical grown-in dislocation density | Approximately 10⁶ cm⁻² = 10¹⁰ m⁻² | Pre-existing dislocations and subgrains make local cleavage quality specimen-dependent, although newly generated crack-front dislocations can be more important. | (pqac-00000005, pqac-00000012) |
