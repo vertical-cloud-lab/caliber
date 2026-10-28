@@ -1,0 +1,12 @@
+10 kV bulk: 24 s
+10 kV sphere25: 25 s
+10 kV sphere50: 24 s
+10 kV raster25 (50 positions): 69 s
+15 kV bulk: 40 s
+15 kV sphere25: 40 s
+15 kV sphere50: 40 s
+15 kV raster25 (50 positions): 112 s
+20 kV bulk: 56 s
+20 kV sphere25: 55 s
+20 kV sphere50: 56 s
+20 kV raster25 (50 positions): 157 s

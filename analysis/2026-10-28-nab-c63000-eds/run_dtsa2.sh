@@ -22,5 +22,5 @@ if ! grep -q 'key="Base Path"' "$prefs" 2>/dev/null; then
   mkdir -p "$(dirname "$prefs")" /tmp/dtsa2reports
   printf '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n<!DOCTYPE map SYSTEM "http://java.sun.com/dtd/preferences.dtd">\n<map MAP_XML_VERSION="1.0">\n  <entry key="Base Path" value="/tmp/dtsa2reports"/>\n</map>\n' > "$prefs"
 fi
-xvfb-run -a -s "-screen 0 1600x1200x24" "$JAVA26" --enable-preview --enable-native-access=ALL-UNNAMED \
+xvfb-run -a -s "-screen 0 1600x1200x24" "$JAVA26" --enable-preview --enable-native-access=ALL-UNNAMED -Dderby.stream.error.file=/tmp/derby.log \
   -jar "$DTSA2_HOME"/dtsa2-*.jar --script "$(readlink -f "$1")"

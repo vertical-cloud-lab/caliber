@@ -3,7 +3,8 @@
 # pure-element standards (DTSA-II's analytical spectrum simulator, same detector model and dose).
 # Peaks are fit with DTSA-II's filter fit (k-ratios for every line family of every element),
 # then the metal k-ratios go through the XPP matrix correction. C and O are fit but kept out
-# of the matrix: C is the tape, O is surface oxide/contamination.
+# of the matrix: C is the tape, O is surface oxide/contamination. The Monte Carlo spectra of
+# nominal C63000 from dtsa2_mc.py, when present, go through the same steps ("simulated" rows).
 # Run:  NAB_DATA=/tmp/nab-staging/files/eds NAB_OUT=outputs ./run_dtsa2.sh dtsa2_quant.py
 import os, codecs
 import java.lang as jl
@@ -56,15 +57,11 @@ try:
     probeCurrent = 3.2  # nA, as set on the Apreo
 
     kfile = codecs.open(os.path.join(outDir, "dtsa2_kratios.csv"), "w", "utf-8")
-    kfile.write("kV,transition_set,element,family,k,k_sigma\n")
+    kfile.write("kV,source,transition_set,element,family,k,k_sigma\n")
     qfile = codecs.open(os.path.join(outDir, "dtsa2_quant.csv"), "w", "utf-8")
-    qfile.write("kV,line_set,element,family,k,k_sigma,wt_pct_raw,wt_pct_raw_sigma,wt_pct_norm,wt_pct_norm_sigma,analytical_total_pct\n")
+    qfile.write("kV,source,line_set,element,family,k,k_sigma,wt_pct_raw,wt_pct_raw_sigma,wt_pct_norm,wt_pct_norm_sigma,analytical_total_pct\n")
     for e0 in sorted(spectra.keys()):
         det = dets[e0]
-        unk = readSpectrum(os.path.join(dataDir, spectra[e0]), det=det)
-        unk.getProperties().setNumericProperty(epq.SpectrumProperties.ProbeCurrent, probeCurrent)
-        unk.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayBegin, probeCurrent)
-        unk.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayEnd, probeCurrent)
         qus = epq.QuantifyUsingStandards(det, epq.ToSI.keV(e0), True, True)
         for name in fitElms[e0]:
             formula, rho = stdMats[name]
@@ -73,49 +70,60 @@ try:
             std.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayBegin, 1.0)
             std.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayEnd, 1.0)
             qus.addStandard(element(name), mat, std)
-        res = qus.compute(unk)
-        krs = unk.getProperties().getKRatioProperty(epq.SpectrumProperties.KRatios)
-        byFamily = {}
-        for xrts in krs.getTransitions():
-            kr = krs.getKRatioU(xrts)
-            elm = xrts.getElement().toAbbrev()
-            fam = xrts.getWeighiestTransition().getFamily()
-            famName = [f for f, v in families.items() if v == fam]
-            famName = famName[0] if famName else str(xrts)
-            kfile.write(u"%d,\"%s\",%s,%s,%.6g,%.3g\n" % (e0, xrts, elm, famName, kr.doubleValue(), kr.uncertainty()))
-            # keep the ROI holding the family's principal line (Ka1, La1, Ma1)
-            principal = {"K": epq.XRayTransition.KA1, "L": epq.XRayTransition.LA1, "M": epq.XRayTransition.MA1}.get(famName)
-            if principal is not None and xrts.contains(epq.XRayTransition(xrts.getElement(), principal)):
-                byFamily[(elm, famName)] = (xrts, kr)
-        resid = res.getResidual()
-        rfile = codecs.open(os.path.join(outDir, "dtsa2_residual_%dkV.csv" % e0), "w", "utf-8")
-        rfile.write("keV,measured,residual\n")
-        for ch in range(unk.getChannelCount()):
-            rfile.write("%.4f,%.1f,%.3f\n" % (epq.SpectrumUtils.minEnergyForChannel(unk, ch) / 1000.0 + 0.0025, unk.getCounts(ch), resid.getCounts(ch)))
-        rfile.close()
-        for setName in useSets[e0]:
-            kdict = {}
-            for elm, fam in lineSets[setName].items():
-                if (elm, fam) in byFamily and byFamily[(elm, fam)][1].doubleValue() > 0.0:
-                    kdict[byFamily[(elm, fam)][0]] = byFamily[(elm, fam)][1]
-            cfk = epq.CompositionFromKRatios()
-            krsIn = epq.KRatioSet()
-            props = epq.SpectrumProperties()
-            props.setNumericProperty(epq.SpectrumProperties.BeamEnergy, float(e0))
-            props.addAll(det.getProperties())
-            for xrts, kr in kdict.items():
-                cfk.addStandard(xrts, material(xrts.getElement().toAbbrev(), stdMats[xrts.getElement().toAbbrev()][1]), props)
-                krsIn.addKRatio(xrts, kr)
-            comp = cfk.compute(krsIn, props)
-            total = comp.sumWeightFraction() * 100.0
-            for xrts, kr in sorted(kdict.items(), key=lambda t: t[0].getElement().getAtomicNumber()):
-                elm = xrts.getElement()
-                raw = comp.weightFractionU(elm, False)
-                nrm = comp.weightFractionU(elm, True)
-                qfile.write(u"%d,%s,%s,%s,%.6g,%.3g,%.3f,%.3f,%.3f,%.3f,%.2f\n" % (e0, setName, elm.toAbbrev(), lineSets[setName][elm.toAbbrev()], kr.doubleValue(), kr.uncertainty(),
-                            100.0 * raw.doubleValue(), 100.0 * raw.uncertainty(), 100.0 * nrm.doubleValue(), 100.0 * nrm.uncertainty(), total))
-            log.write(u"%d kV %s: %s (total %.1f%%)\n" % (e0, setName, comp.toString(), total))
-        log.write(u"%d kV warning: %s\n" % (e0, res.getWarningMessage()))
+        # The measured spectrum, then (when dtsa2_mc.py has run) the Monte Carlo spectra of nominal C63000
+        sources = [("measured", os.path.join(dataDir, spectra[e0]), probeCurrent)]
+        for g in ("bulk", "sphere25", "sphere50", "raster25"):
+            path = os.path.join(outDir, "mc", "%s_%dkV.msa" % (g, e0))
+            if os.path.exists(path):
+                sources.append((g, path, 1.0))
+        for source, path, current in sources:
+            unk = readSpectrum(path, det=det)
+            unk.getProperties().setNumericProperty(epq.SpectrumProperties.ProbeCurrent, current)
+            unk.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayBegin, current)
+            unk.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayEnd, current)
+            res = qus.compute(unk)
+            krs = unk.getProperties().getKRatioProperty(epq.SpectrumProperties.KRatios)
+            byFamily = {}
+            for xrts in krs.getTransitions():
+                kr = krs.getKRatioU(xrts)
+                elm = xrts.getElement().toAbbrev()
+                fam = xrts.getWeighiestTransition().getFamily()
+                famName = [f for f, v in families.items() if v == fam]
+                famName = famName[0] if famName else str(xrts)
+                kfile.write(u"%d,%s,\"%s\",%s,%s,%.6g,%.3g\n" % (e0, source, xrts, elm, famName, kr.doubleValue(), kr.uncertainty()))
+                # keep the ROI holding the family's principal line (Ka1, La1, Ma1)
+                principal = {"K": epq.XRayTransition.KA1, "L": epq.XRayTransition.LA1, "M": epq.XRayTransition.MA1}.get(famName)
+                if principal is not None and xrts.contains(epq.XRayTransition(xrts.getElement(), principal)):
+                    byFamily[(elm, famName)] = (xrts, kr)
+            if source == "measured":
+                resid = res.getResidual()
+                rfile = codecs.open(os.path.join(outDir, "dtsa2_residual_%dkV.csv" % e0), "w", "utf-8")
+                rfile.write("keV,residual\n")
+                for ch in range(unk.getChannelCount()):
+                    rfile.write("%.4f,%.3f\n" % ((epq.SpectrumUtils.minEnergyForChannel(unk, ch) + 0.5 * det.getChannelWidth()) / 1000.0, resid.getCounts(ch)))
+                rfile.close()
+            for setName in useSets[e0]:
+                kdict = {}
+                for elm, fam in lineSets[setName].items():
+                    if (elm, fam) in byFamily and byFamily[(elm, fam)][1].doubleValue() > 0.0:
+                        kdict[byFamily[(elm, fam)][0]] = byFamily[(elm, fam)][1]
+                cfk = epq.CompositionFromKRatios()
+                krsIn = epq.KRatioSet()
+                props = epq.SpectrumProperties()
+                props.setNumericProperty(epq.SpectrumProperties.BeamEnergy, float(e0))
+                props.addAll(det.getProperties())
+                for xrts, kr in kdict.items():
+                    cfk.addStandard(xrts, material(xrts.getElement().toAbbrev(), stdMats[xrts.getElement().toAbbrev()][1]), props)
+                    krsIn.addKRatio(xrts, kr)
+                comp = cfk.compute(krsIn, props)
+                total = comp.sumWeightFraction() * 100.0
+                for xrts, kr in sorted(kdict.items(), key=lambda t: t[0].getElement().getAtomicNumber()):
+                    elm = xrts.getElement()
+                    raw = comp.weightFractionU(elm, False)
+                    nrm = comp.weightFractionU(elm, True)
+                    qfile.write(u"%d,%s,%s,%s,%s,%.6g,%.3g,%.3f,%.3f,%.3f,%.3f,%.2f\n" % (e0, source, setName, elm.toAbbrev(), lineSets[setName][elm.toAbbrev()], kr.doubleValue(), kr.uncertainty(),
+                                100.0 * raw.doubleValue(), 100.0 * raw.uncertainty(), 100.0 * nrm.doubleValue(), 100.0 * nrm.uncertainty(), total))
+                log.write(u"%d kV %s %s: %s (total %.1f%%)\n" % (e0, source, setName, comp.toString(), total))
     kfile.close()
     qfile.close()
 except Exception, e:

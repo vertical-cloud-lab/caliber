@@ -14,7 +14,7 @@
         <string>Dead layer</string>
         <double>0.085</double>
         <string>Detector GUID</string>
-        <string>aa82e31b-98f5-db54-36af-0d1b7bff2193</string>
+        <string>d886073d-5814-ba78-7018-28636403448d</string>
         <string>Detector area</string>
         <double>30.0</double>
         <string>Detector orientation</string>
@@ -241,7 +241,7 @@
         <null/>
         <int>5</int>
         <string>Calibration GUID</string>
-        <string>546fe111-8220-516c-21af-c474a01ee9b0</string>
+        <string>45d80f28-ab76-f191-4e81-c936136f02b2</string>
         <string>Energy offset</string>
         <double>-4.226636</double>
         <string>Energy scale</string>

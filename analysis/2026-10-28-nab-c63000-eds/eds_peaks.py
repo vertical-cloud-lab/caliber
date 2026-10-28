@@ -88,36 +88,41 @@ chk = pd.DataFrame(chk)
 chk.to_csv(os.path.join(here, "outputs", "peak_check.csv"), index=False)
 print(cal.round(5).to_string(), cr.to_string(), chk.to_string(), sep="\n\n")
 
-# Figure: 20 kV spectrum (log) with identified lines, plus zooms on the 1.7-2.0 keV bump and the W L / Zn K region
-fig = plt.figure(figsize=(12, 7.5), constrained_layout=True)
-gs = fig.add_gridspec(2, 3)
+# Figure: the three spectra per live second per nA (log), the low-energy region, and zooms on the
+# 1.7-2.0 keV bump, the Mn Ka / Cu Ka escape region and the W L / Zn K region
+colors = {20: "#2a78d6", 15: "#eb6834", 10: "#1baf7a"}
+plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
+fig = plt.figure(figsize=(13, 8.5), constrained_layout=True)
+gs = fig.add_gridspec(2, 4, height_ratios=[1.1, 1])
 ax = fig.add_subplot(gs[0, :])
-colors = {10: "#4C78A8", 15: "#F58518", 20: "#222222"}
-for kv in (10, 15, 20):
+for kv in (20, 15, 10):
     s = spectra[kv]
     ax.semilogy(s["e"], np.maximum(s["c"] / s["lt"] / 3.2, 1e-3), lw=0.7, color=colors[kv], label="%d kV" % kv)
-labels = {"C K": 0.277, "O K": 0.525, "Fe L": 0.705, "Ni L": 0.851, "Cu L": 0.930, "Al K": 1.487, "Mn Ka": 5.899, "Fe Ka": 6.404,
-          "Fe Kb": 7.058, "Ni Ka": 7.478, "Cu Ka": 8.048, "Cu Kb": 8.905}
-for n, x in labels.items():
-    ax.axvline(x, color="0.75", lw=0.5, zorder=0)
-    ax.text(x, 120, n, rotation=90, fontsize=7, ha="right", va="top")
-ax.set(xlim=(0, 20.2), ylim=(2e-3, 150), xlabel="Energy (keV)", ylabel="counts / (s nA) per 5 eV channel",
-       title="NAB (C63000) powder on C tape, 3.2 nA: counts per live second per nA")
+for n, x in {"Al K": 1.487, "Mn Ka": 5.899, "Fe Ka": 6.404, "Fe Kb": 7.058, "Ni Ka": 7.478, "Cu Ka": 8.048, "Cu Kb": 8.905,
+             "W Lb1": 9.672, "2 x Cu Ka (pile-up)": 16.09}.items():
+    ax.axvline(x, color="0.85", lw=0.6, zorder=0)
+    ax.text(x, 120, n, rotation=90, fontsize=7, ha="right", va="top", color="0.3")
+ax.set(xlim=(0, 20.2), ylim=(3e-3, 150), xlabel="Energy (keV)", ylabel="counts / (live s nA) per 5 eV",
+       title="NAB (C63000) powder on carbon tape, 3.2 nA, EDAX Octane Plus, TOA 36 deg")
 ax.legend(loc="upper right", frameon=False)
-zooms = [(1.55, 2.25, "1.7-2.0 keV: Si Ka / W Ma / Cu L+Cu L", {"Si Ka": 1.740, "W Ma": 1.775, "W Mb": 1.835, "2 x Cu L": 1.86}),
-         (5.6, 6.7, "Mn Ka and Cu Ka escape", {"Mn Ka": 5.899, "Cu Ka esc": 6.308, "Fe Ka": 6.404, "Mn Kb": 6.490}),
-         (8.1, 10.0, "W L and Zn K", {"Ni Kb": 8.265, "W La": 8.398, "Zn Ka": 8.638, "Cu Kb": 8.905, "Cu Ka + Cu L": 8.98, "W Lb": 9.672})]
-for j, (lo, hi, title, mk) in enumerate(zooms):
+zooms = [(0.1, 2.3, "Low energy", {"C K": 0.277, "O K": 0.525, "Fe L": 0.705, "Ni L": 0.851, "Cu L": 0.930, "Al K": 1.487, "bump": 1.82}, (20, 15, 10), "linear"),
+         (1.55, 2.25, "Si Ka / W Ma / L+L pile-up", {"Si Ka": 1.740, "W Ma": 1.775, "W Mb": 1.835, "2 x Cu L": 1.86}, (20, 15, 10), "linear"),
+         (5.6, 6.7, "Mn Ka and Cu Ka escape", {"Mn Ka": 5.899, "Cu Ka esc": 6.308, "Fe Ka": 6.404, "Mn Kb": 6.490}, (20, 15), "linear"),
+         (8.1, 10.0, "W L and Zn K", {"Ni Kb": 8.265, "W La": 8.398, "Zn Ka": 8.638, "Cu Kb": 8.905, "Cu Ka+Cu L": 8.98, "W Lb1": 9.672}, (20, 15), "log")]
+for j, (lo, hi, title, mk, kvs, scale) in enumerate(zooms):
     ax = fig.add_subplot(gs[1, j])
-    for kv in (15, 20) if lo > 5 else (10, 15, 20):
+    for kv in kvs:
         s = spectra[kv]
         m = (s["e"] > lo) & (s["e"] < hi)
         ax.plot(s["e"][m], s["c"][m] / s["lt"] / 3.2, lw=0.8, color=colors[kv], label="%d kV" % kv)
+    ax.set_yscale(scale)
+    ax.set_xlim(lo, hi)
+    top = ax.get_ylim()[1]
     for n, x in mk.items():
-        ax.axvline(x, color="0.6", lw=0.6, ls="--")
-        ax.text(x, ax.get_ylim()[1], n, rotation=90, fontsize=7, ha="right", va="top")
-    ax.set(xlim=(lo, hi), xlabel="Energy (keV)", title=title)
-    if lo > 8:
-        ax.set_ylim(0, 0.5)
-    ax.title.set_fontsize(9)
+        ax.axvline(x, color="0.7", lw=0.6, ls="--", zorder=0)
+        ax.text(x, top, n, rotation=90, fontsize=7, ha="right", va="top", color="0.3")
+    ax.set(xlabel="Energy (keV)", title=title)
+    if j == 0:
+        ax.set_ylabel("counts / (live s nA) per 5 eV")
+        ax.legend(loc="center right", frameon=False)
 fig.savefig(os.path.join(here, "figures", "peak_id.png"), dpi=130)
