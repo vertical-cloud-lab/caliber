@@ -19,18 +19,25 @@ try:
     # 40 nm Al, 0.085 um dead layer, 0.45 mm Si. The sample sat at WD 10.89 mm against a 10.00 mm
     # intersection, which TEAM reports as a 36.03 deg take-off angle (it implies about 40 mm
     # sample-detector distance). Area 30 mm2 and the Moxtek AP3.3 polymer window are assumptions.
-    dp = epd.DetectorProperties.getDefaultSDDProperties(epd.ElectronProbe("Apreo C"), "EDAX Octane Plus (model)", 4096)
-    sp = dp.getProperties()
-    sp.setDetectorPosition(jl.Math.toRadians(36.03), 0.0, 40.0e-3, 10.89e-3)
-    sp.setNumericProperty(epq.SpectrumProperties.DetectorArea, 30.0)
-    sp.setNumericProperty(epq.SpectrumProperties.AluminumLayer, 40.0)
-    sp.setNumericProperty(epq.SpectrumProperties.DeadLayer, 0.085)
-    sp.setNumericProperty(epq.SpectrumProperties.DetectorThickness, 0.45)
-    sp.setWindow(epd.XRayWindowFactory.createWindow(epd.XRayWindowFactory.Moxtek_AP3_3_Model))
-    calib = epd.SDDCalibration(5.0, 0.0, 127.9)
-    calib.makeBaseCalibration()
-    det = epd.EDSDetector.createDetector(dp, calib)
-    det.writeXML(jio.File(os.path.join(outDir, "octane_plus_model.xml")))
+    # Energy scale per spectrum from eds_peaks.py (centroids of Al Ka, Fe Ka, Ni Ka, Cu Ka, Cu Kb).
+    cal = {}
+    for row in open(os.path.join(outDir, "energy_calibration.csv")).read().splitlines()[1:]:
+        f = row.split(",")
+        cal[int(f[0])] = (float(f[4]), float(f[3]))  # (channel width eV, zero offset eV)
+    dets = {}
+    for e0 in cal:
+        dp = epd.DetectorProperties.getDefaultSDDProperties(epd.ElectronProbe("Apreo C"), "EDAX Octane Plus (model, %d kV calibration)" % e0, 4096)
+        sp = dp.getProperties()
+        sp.setDetectorPosition(jl.Math.toRadians(36.03), 0.0, 40.0e-3, 10.89e-3)
+        sp.setNumericProperty(epq.SpectrumProperties.DetectorArea, 30.0)
+        sp.setNumericProperty(epq.SpectrumProperties.AluminumLayer, 40.0)
+        sp.setNumericProperty(epq.SpectrumProperties.DeadLayer, 0.085)
+        sp.setNumericProperty(epq.SpectrumProperties.DetectorThickness, 0.45)
+        sp.setWindow(epd.XRayWindowFactory.createWindow(epd.XRayWindowFactory.Moxtek_AP3_3_Model))
+        calib = epd.SDDCalibration(cal[e0][0], cal[e0][1], 127.9)
+        calib.makeBaseCalibration()
+        dets[e0] = epd.EDSDetector.createDetector(dp, calib)
+        dets[e0].writeXML(jio.File(os.path.join(outDir, "octane_plus_model_%dkV.xml" % e0)))
 
     spectra = {10: "10kV 3_2nA_1.msa", 15: "15kV 3_2nA_1.msa", 20: "20kV 3_2 nA  USE THIS ONE_1.msa"}
     # Standards: pure elements (O from Al2O3), simulated noise-free at a large dose.
@@ -53,6 +60,7 @@ try:
     qfile = codecs.open(os.path.join(outDir, "dtsa2_quant.csv"), "w", "utf-8")
     qfile.write("kV,line_set,element,family,k,k_sigma,wt_pct_raw,wt_pct_raw_sigma,wt_pct_norm,wt_pct_norm_sigma,analytical_total_pct\n")
     for e0 in sorted(spectra.keys()):
+        det = dets[e0]
         unk = readSpectrum(os.path.join(dataDir, spectra[e0]), det=det)
         unk.getProperties().setNumericProperty(epq.SpectrumProperties.ProbeCurrent, probeCurrent)
         unk.getProperties().setNumericProperty(epq.SpectrumProperties.FaradayBegin, probeCurrent)
@@ -75,10 +83,10 @@ try:
             famName = [f for f, v in families.items() if v == fam]
             famName = famName[0] if famName else str(xrts)
             kfile.write(u"%d,\"%s\",%s,%s,%.6g,%.3g\n" % (e0, xrts, elm, famName, kr.doubleValue(), kr.uncertainty()))
-            # keep the family k-ratio with the largest signal-to-noise
-            key = (elm, famName)
-            if (key not in byFamily) or (kr.doubleValue() / max(kr.uncertainty(), 1e-12) > byFamily[key][1].doubleValue() / max(byFamily[key][1].uncertainty(), 1e-12)):
-                byFamily[key] = (xrts, kr)
+            # keep the ROI holding the family's principal line (Ka1, La1, Ma1)
+            principal = {"K": epq.XRayTransition.KA1, "L": epq.XRayTransition.LA1, "M": epq.XRayTransition.MA1}.get(famName)
+            if principal is not None and xrts.contains(epq.XRayTransition(xrts.getElement(), principal)):
+                byFamily[(elm, famName)] = (xrts, kr)
         resid = res.getResidual()
         rfile = codecs.open(os.path.join(outDir, "dtsa2_residual_%dkV.csv" % e0), "w", "utf-8")
         rfile.write("keV,measured,residual\n")
