@@ -70,7 +70,7 @@ gcol = {"measured": ink, "bulk": c1, "raster25": c2, "sphere25": c3}
 plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
 
 # Spectra of every voltage, scaled to the same Cu Ka net counts, so L lines and Al K read against Cu Ka
-fig, axs = plt.subplots(3, 2, figsize=(12, 10), constrained_layout=True, gridspec_kw={"width_ratios": [1.3, 1]})
+fig, axs = plt.subplots(3, 2, figsize=(12, 10.5), layout="constrained", gridspec_kw={"width_ratios": [1.3, 1]})
 for i, kv in enumerate(files):
     ref = cu_ka_net(*spec[(kv, "measured")])
     for j, (lo, hi) in enumerate([(0.15, 2.2), (5.6, 9.4)]):
@@ -83,16 +83,15 @@ for i, kv in enumerate(files):
         ax.set(xlim=(lo, hi), title="%d kV, scaled to equal Cu Ka" % kv, xlabel="Energy (keV)")
         if j == 0:
             ax.set_ylabel("counts per 5 eV")
-        if i == 0 and j == 1:
-            ax.legend(frameon=False, loc="upper left")
+fig.legend(*axs[0, 0].get_legend_handles_labels(), loc="outside upper center", ncol=4, frameon=False)
 fig.savefig(os.path.join(here, "figures", "mc_vs_measured_spectra.png"), dpi=120)
 
 # Main summary figure
 q = pd.read_csv(os.path.join(out, "dtsa2_quant.csv"))
 x = pd.read_csv(os.path.join(out, "exspy_mc_standard_quant.csv"))
-spec_range = {"Al": (9.0, 11.0), "Fe": (2.0, 4.0), "Ni": (4.0, 5.5), "Cu": (78.0, 86.0), "Mn": (0.0, 1.5)}
+spec_range = {"Al": (9.0, 11.0), "Fe": (2.0, 4.0), "Ni": (4.0, 5.5), "Cu": None, "Mn": (0.0, 1.5)}
 nominal = {"Al": 10.0, "Fe": 3.0, "Ni": 5.0, "Cu": 82.0, "Mn": None}
-fig = plt.figure(figsize=(13, 8.6), constrained_layout=True)
+fig = plt.figure(figsize=(13, 8.6), layout="constrained")
 gs = fig.add_gridspec(2, 5, height_ratios=[1.15, 1])
 ax = fig.add_subplot(gs[0, :3])
 ref = cu_ka_net(*spec[(20, "measured")])
@@ -104,40 +103,38 @@ for n, xx in {"C K": 0.277, "O K": 0.525, "Cu L": 0.93, "Al K": 1.487, "Fe Ka": 
     ax.text(xx, 1.6e5, n, rotation=90, fontsize=7, ha="center", va="top", color="0.3")
 ax.set(xlim=(0.15, 10), ylim=(20, 2e5), xlabel="Energy (keV)", ylabel="counts per 5 eV (MC scaled to measured Cu Ka)",
        title="A. 20 kV: measured vs DTSA-II Monte Carlo of nominal C63000")
-ax.legend(frameon=False, loc="upper right")
+ax.legend(frameon=False, loc="upper left", bbox_to_anchor=(0.24, 0.86))
 ax = fig.add_subplot(gs[0, 3:])
-show = ["Al K / Cu Ka", "Cu L / Cu Ka", "Ni L / Ni Ka", "Fe L / Fe Ka"]
-mk = {"measured": "o", "raster25": "s", "sphere25": "^", "sphere50": "v"}
-for g in ("measured", "raster25", "sphere25"):
-    for ii, r in enumerate(show):
+show = ["Al K / Cu Ka", "Cu L / Cu Ka", "Ni L / Ni Ka"]
+for ii, r in enumerate(show):
+    for g, ls, mkr in (("measured", "-", "o"), ("raster25", ":", "s")):
         yv = [rel.loc[(kv, g), r] for kv in files]
-        ax.plot(np.array(list(files)) + (ii - 1.5) * 0.35, yv, marker=mk[g], ls="-" if g == "measured" else ":", lw=1,
-                color=[c1, c2, c3, ink][ii], label=r if g == "measured" else None, markersize=6, markerfacecolor="white" if g != "measured" else None)
+        ax.plot(np.array(list(files)) + (ii - 1) * 0.3, yv, marker=mkr, ls=ls, lw=1.2, color=[c1, c2, c3][ii], markersize=6,
+                markerfacecolor="white" if g != "measured" else [c1, c2, c3][ii], label=r if g == "measured" else None)
 ax.axhline(1, color="0.6", lw=0.8)
 ax.set(xticks=list(files), xlabel="Beam energy (kV)", ylabel="ratio / same ratio in MC flat bulk",
        title="B. Low-energy line vs K line, relative to flat bulk")
-h1 = ax.legend(frameon=False, loc="lower left", fontsize=8)
+h1 = ax.legend(frameon=False, loc="upper left", fontsize=8)
 ax.add_artist(h1)
 from matplotlib.lines import Line2D
 ax.legend(handles=[Line2D([], [], color="0.3", marker="o", ls="-", label="measured"),
-                   Line2D([], [], color="0.3", marker="s", ls=":", markerfacecolor="white", label="MC raster, 50 um sphere"),
-                   Line2D([], [], color="0.3", marker="^", ls=":", markerfacecolor="white", label="MC top of 50 um sphere")],
+                   Line2D([], [], color="0.3", marker="s", ls=":", markerfacecolor="white", label="MC raster, 50 um sphere")],
           frameon=False, loc="lower right", fontsize=8)
 for j, el in enumerate(["Al", "Fe", "Ni", "Cu", "Mn"]):
     ax = fig.add_subplot(gs[1, j])
-    lo, hi = spec_range[el]
-    ax.axhspan(lo, hi, color="0.9", zorder=0, label="C63000 spec")
+    if spec_range[el] is not None:
+        ax.axhspan(*spec_range[el], color="0.9", zorder=0, label="C63000 limits")
     if nominal[el] is not None:
         ax.axhline(nominal[el], color="0.45", lw=1, ls="--", label="nominal")
     cats, vals, errs, cols = [], [], [], []
     for kv in files:
         r = q[(q.kV == kv) & (q.source == "measured") & (q.line_set == "K") & (q.element == el)]
         if len(r):
-            cats.append("DTSA-II\n%d kV" % kv)
+            cats.append("%d kV" % kv)
             vals.append(r.wt_pct_norm.iloc[0])
             errs.append(r.wt_pct_norm_sigma.iloc[0])
             cols.append(c1)
-    for std, lab in (("bulk", "MC bulk\nstd, 20 kV"), ("raster25", "MC raster\nstd, 20 kV")):
+    for std, lab in (("bulk", "MC\nbulk"), ("raster25", "MC\nraster")):
         r = x[(x.kV == 20) & (x.mc_standard == std) & (x.element == el)]
         if len(r):
             cats.append(lab)
@@ -148,9 +145,12 @@ for j, el in enumerate(["Al", "Fe", "Ni", "Cu", "Mn"]):
     for xi, v, er, cc in zip(xs, vals, errs, cols):
         ax.errorbar(xi, v, yerr=er, fmt="o", color=cc, ms=6, capsize=3, lw=1.2)
     ax.set_xticks(xs, cats, fontsize=7)
-    ax.set_title("%s (wt%%)" % el)
+    ax.set_xlim(-0.6, len(cats) - 0.4)
+    ax.set_title(("C. " if j == 0 else "") + "%s (wt%%)%s" % (el, ", balance" if el == "Cu" else ""))
     if j == 0:
         ax.set_ylabel("wt%, normalized to 100% metals")
-        ax.legend(frameon=False, fontsize=7, loc="lower right")
-fig.suptitle("C. Composition: DTSA-II simulated-standard quant (blue, 1 sigma) and exspy fit with MC spectrum as standard (orange)", x=0.5, y=0.47, fontsize=9)
+        ax.errorbar([], [], yerr=[], fmt="o", color=c1, label="DTSA-II, simulated stds (1 sigma)")
+        ax.errorbar([], [], yerr=[], fmt="o", color=c2, label="exspy, MC spectrum as std, 20 kV")
+        ax.set_ylim(5, 13.5)
+        ax.legend(frameon=False, fontsize=7, loc="upper left")
 fig.savefig(os.path.join(here, "figures", "summary.png"), dpi=130)
