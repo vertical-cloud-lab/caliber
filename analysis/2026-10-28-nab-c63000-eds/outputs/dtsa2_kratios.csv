@@ -1,0 +1,341 @@
+kV,source,transition_set,element,family,k,k_sigma
+10,measured,"C K-L2",C,K,0.141239,0.00146
+10,measured,"O All",O,K,0.014812,0.000325
+10,measured,"Al All",Al,K,0.0162434,0.000112
+10,measured,"Si K-L3 + 2 others",Si,K,9.89247e-06,5.76e-05
+10,measured,"Mn Kα",Mn,K,0,0.000308
+10,measured,"Mn Kβ",Mn,K,0,0.00263
+10,measured,"Mn L-family",Mn,L,0,0.00124
+10,measured,"Fe Kα",Fe,K,0.011587,0.000529
+10,measured,"Fe Kβ",Fe,K,0.0195669,0.00325
+10,measured,"Fe L-family",Fe,L,0.0167699,0.000782
+10,measured,"Ni Kα",Ni,K,0.0183205,0.00139
+10,measured,"Ni Kβ",Ni,K,0.0384717,0.0098
+10,measured,"Ni L-family",Ni,L,0.0114208,0.000854
+10,measured,"Cu Kα",Cu,K,0.33449,0.00554
+10,measured,"Cu Kβ",Cu,K,0.369989,0.021
+10,measured,"Cu L-family",Cu,L,0.264447,0.000812
+10,measured,"W M5-N7 + 11 others",W,M,0.000290146,0.000131
+10,measured,"W M4-N2 + 2 others",W,M,0.00169326,0.00126
+10,bulk,"C K-L2",C,K,0.00416249,0.000617
+10,bulk,"O All",O,K,0.00100548,0.000407
+10,bulk,"Al All",Al,K,0.0658029,0.00021
+10,bulk,"Si K-L3 + 2 others",Si,K,3.14848e-05,9.59e-05
+10,bulk,"Mn Kα",Mn,K,0,0.000555
+10,bulk,"Mn Kβ",Mn,K,0,0.00462
+10,bulk,"Mn L-family",Mn,L,0,0.00201
+10,bulk,"Fe Kα",Fe,K,0.0319871,0.000919
+10,bulk,"Fe Kβ",Fe,K,0.0321541,0.00564
+10,bulk,"Fe L-family",Fe,L,0.0328826,0.00124
+10,bulk,"Ni Kα",Ni,K,0.056066,0.00237
+10,bulk,"Ni Kβ",Ni,K,0.0448879,0.0161
+10,bulk,"Ni L-family",Ni,L,0.0558294,0.00134
+10,bulk,"Cu Kα",Cu,K,0.818342,0.00905
+10,bulk,"Cu Kβ",Cu,K,0.8518,0.0337
+10,bulk,"Cu L-family",Cu,L,0.714314,0.0014
+10,bulk,"W M5-N7 + 11 others",W,M,0.000402815,0.000218
+10,bulk,"W M4-N2 + 2 others",W,M,0.00138222,0.00222
+10,sphere25,"C K-L2",C,K,0.00422898,0.000624
+10,sphere25,"O All",O,K,0.00121369,0.000413
+10,sphere25,"Al All",Al,K,0.067244,0.000212
+10,sphere25,"Si K-L3 + 2 others",Si,K,0,9.63e-05
+10,sphere25,"Mn Kα",Mn,K,0.00100144,0.000565
+10,sphere25,"Mn Kβ",Mn,K,0,0.00462
+10,sphere25,"Mn L-family",Mn,L,0,0.00203
+10,sphere25,"Fe Kα",Fe,K,0.032554,0.000922
+10,sphere25,"Fe Kβ",Fe,K,0.0294711,0.00568
+10,sphere25,"Fe L-family",Fe,L,0.0338195,0.00125
+10,sphere25,"Ni Kα",Ni,K,0.0539133,0.00238
+10,sphere25,"Ni Kβ",Ni,K,0.0660293,0.0162
+10,sphere25,"Ni L-family",Ni,L,0.0573143,0.00135
+10,sphere25,"Cu Kα",Cu,K,0.81144,0.00903
+10,sphere25,"Cu Kβ",Cu,K,0.798012,0.0337
+10,sphere25,"Cu L-family",Cu,L,0.730166,0.00141
+10,sphere25,"W M5-N7 + 11 others",W,M,0.000515387,0.000215
+10,sphere25,"W M4-N2 + 2 others",W,M,0.00128405,0.00223
+10,sphere50,"C K-L2",C,K,0.00424603,0.000625
+10,sphere50,"O All",O,K,0.00108811,0.000412
+10,sphere50,"Al All",Al,K,0.0668077,0.000212
+10,sphere50,"Si K-L3 + 2 others",Si,K,0,9.65e-05
+10,sphere50,"Mn Kα",Mn,K,0,0.000554
+10,sphere50,"Mn Kβ",Mn,K,0,0.00461
+10,sphere50,"Mn L-family",Mn,L,0,0.00203
+10,sphere50,"Fe Kα",Fe,K,0.0315646,0.000917
+10,sphere50,"Fe Kβ",Fe,K,0.0320059,0.00567
+10,sphere50,"Fe L-family",Fe,L,0.0339725,0.00125
+10,sphere50,"Ni Kα",Ni,K,0.0548802,0.00239
+10,sphere50,"Ni Kβ",Ni,K,0.0662206,0.0162
+10,sphere50,"Ni L-family",Ni,L,0.0567715,0.00135
+10,sphere50,"Cu Kα",Cu,K,0.823454,0.00907
+10,sphere50,"Cu Kβ",Cu,K,0.835519,0.0343
+10,sphere50,"Cu L-family",Cu,L,0.727374,0.00141
+10,sphere50,"W M5-N7 + 11 others",W,M,0.000329878,0.000215
+10,sphere50,"W M4-N2 + 2 others",W,M,0.000676178,0.00224
+10,raster25,"C K-L2",C,K,0.21319,0.00138
+10,raster25,"O All",O,K,0.000618436,0.000309
+10,raster25,"Al All",Al,K,0.0360934,0.000159
+10,raster25,"Si K-L3 + 2 others",Si,K,1.9539e-05,7.43e-05
+10,raster25,"Mn Kα",Mn,K,0,0.000451
+10,raster25,"Mn Kβ",Mn,K,0,0.00374
+10,raster25,"Mn L-family",Mn,L,0,0.00151
+10,raster25,"Fe Kα",Fe,K,0.0210304,0.000743
+10,raster25,"Fe Kβ",Fe,K,0.0216181,0.00467
+10,raster25,"Fe L-family",Fe,L,0.0177396,0.000924
+10,raster25,"Ni Kα",Ni,K,0.035686,0.00198
+10,raster25,"Ni Kβ",Ni,K,0.0418681,0.0135
+10,raster25,"Ni L-family",Ni,L,0.0301507,0.000993
+10,raster25,"Cu Kα",Cu,K,0.580652,0.00757
+10,raster25,"Cu Kβ",Cu,K,0.58581,0.0285
+10,raster25,"Cu L-family",Cu,L,0.388335,0.00105
+10,raster25,"W M5-N7 + 11 others",W,M,0.000193756,0.000168
+10,raster25,"W M4-N2 + 2 others",W,M,0.000355858,0.00173
+15,measured,"C K-L2",C,K,0.137391,0.0019
+15,measured,"O All",O,K,0.0164477,0.000456
+15,measured,"Al All",Al,K,0.0132774,9.23e-05
+15,measured,"Si K-L3 + 2 others",Si,K,0,5.14e-05
+15,measured,"Mn Kα",Mn,K,0.000288928,0.000143
+15,measured,"Mn Kβ",Mn,K,0,0.00141
+15,measured,"Mn L-family",Mn,L,0,0.00172
+15,measured,"Fe Kα",Fe,K,0.0135572,0.000238
+15,measured,"Fe Kβ",Fe,K,0.0146971,0.0014
+15,measured,"Fe L-family",Fe,L,0.0134895,0.00104
+15,measured,"Ni Kα",Ni,K,0.0186637,0.000348
+15,measured,"Ni Kβ",Ni,K,0.0499322,0.00329
+15,measured,"Ni L-family",Ni,L,0.0168524,0.00109
+15,measured,"Cu Kα",Cu,K,0.279674,0.00105
+15,measured,"Cu Kβ",Cu,K,0.313111,0.00377
+15,measured,"Cu L-family",Cu,L,0.300523,0.00103
+15,measured,"Zn Kα",Zn,K,0,0.000469
+15,measured,"Zn Kβ",Zn,K,0,0.00254
+15,measured,"Zn L-family",Zn,L,0,0.000325
+15,measured,"W L2-M4 + 14 others",W,L,0,0.00209
+15,measured,"W L2-N4 + 17 others",W,L,0,0.0106
+15,measured,"W L3-M5 + 2 others",W,L,0.0066124,0.000968
+15,measured,"W L3-M1 + 1 others",W,L,0.0462814,0.0206
+15,measured,"W M5-N7 + 11 others",W,M,0.000101056,0.000137
+15,measured,"W M4-N2 + 2 others",W,M,0,0.00134
+15,bulk,"C K-L2",C,K,0.0026794,0.000638
+15,bulk,"O All",O,K,0.00162689,0.000512
+15,bulk,"Al All",Al,K,0.0470288,0.000171
+15,bulk,"Si K-L3 + 2 others",Si,K,3.45331e-05,7.36e-05
+15,bulk,"Mn Kα",Mn,K,6.19211e-05,0.000231
+15,bulk,"Mn Kβ",Mn,K,0,0.00225
+15,bulk,"Mn L-family",Mn,L,0,0.00247
+15,bulk,"Fe Kα",Fe,K,0.0349593,0.000379
+15,bulk,"Fe Kβ",Fe,K,0.0378935,0.00219
+15,bulk,"Fe L-family",Fe,L,0.0332035,0.00145
+15,bulk,"Ni Kα",Ni,K,0.0539052,0.00056
+15,bulk,"Ni Kβ",Ni,K,0.0632314,0.00521
+15,bulk,"Ni L-family",Ni,L,0.0587423,0.00157
+15,bulk,"Cu Kα",Cu,K,0.808531,0.00173
+15,bulk,"Cu Kβ",Cu,K,0.80402,0.00574
+15,bulk,"Cu L-family",Cu,L,0.690251,0.00173
+15,bulk,"Zn Kα",Zn,K,0,0.000701
+15,bulk,"Zn Kβ",Zn,K,0.0055762,0.00403
+15,bulk,"Zn L-family",Zn,L,0.00259169,0.000498
+15,bulk,"W L2-M4 + 14 others",W,L,0.00072472,0.0033
+15,bulk,"W L2-N4 + 17 others",W,L,0.0266596,0.0166
+15,bulk,"W L3-M5 + 2 others",W,L,0.00103058,0.00148
+15,bulk,"W L3-M1 + 1 others",W,L,0.021315,0.0331
+15,bulk,"W M5-N7 + 11 others",W,M,0.000237647,0.000196
+15,bulk,"W M4-N2 + 2 others",W,M,0.00174819,0.00198
+15,sphere25,"C K-L2",C,K,0.00279812,0.00065
+15,sphere25,"O All",O,K,0.00144055,0.000521
+15,sphere25,"Al All",Al,K,0.0483753,0.000174
+15,sphere25,"Si K-L3 + 2 others",Si,K,3.09818e-05,7.51e-05
+15,sphere25,"Mn Kα",Mn,K,0,0.000231
+15,sphere25,"Mn Kβ",Mn,K,0,0.00225
+15,sphere25,"Mn L-family",Mn,L,0,0.00252
+15,sphere25,"Fe Kα",Fe,K,0.0339527,0.000379
+15,sphere25,"Fe Kβ",Fe,K,0.0347657,0.00217
+15,sphere25,"Fe L-family",Fe,L,0.0344293,0.00147
+15,sphere25,"Ni Kα",Ni,K,0.0532958,0.000564
+15,sphere25,"Ni Kβ",Ni,K,0.0602856,0.00525
+15,sphere25,"Ni L-family",Ni,L,0.0602102,0.00159
+15,sphere25,"Cu Kα",Cu,K,0.813056,0.00174
+15,sphere25,"Cu Kβ",Cu,K,0.809981,0.00584
+15,sphere25,"Cu L-family",Cu,L,0.708596,0.00176
+15,sphere25,"Zn Kα",Zn,K,0.000190569,0.000709
+15,sphere25,"Zn Kβ",Zn,K,0,0.00408
+15,sphere25,"Zn L-family",Zn,L,0.00273508,0.000509
+15,sphere25,"W L2-M4 + 14 others",W,L,0,0.00332
+15,sphere25,"W L2-N4 + 17 others",W,L,0,0.0167
+15,sphere25,"W L3-M5 + 2 others",W,L,0.00173063,0.00157
+15,sphere25,"W L3-M1 + 1 others",W,L,0,0.0334
+15,sphere25,"W M5-N7 + 11 others",W,M,0.000272355,0.0002
+15,sphere25,"W M4-N2 + 2 others",W,M,0.000404759,0.00202
+15,sphere50,"C K-L2",C,K,0.0026835,0.000644
+15,sphere50,"O All",O,K,0.00158422,0.000517
+15,sphere50,"Al All",Al,K,0.0482482,0.000174
+15,sphere50,"Si K-L3 + 2 others",Si,K,3.30191e-05,7.45e-05
+15,sphere50,"Mn Kα",Mn,K,0.000371325,0.000232
+15,sphere50,"Mn Kβ",Mn,K,0,0.00227
+15,sphere50,"Mn L-family",Mn,L,0,0.00251
+15,sphere50,"Fe Kα",Fe,K,0.0355403,0.000382
+15,sphere50,"Fe Kβ",Fe,K,0.0378616,0.0022
+15,sphere50,"Fe L-family",Fe,L,0.0342067,0.00147
+15,sphere50,"Ni Kα",Ni,K,0.0541627,0.000565
+15,sphere50,"Ni Kβ",Ni,K,0.0557836,0.0046
+15,sphere50,"Ni L-family",Ni,L,0.0602448,0.00159
+15,sphere50,"Cu Kα",Cu,K,0.814465,0.00172
+15,sphere50,"Cu Kβ",Cu,K,0.808608,0.0058
+15,sphere50,"Cu L-family",Cu,L,0.707982,0.00175
+15,sphere50,"Zn Kα",Zn,K,0,0.000712
+15,sphere50,"Zn Kβ",Zn,K,0,0.00402
+15,sphere50,"Zn L-family",Zn,L,0.00275366,0.000506
+15,sphere50,"W L2-M4 + 14 others",W,L,0,0.00332
+15,sphere50,"W L2-N4 + 17 others",W,L,0.0149658,0.0167
+15,sphere50,"W L3-M5 + 2 others",W,L,0,0.00157
+15,sphere50,"W L3-M1 + 1 others",W,L,0.0141425,0.0334
+15,sphere50,"W M5-N7 + 11 others",W,M,0.000221752,0.000199
+15,sphere50,"W M4-N2 + 2 others",W,M,0.000580556,0.00201
+15,raster25,"C K-L2",C,K,0.24163,0.00178
+15,raster25,"O All",O,K,0.000817576,0.000399
+15,raster25,"Al All",Al,K,0.0270051,0.000134
+15,raster25,"Si K-L3 + 2 others",Si,K,7.52286e-06,5.92e-05
+15,raster25,"Mn Kα",Mn,K,0,0.000184
+15,raster25,"Mn Kβ",Mn,K,0,0.0018
+15,raster25,"Mn L-family",Mn,L,0,0.0019
+15,raster25,"Fe Kα",Fe,K,0.0214293,0.000301
+15,raster25,"Fe Kβ",Fe,K,0.0224101,0.00175
+15,raster25,"Fe L-family",Fe,L,0.0181167,0.00109
+15,raster25,"Ni Kα",Ni,K,0.0344277,0.000452
+15,raster25,"Ni Kβ",Ni,K,0.0358126,0.00374
+15,raster25,"Ni L-family",Ni,L,0.031882,0.00118
+15,raster25,"Cu Kα",Cu,K,0.534618,0.0014
+15,raster25,"Cu Kβ",Cu,K,0.538072,0.00467
+15,raster25,"Cu L-family",Cu,L,0.381719,0.00135
+15,raster25,"Zn Kα",Zn,K,0,0.000578
+15,raster25,"Zn Kβ",Zn,K,0,0.00319
+15,raster25,"Zn L-family",Zn,L,0.00248592,0.000423
+15,raster25,"W L2-M4 + 14 others",W,L,3.25977e-06,0.00261
+15,raster25,"W L2-N4 + 17 others",W,L,0,0.0134
+15,raster25,"W L3-M5 + 2 others",W,L,0,0.00128
+15,raster25,"W L3-M1 + 1 others",W,L,0,0.0268
+15,raster25,"W M5-N7 + 11 others",W,M,0.000154704,0.000157
+15,raster25,"W M4-N2 + 2 others",W,M,0.000640378,0.00163
+20,measured,"C K-L2",C,K,0.142339,0.0023
+20,measured,"O All",O,K,0.011626,0.000542
+20,measured,"Al All",Al,K,0.00936483,8.64e-05
+20,measured,"Si K-L3 + 2 others",Si,K,5.00276e-05,4.4e-05
+20,measured,"Mn Kα",Mn,K,0.000459863,9.65e-05
+20,measured,"Mn Kβ",Mn,K,0,0.001
+20,measured,"Mn L-family",Mn,L,0,0.00184
+20,measured,"Fe Kα",Fe,K,0.012706,0.000163
+20,measured,"Fe Kβ",Fe,K,0.0125879,0.000935
+20,measured,"Fe L-family",Fe,L,0.0131216,0.00116
+20,measured,"Ni Kα",Ni,K,0.017218,0.000216
+20,measured,"Ni Kβ",Ni,K,0.022994,0.00198
+20,measured,"Ni L-family",Ni,L,0.0115759,0.00119
+20,measured,"Cu Kα",Cu,K,0.242443,0.00065
+20,measured,"Cu Kβ",Cu,K,0.276023,0.00228
+20,measured,"Cu L-family",Cu,L,0.249741,0.00102
+20,measured,"Zn Kα",Zn,K,0,0.000243
+20,measured,"Zn Kβ",Zn,K,0,0.00131
+20,measured,"Zn L-family",Zn,L,0,0.000347
+20,measured,"W L2-M4 + 14 others",W,L,0,0.000869
+20,measured,"W L2-N4 + 17 others",W,L,0,0.00443
+20,measured,"W L3-M5 + 2 others",W,L,0.00149619,0.000462
+20,measured,"W L3-M1 + 1 others",W,L,0.0368666,0.0102
+20,measured,"W M5-N7 + 11 others",W,M,4.64603e-05,0.000133
+20,measured,"W M4-N2 + 2 others",W,M,0.00409231,0.00142
+20,bulk,"C K-L2",C,K,0.00223084,0.000694
+20,bulk,"O All",O,K,0.00111882,0.000609
+20,bulk,"Al All",Al,K,0.0344598,0.000143
+20,bulk,"Si K-L3 + 2 others",Si,K,0,6.05e-05
+20,bulk,"Mn Kα",Mn,K,0.000101159,0.000154
+20,bulk,"Mn Kβ",Mn,K,2.03077e-05,0.00163
+20,bulk,"Mn L-family",Mn,L,0,0.00257
+20,bulk,"Fe Kα",Fe,K,0.0364744,0.000267
+20,bulk,"Fe Kβ",Fe,K,0.037149,0.00144
+20,bulk,"Fe L-family",Fe,L,0.0307319,0.00158
+20,bulk,"Ni Kα",Ni,K,0.0541513,0.000355
+20,bulk,"Ni Kβ",Ni,K,0.0542752,0.00317
+20,bulk,"Ni L-family",Ni,L,0.0612584,0.00167
+20,bulk,"Cu Kα",Cu,K,0.817234,0.00112
+20,bulk,"Cu Kβ",Cu,K,0.810985,0.00359
+20,bulk,"Cu L-family",Cu,L,0.663169,0.00176
+20,bulk,"Zn Kα",Zn,K,0,0.00035
+20,bulk,"Zn Kβ",Zn,K,0,0.00196
+20,bulk,"Zn L-family",Zn,L,0.00391928,0.000503
+20,bulk,"W L2-M4 + 14 others",W,L,0,0.0013
+20,bulk,"W L2-N4 + 17 others",W,L,0.00135593,0.00666
+20,bulk,"W L3-M5 + 2 others",W,L,0.000625059,0.000695
+20,bulk,"W L3-M1 + 1 others",W,L,0,0.0167
+20,bulk,"W M5-N7 + 11 others",W,M,0.000214357,0.000176
+20,bulk,"W M4-N2 + 2 others",W,M,0.000329684,0.00193
+20,sphere25,"C K-L2",C,K,0.00224224,0.000696
+20,sphere25,"O All",O,K,0.00123247,0.000611
+20,sphere25,"Al All",Al,K,0.0343599,0.000143
+20,sphere25,"Si K-L3 + 2 others",Si,K,1.45835e-06,6.07e-05
+20,sphere25,"Mn Kα",Mn,K,0,0.000152
+20,sphere25,"Mn Kβ",Mn,K,0,0.00161
+20,sphere25,"Mn L-family",Mn,L,0,0.00257
+20,sphere25,"Fe Kα",Fe,K,0.0345437,0.00026
+20,sphere25,"Fe Kβ",Fe,K,0.0348005,0.00142
+20,sphere25,"Fe L-family",Fe,L,0.0302599,0.00157
+20,sphere25,"Ni Kα",Ni,K,0.0523392,0.000351
+20,sphere25,"Ni Kβ",Ni,K,0.0519389,0.00281
+20,sphere25,"Ni L-family",Ni,L,0.0609001,0.00166
+20,sphere25,"Cu Kα",Cu,K,0.800723,0.0011
+20,sphere25,"Cu Kβ",Cu,K,0.797276,0.00355
+20,sphere25,"Cu L-family",Cu,L,0.660183,0.00176
+20,sphere25,"Zn Kα",Zn,K,0,0.000347
+20,sphere25,"Zn Kβ",Zn,K,0.000384453,0.00197
+20,sphere25,"Zn L-family",Zn,L,0.00383418,0.000503
+20,sphere25,"W L2-M4 + 14 others",W,L,6.61679e-06,0.0013
+20,sphere25,"W L2-N4 + 17 others",W,L,0,0.00659
+20,sphere25,"W L3-M5 + 2 others",W,L,0,0.000717
+20,sphere25,"W L3-M1 + 1 others",W,L,0,0.0165
+20,sphere25,"W M5-N7 + 11 others",W,M,0.000236864,0.000184
+20,sphere25,"W M4-N2 + 2 others",W,M,0.00178595,0.00193
+20,sphere50,"C K-L2",C,K,0.00231066,0.000695
+20,sphere50,"O All",O,K,0.0011488,0.00061
+20,sphere50,"Al All",Al,K,0.0344676,0.000143
+20,sphere50,"Si K-L3 + 2 others",Si,K,1.89784e-05,6.05e-05
+20,sphere50,"Mn Kα",Mn,K,0,0.000152
+20,sphere50,"Mn Kβ",Mn,K,0,0.00162
+20,sphere50,"Mn L-family",Mn,L,0,0.00257
+20,sphere50,"Fe Kα",Fe,K,0.0358786,0.000263
+20,sphere50,"Fe Kβ",Fe,K,0.0371111,0.00143
+20,sphere50,"Fe L-family",Fe,L,0.0306425,0.00158
+20,sphere50,"Ni Kα",Ni,K,0.0533859,0.000354
+20,sphere50,"Ni Kβ",Ni,K,0.0553262,0.00283
+20,sphere50,"Ni L-family",Ni,L,0.0613404,0.00167
+20,sphere50,"Cu Kα",Cu,K,0.808336,0.00111
+20,sphere50,"Cu Kβ",Cu,K,0.804028,0.00356
+20,sphere50,"Cu L-family",Cu,L,0.663679,0.00177
+20,sphere50,"Zn Kα",Zn,K,0,0.000348
+20,sphere50,"Zn Kβ",Zn,K,0.000450218,0.00196
+20,sphere50,"Zn L-family",Zn,L,0.00393718,0.000504
+20,sphere50,"W L2-M4 + 14 others",W,L,6.93851e-05,0.0013
+20,sphere50,"W L2-N4 + 17 others",W,L,0.000289667,0.00665
+20,sphere50,"W L3-M5 + 2 others",W,L,0,0.000722
+20,sphere50,"W L3-M1 + 1 others",W,L,0,0.0166
+20,sphere50,"W M5-N7 + 11 others",W,M,0.000121816,0.000183
+20,sphere50,"W M4-N2 + 2 others",W,M,0.00112323,0.00193
+20,raster25,"C K-L2",C,K,0.256577,0.00215
+20,raster25,"O All",O,K,0.000731025,0.000491
+20,raster25,"Al All",Al,K,0.0209083,0.000115
+20,raster25,"Si K-L3 + 2 others",Si,K,1.2433e-05,5.08e-05
+20,raster25,"Mn Kα",Mn,K,6.02519e-05,0.000121
+20,raster25,"Mn Kβ",Mn,K,0,0.00129
+20,raster25,"Mn L-family",Mn,L,0,0.00201
+20,raster25,"Fe Kα",Fe,K,0.0216042,0.000208
+20,raster25,"Fe Kβ",Fe,K,0.0229412,0.00115
+20,raster25,"Fe L-family",Fe,L,0.0177498,0.00121
+20,raster25,"Ni Kα",Ni,K,0.0336747,0.000284
+20,raster25,"Ni Kβ",Ni,K,0.0368143,0.00255
+20,raster25,"Ni L-family",Ni,L,0.0352533,0.00127
+20,raster25,"Cu Kα",Cu,K,0.52237,0.000898
+20,raster25,"Cu Kβ",Cu,K,0.522643,0.00286
+20,raster25,"Cu L-family",Cu,L,0.379841,0.00141
+20,raster25,"Zn Kα",Zn,K,0,0.000284
+20,raster25,"Zn Kβ",Zn,K,1.89759e-05,0.00152
+20,raster25,"Zn L-family",Zn,L,0.00377004,0.000447
+20,raster25,"W L2-M4 + 14 others",W,L,3.6288e-05,0.00101
+20,raster25,"W L2-N4 + 17 others",W,L,0.00325079,0.00524
+20,raster25,"W L3-M5 + 2 others",W,L,0.000253037,0.000561
+20,raster25,"W L3-M1 + 1 others",W,L,0,0.0133
+20,raster25,"W M5-N7 + 11 others",W,M,0.000205003,0.000153
+20,raster25,"W M4-N2 + 2 others",W,M,0.000498352,0.00167
