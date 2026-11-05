@@ -76,10 +76,11 @@ def run_experiments(prev_data: pd.DataFrame=None):
 
     # optimization loop
     while True:
-
         # get_next_trial performs model fitting and acquisition function evaluation
         parameterizations, optimization_complete = ax_client.get_next_trials(max_trials=3)
-        
+        times = []
+        live_times = []
+        dead_pcts = []
         for trial_index, parameterization in list(parameterizations.items()):
             # extract parameters
             x1 = parameterization["voltage"]
@@ -95,22 +96,29 @@ def run_experiments(prev_data: pd.DataFrame=None):
                     break
 
             live_time, dead_time_pct, total_time = x_to_live_time(x3)
-            
+            times.append(total_time)
+            live_times.append(live_time)
+            dead_pcts.append(dead_time_pct)
             # evaluate the dummy objective function
             print("Now run the experiment under these conditions")
-            pct_Al = float(input(f"What was the recorded percent of Al: "))
-            pct_Si = float(input(f"What was the recorded percent of Silicon: "))
-            pct_Mg = float(input(f"What was the recorded percent of Magnesium: "))
+
+        for i, (trial_index, parameterization) in enumerate(list(parameterizations.items())):
+            x1 = parameterization["voltage"]
+            x2 = parameterization["current"]
+            x3 = parameterization["x_counts"]
+            pct_Al = float(input(f"What was the recorded percent of Al for trial {trial_index}: "))
+            pct_Si = float(input(f"What was the recorded percent of Silicon for trial {trial_index}: "))
+            pct_Mg = float(input(f"What was the recorded percent of Magnesium for trial {trial_index}: "))
 
             comp_err = np.sum((np.array([pct_Al, pct_Si, pct_Mg]) - TRUE_PCT_ALSIMG)**2)
 
             # report the results back to the algorithm
-            ax_client.complete_trial(trial_index=trial_index, raw_data={"comp_error": comp_err, "acq_time": total_time})
+            ax_client.complete_trial(trial_index=trial_index, raw_data={"comp_error": comp_err, "acq_time": times[i]})
             now = datetime.now()
 
             formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
-            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, total_time, formatted_time, pct_Al, pct_Si, pct_Mg, live_time, dead_time_pct]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
-            prev_data.to_csv("SEM_ALSI10MG_OPTIM_data.csv")
+            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
+            prev_data.to_csv("SEM_ALSI10MG_OPTIM_data.csv", index=False)
     pareto_results = ax_client.get_pareto_optimal_parameters()
 
 def x_to_live_time(x_counts):
@@ -118,7 +126,7 @@ def x_to_live_time(x_counts):
         X_rate = float(input("What is the X ray count rate: "))
         live_time = x_counts / X_rate
         dead_time_pct = float(input("What is the dead time (will be percentage): "))
-        total_time = live_time + dead_time_pct / 100 *live_time
+        total_time = live_time / (1 - dead_time_pct / 100)
         print(f"This is the Live Time for EDAX: {live_time}")
         ans = input("Did you get the Live Time? (Type Y/y to move on): ")
         if ans.strip().lower() == "y":
