@@ -1,6 +1,6 @@
 # 2027 MSA Undergraduate Research Scholarship — CALIBER Proposal (Draft)
 
-Working draft for the [MSA Undergraduate Research Scholarship Program](https://microscopy.org/undergraduate-research-scholarship-program). The research proposal (between the horizontal rules below) is held to the program's **3-page limit**; the [PDF render](2027_msa_undergraduate_research_scholarship_proposal.pdf) uses Carlito, which has the same letter widths as Calibri, at 11 pt with 1-inch margins on US Letter, references included, so it should stay within 3 pages when pasted into Word in Calibri 11 pt. The only bracketed items left are the applicant's own details (SEM course, graduation date, contact information). The Expenditure of Funds and CV are separate documents and do not count toward the limit.
+Working draft for the [MSA Undergraduate Research Scholarship Program](https://microscopy.org/undergraduate-research-scholarship-program). The research proposal (between the horizontal rules below) is held to the program's **3-page limit**; the [PDF render](2027_msa_undergraduate_research_scholarship_proposal.pdf) uses Carlito, which has the same letter widths as Calibri, at 11 pt with 1-inch margins on US Letter, references included, so it should stay within 3 pages when pasted into Word in Calibri 11 pt. The [Word version](2027_msa_undergraduate_research_scholarship_proposal.docx) has the proposal (pages 1–3, numbered "1 of 3" and so on), the Expenditure of Funds, and the CV in Calibri 11 pt, each part starting on a new page. The only bracketed items left are the applicant's own details (SEM course, graduation date, contact information). The Expenditure of Funds and CV are separate documents and do not count toward the limit.
 
 ## Program requirements
 
@@ -100,23 +100,27 @@ To explain these results, I proposed a rule for choosing beam energy, which we t
 
 ## Expenditure of Funds (separate document; $3,000)
 
-I am requesting $3,000. Following the program's guidelines, the award will pay for my stipend, the supplies this study uses, and travel to present the results. My supervisor's laboratory covers microscope time and equipment, as listed under other funding sources below.
+<!-- budget:start -->
+
+Of the $3,000 requested, $2,000 will be used as my research stipend, and the remaining $1,000 will be used for sample production, polishing, and preparation. My supervisor's laboratory covers microscope time and equipment, as listed under other funding sources below.
 
 | Item | Amount |
 |---|---|
 | Student research stipend: about 125 hours from February to August 2027, paid through BYU student payroll | $2,000 |
-| Supplies for the ICP-MS reference composition: digestion acids and certified Mg, Al, and Si calibration solutions | $250 |
-| Supplies for sample preparation and standards: polishing consumables, carbon-coating supplies, stubs, and a certified Al-Si-Mg reference material as an independent accuracy check | $350 |
-| Travel to present the results at M&M 2027 (student registration and part of the airfare) | $400 |
+| Sample production, polishing, and preparation: materials for producing and sectioning the AlSi10Mg samples, mounting resin, grinding papers, polishing cloths and suspensions, carbon-coating supplies, and SEM stubs, for the samples and the Al, Si, and MgO standards | $1,000 |
 | **Total** | **$3,000** |
 
-**Other funding sources.** Prof. Baird's laboratory pays for SEM and EDS time at the BYU Electron Microscopy Facility, the Al, Si, and MgO standards it has already bought, and laboratory equipment. ICP-MS access is through Prof. Devin Rappleye's group (BYU Chemical Engineering), and WDXRF through Kevin Rey (BYU Geological Sciences). I will apply for MSA's student travel awards to cover the rest of the M&M trip. DTSA-II, HyperSpy, and our analysis scripts are free and open source.
+**Other funding sources.** Prof. Baird's laboratory pays for SEM and EDS time at the BYU Electron Microscopy Facility, the Al, Si, and MgO standards it has already bought, and laboratory equipment. ICP-MS access is through Prof. Devin Rappleye's group (BYU Chemical Engineering), and WDXRF through Kevin Rey (BYU Geological Sciences). Travel to present at M&M 2027 is not part of this request; I will apply for MSA's student travel awards to cover it. DTSA-II, HyperSpy, and our analysis scripts are free and open source.
 
-**Why the award does not pay for microscope time.** MSA's program page says: "MSA scholarship funds are generally approved for student stipends, supplies, and occasionally for limited travel essential to proposed studies. Fees for use of instruments, extensive travel, or purchase of/or contribution toward purchase of, laboratory equipment are generally considered to be part of the institutional and/or advisor's commitment to the research project." A budget spent on instrument fees asks MSA for what it expects the advisor to provide, so microscope hours go under other funding sources. Before submitting, confirm with Prof. Baird that the lab covers instrument time, and confirm the stipend rate and the reference-material quote.
+<!-- budget:end -->
+
+**Why the award does not pay for microscope time.** MSA's program page says: "MSA scholarship funds are generally approved for student stipends, supplies, and occasionally for limited travel essential to proposed studies. Fees for use of instruments, extensive travel, or purchase of/or contribution toward purchase of, laboratory equipment are generally considered to be part of the institutional and/or advisor's commitment to the research project." A budget spent on instrument fees asks MSA for what it expects the advisor to provide, so microscope hours go under other funding sources. For the same reason, keep the $1,000 line to materials and consumables: if sample production means paying for time on the printer, MSA is likely to read that as an instrument fee too. Before submitting, confirm with Prof. Baird that the lab covers instrument time, and confirm the stipend rate.
 
 ## Curriculum vitae (separate document)
 
 MSA asks for a CV "including details of education and/or training in microscopy, and a brief statement of career goals." Fill in the bracketed items, and keep it to one page.
+
+<!-- cv:start -->
 
 **Ronnie Guymon**\
 `[email]` · `[phone]` · Brigham Young University, Provo, Utah
@@ -142,6 +146,8 @@ MSA asks for a CV "including details of education and/or training in microscopy,
 
 **Statement of career goals.** I want a career in materials science, developing and analyzing materials for aerospace applications. Microscopy will be one of my main tools. Building my SEM and microanalysis skills will help me understand the materials I work with and how to modify and improve them to reach the properties a design needs. `[Optional: a sentence on graduate school or the kind of role you want.]`
 
+<!-- cv:end -->
+
 ## Letters (separate documents)
 
 - **Supervisor letter** confirming that the applicant and project are acceptable: Prof. Sterling G. Baird. Once he joins MSA (needed for the Strategic Initiatives proposal by October 12), this letter also serves as the **MSA-member letter**.
@@ -161,7 +167,7 @@ The deadline is 11:59 PM ET on Tuesday, December 1, 2026. These dates work back 
 | Fri Oct 16 | Ronnie, Gage | Ask MSE Supplies for the certificate of analysis for our lot of MSE PRO AlSi10Mg (MP0203). MSE specifies 0.20–0.45 wt% Mg; the certificate gives the lot's actual value. |
 | Fri Oct 23 | Ronnie | Confirm the surface of the April 30 run: the byu-vcl PR 95 table calls it "non-flat". If it was a fracture surface, swap Table 1's 15 kV row for the polished May 22 runs (1.42–1.43 wt% Mg) and drop the ×1.52 consistency check, which assumes a flat sample. |
 | Fri Oct 30 | Ronnie | **CV** with the SEM course number and the career-goals statement |
-| Fri Nov 6 | Sterling | Confirm the stipend rate and hours (BYU student payroll) and that lab funds cover instrument time; get a quote for the certified reference material |
+| Fri Nov 6 | Sterling | Confirm the stipend rate and hours (BYU student payroll) and that lab funds cover instrument time |
 | Fri Nov 20 | Ronnie | If the voltage series has run (the carbon coater returns at the end of October), move its results into the preliminary data and shift the timeline toward Goals 3–5 |
 | Fri Nov 20 | Ronnie | Letters received; final PDF within 3 pages; check the live form for letter uploads and any format rules |
 | Tue Nov 24 | Ronnie | **Submit** the form, proposal, budget, CV, and any letters the form requests |
