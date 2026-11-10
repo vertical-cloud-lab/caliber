@@ -71,6 +71,10 @@ jobs:
       # Read-only access to the sgbaird/agent-staging drop box, for files staged
       # from other repos (see CLAUDE.md, "Receiving files from other repos").
       GH_READ_PAT_STAGING: ${{ secrets.GH_READ_PAT_STAGING }}
+      # The lab's shared Onshape account (member privileges, no 2FA), for signing
+      # in through the browser. See the Onshape section of CLAUDE.md.
+      ONSHAPE_USERNAME: ${{ secrets.ONSHAPE_USERNAME }}
+      ONSHAPE_PASSWORD: ${{ secrets.ONSHAPE_PASSWORD }}
 
       # Zenodo, full scope (deposit:write + deposit:actions). Publishing mints a
       # permanent DOI, so test against the sandbox. Org secrets, shared with
