@@ -37,7 +37,7 @@ def run_experiments(prev_data: pd.DataFrame=None):
     ax_client.create_experiment(
         parameters=[
             {"name": "voltage", "type": "choice", "is_ordered": True, "value_type":"float", "sort_values":True, "values": [5.00, 10.00, 15.00, 20.00, 25.00]},
-            {"name": "current", "type": "choice", "is_ordered": True, "value_type":"float", "sort_values":True, "values": [.1, .2, .4, .8, 1.6, 3.2, 6.4, 13.0, 26.0, 51.0, 100.0, 200.0, 410.0]},
+            {"name": "current", "type": "choice", "is_ordered": True, "value_type":"float", "sort_values":True, "values": [.1, .2, .4, .8, 1.6, 3.2, 6.4]},
             {
                 "name": "x_counts",
                 "type": "range",
@@ -51,14 +51,7 @@ def run_experiments(prev_data: pd.DataFrame=None):
         },
     )
 
-    # 1. Define your parameter search space
-    search_space = SearchSpace(
-        parameters=[
-            ChoiceParameter(name="current", parameter_type=ParameterType.FLOAT, is_ordered=True, sort_values=True,  values=[.1, .2, .4, .8, 1.6, 3.2, 6.4, 13.0, 26.0, 51.0, 100.0, 200.0, 410.0]),
-            ChoiceParameter(name="voltage", parameter_type=ParameterType.FLOAT, is_ordered=True, sort_values=True, values=[5.00, 10.00, 15.00, 20.00, 25.00]),
-            RangeParameter(name="x_counts", parameter_type=ParameterType.INT, lower=1000000, upper=16000000)
-        ]
-    )
+
 
     for exp in prev_data.iterrows():
         exp = exp[1]
@@ -81,6 +74,7 @@ def run_experiments(prev_data: pd.DataFrame=None):
         times = []
         live_times = []
         dead_pcts = []
+        x_rates = []
         for trial_index, parameterization in list(parameterizations.items()):
             # extract parameters
             x1 = parameterization["voltage"]
@@ -95,10 +89,11 @@ def run_experiments(prev_data: pd.DataFrame=None):
                     print_parameters(parameterization)
                     break
 
-            live_time, dead_time_pct, total_time = x_to_live_time(x3)
+            live_time, dead_time_pct, total_time, x_rate = x_to_live_time(x3)
             times.append(total_time)
             live_times.append(live_time)
             dead_pcts.append(dead_time_pct)
+            x_rates.append(x_rate)
             # evaluate the dummy objective function
             print("Now run the experiment under these conditions")
 
@@ -117,7 +112,7 @@ def run_experiments(prev_data: pd.DataFrame=None):
             now = datetime.now()
 
             formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
-            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
+            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i], x_rates[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
             prev_data.to_csv("SEM_ALSI10MG_OPTIM_data.csv", index=False)
     pareto_results = ax_client.get_pareto_optimal_parameters()
 
@@ -131,7 +126,7 @@ def x_to_live_time(x_counts):
         ans = input("Did you get the Live Time? (Type Y/y to move on): ")
         if ans.strip().lower() == "y":
             break
-    return live_time, dead_time_pct, total_time
+    return live_time, dead_time_pct, total_time, X_rate
 
 def print_parameters(parameters):
     while True:
@@ -151,25 +146,16 @@ for root, dirs, files in os.walk(search_root):
     if target_file in files:
         full_path = os.path.join(root, target_file)
 if full_path == None:
-    data = pd.DataFrame([[5.0, 1.6, 1000003, 5.65, 30.5, "dfsdf", 81, 10, 9, 210, 22]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])
+    # "voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"
+    data = pd.DataFrame([[5.0,6.04, 13344683.0, 5.65, 30.5, "dfsdf", 81, 10, 9, 332.0, 46.5, 40100.0], 
+                         [20.0, .2322, 7714719.0, , , , , , , 622.0, 18.0, 12400.0],
+                         [10.0, .753, 8656621.0, , , , , , , 478.0, 24.7, 18100.0],
+                         [25.0, 3.7, 3027888.0, , , , , , 13.0, 98.5, 238000.0],
+                         [15.0, 1.01, 5229196.0, , , , , , 135.0, 46.0, 38800.0],
+                         [25.0, .502, 14599716.0, , , , , 456.0, 40.0, 32000.0]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"])
 else:
     data = pd.read_csv(full_path)
 
 run_experiments(data)
 
 
-    # # 2. Initialize the Sobol model bridge
-    # # Optional arguments: seed (int) for reproducibility, scramble (bool) to toggle scrambling
-    # sobol_model = get_sobol(search_space=search_space, seed=42)
-
-    # # 3. Generate a GeneratorRun containing n samples
-    # generator_run = sobol_model.gen(n=6)
-
-    # # 4. Extract parameters into a clean Python list of dicts or a NumPy array
-    # samples = np.array([np.array(list(arm.parameters.values())) for arm in generator_run.arms])
-    # print(samples)
-    # sobol = pd.DataFrame(samples, columns=["current", "voltage", "x_counts"])
-    # sobol.to_csv("init_sobol_samples.csv")
-    # Preview the results
-    # for i, sample in enumerate(samples[:3]):
-    #     print(f"Sample {i}: {sample}")
