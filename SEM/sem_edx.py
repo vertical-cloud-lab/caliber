@@ -1,0 +1,161 @@
+import numpy as np
+from ax.service.ax_client import AxClient, ObjectiveProperties
+from ax.modelbridge.factory import Models
+from ax.modelbridge.generation_strategy import GenerationStep, GenerationStrategy
+from botorch.acquisition.multi_objective import qLogNoisyExpectedHypervolumeImprovement
+import pandas as pd
+import os
+from datetime import datetime
+from ax.modelbridge.factory import get_sobol
+from ax.core.parameter import ParameterType, RangeParameter, ChoiceParameter
+from ax.core.search_space import SearchSpace
+from ax.modelbridge.factory import get_sobol
+
+
+TRUE_PCT_ALSIMG = np.array([80, 10, 10])
+
+def run_experiments(prev_data: pd.DataFrame=None):
+    # define these names as variables for reuse (e.g., branin function return)
+    obj1_name = "acq_time"
+    obj2_name = "comp_error"
+    gs = GenerationStrategy(steps=[
+            # GenerationStep(
+            #     model=Models.SOBOL,
+            #     num_trials=6,
+            #     max_parallelism=1
+            # ), 
+            GenerationStep(
+                model=Models.BOTORCH_MODULAR,
+                num_trials=-1,  # No limitation on how many trials should be produced from this step
+                max_parallelism=3,  # Parallelism limit for this step, often lower than for Sobol
+                model_kwargs={"botorch_acqf_class": qLogNoisyExpectedHypervolumeImprovement}
+            ),
+        ])
+    ax_client = AxClient(generation_strategy=gs, verbose_logging=False, random_seed=42)
+
+    # Define your search space and objectives
+    ax_client.create_experiment(
+        parameters=[
+            {"name": "voltage", "type": "choice", "is_ordered": True, "value_type":"float", "sort_values":True, "values": [5.00, 10.00, 15.00, 20.00, 25.00]},
+            {"name": "current", "type": "choice", "is_ordered": True, "value_type":"float", "sort_values":True, "values": [.1, .2, .4, .8, 1.6, 3.2, 6.4]},
+            {
+                "name": "x_counts",
+                "type": "range",
+                "value_type":"int",
+                "bounds": [1000000, 16000000],
+            },
+        ],
+        objectives={
+            obj1_name: ObjectiveProperties(minimize=True),
+            obj2_name: ObjectiveProperties(minimize=True),
+        },
+    )
+
+
+
+    for exp in prev_data.iterrows():
+        exp = exp[1]
+        print("here")
+        parameters = {pair[0]:pair[1] for pair in zip(["voltage", "current", "x_counts"], exp[["voltage", "current", "x_counts"]])}
+        _, trial_index = ax_client.attach_trial(parameters=parameters)
+
+        # 2. Complete the trial with your evaluated raw data
+        ax_client.complete_trial(
+            trial_index=trial_index,
+            raw_data={
+                obj1_name:(exp[obj1_name], None), obj2_name:(exp[obj2_name], None)
+            },
+        )
+
+    # optimization loop
+    while True:
+        # get_next_trial performs model fitting and acquisition function evaluation
+        parameterizations, optimization_complete = ax_client.get_next_trials(max_trials=3)
+        times = []
+        live_times = []
+        dead_pcts = []
+        x_rates = []
+        for trial_index, parameterization in list(parameterizations.items()):
+            # extract parameters
+            x1 = parameterization["voltage"]
+            x2 = parameterization["current"]
+            x3 = parameterization["x_counts"]
+            print(f"Parameters to test for Trial {trial_index}:\nVoltage -> {x1} kV\nCurrent -> {x2} nA\nNum X-Rays to collect -> {x3}")
+            while True:
+                ans = input("Did you get the parameters? (Y/N): ").strip().lower()
+                if ans == "y":
+                    break
+                elif ans == "n":
+                    print_parameters(parameterization)
+                    break
+
+            live_time, dead_time_pct, total_time, x_rate = x_to_live_time(x3)
+            times.append(total_time)
+            live_times.append(live_time)
+            dead_pcts.append(dead_time_pct)
+            x_rates.append(x_rate)
+            # evaluate the dummy objective function
+            print("Now run the experiment under these conditions")
+
+        for i, (trial_index, parameterization) in enumerate(list(parameterizations.items())):
+            x1 = parameterization["voltage"]
+            x2 = parameterization["current"]
+            x3 = parameterization["x_counts"]
+            pct_Al = float(input(f"What was the recorded percent of Al for trial {trial_index}: "))
+            pct_Si = float(input(f"What was the recorded percent of Silicon for trial {trial_index}: "))
+            pct_Mg = float(input(f"What was the recorded percent of Magnesium for trial {trial_index}: "))
+
+            comp_err = np.sum((np.array([pct_Al, pct_Si, pct_Mg]) - TRUE_PCT_ALSIMG)**2)
+
+            # report the results back to the algorithm
+            ax_client.complete_trial(trial_index=trial_index, raw_data={"comp_error": comp_err, "acq_time": times[i]})
+            now = datetime.now()
+
+            formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
+            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i], x_rates[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
+            prev_data.to_csv("SEM_ALSI10MG_OPTIM_data.csv", index=False)
+    pareto_results = ax_client.get_pareto_optimal_parameters()
+
+def x_to_live_time(x_counts):
+    while True:
+        X_rate = float(input("What is the X ray count rate: "))
+        live_time = x_counts / X_rate
+        dead_time_pct = float(input("What is the dead time (will be percentage): "))
+        total_time = live_time / (1 - dead_time_pct / 100)
+        print(f"This is the Live Time for EDAX: {live_time}")
+        ans = input("Did you get the Live Time? (Type Y/y to move on): ")
+        if ans.strip().lower() == "y":
+            break
+    return live_time, dead_time_pct, total_time, X_rate
+
+def print_parameters(parameters):
+    while True:
+        print("Parameters to Test:\n")
+        for name, param in parameters.items():
+            print(f"{name} -> {param}\n")
+        ans = input("Did you get the parameters? (Type Y/y to move on): ")
+        if ans.strip().lower() == "y":
+            break
+
+
+search_root = "./"
+target_file = "SEM_ALSI10MG_OPTIM_data.csv"
+full_path = None
+
+for root, dirs, files in os.walk(search_root):
+    if target_file in files:
+        full_path = os.path.join(root, target_file)
+if full_path == None:
+    # "voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"
+    data = pd.DataFrame([[5.0,6.04, 13344683.0, 5.65, 30.5, "dfsdf", 81, 10, 9, 332.0, 46.5, 40100.0], 
+                         [20.0, .2322, 7714719.0, , , , , , , 622.0, 18.0, 12400.0],
+                         [10.0, .753, 8656621.0, , , , , , , 478.0, 24.7, 18100.0],
+                         [25.0, 3.7, 3027888.0, , , , , , 13.0, 98.5, 238000.0],
+                         [15.0, 1.01, 5229196.0, , , , , , 135.0, 46.0, 38800.0],
+                         [25.0, .502, 14599716.0, , , , , 456.0, 40.0, 32000.0]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"])
+else:
+    data = pd.read_csv(full_path)
+
+run_experiments(data)
+
+
