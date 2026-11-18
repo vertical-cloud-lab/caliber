@@ -12,7 +12,8 @@ from ax.core.search_space import SearchSpace
 from ax.modelbridge.factory import get_sobol
 
 
-TRUE_PCT_ALSIMG = np.array([80, 10, 10])
+TRUE_PCT_ALSIMG = np.array([89.675, 10.0, .325])
+scalarization = np.array([1/4, 1, 12])
 
 def run_experiments(prev_data: pd.DataFrame=None):
     # define these names as variables for reuse (e.g., branin function return)
@@ -105,14 +106,14 @@ def run_experiments(prev_data: pd.DataFrame=None):
             pct_Si = float(input(f"What was the recorded percent of Silicon for trial {trial_index}: "))
             pct_Mg = float(input(f"What was the recorded percent of Magnesium for trial {trial_index}: "))
 
-            comp_err = np.sum((np.array([pct_Al, pct_Si, pct_Mg]) - TRUE_PCT_ALSIMG)**2)
+            comp_err = np.sum(np.abs((np.array([pct_Al, pct_Si, pct_Mg]) - TRUE_PCT_ALSIMG)) * scalarization)
 
             # report the results back to the algorithm
             ax_client.complete_trial(trial_index=trial_index, raw_data={"comp_error": comp_err, "acq_time": times[i]})
             now = datetime.now()
 
             formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
-            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i], x_rates[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time"])), ignore_index=True, axis=0)
+            prev_data = pd.concat( (prev_data, pd.DataFrame([[x1, x2, x3, comp_err, times[i], formatted_time, pct_Al, pct_Si, pct_Mg, live_times[i], dead_pcts[i], x_rates[i]]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"])), ignore_index=True, axis=0)
             prev_data.to_csv("SEM_ALSI10MG_OPTIM_data.csv", index=False)
     pareto_results = ax_client.get_pareto_optimal_parameters()
 
@@ -146,13 +147,15 @@ for root, dirs, files in os.walk(search_root):
     if target_file in files:
         full_path = os.path.join(root, target_file)
 if full_path == None:
+    # TRUE_PCT_ALSIMG = np.array([89.675, 10.0, .325])
+    # [2.22625 3.97625 1.08125 4.07875 2.85875 4.94375]
     # "voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"
-    data = pd.DataFrame([[5.0,6.04, 13344683.0, 5.65, 30.5, "dfsdf", 81, 10, 9, 332.0, 46.5, 40100.0], 
-                         [20.0, .2322, 7714719.0, , , , , , , 622.0, 18.0, 12400.0],
-                         [10.0, .753, 8656621.0, , , , , , , 478.0, 24.7, 18100.0],
-                         [25.0, 3.7, 3027888.0, , , , , , 13.0, 98.5, 238000.0],
-                         [15.0, 1.01, 5229196.0, , , , , , 135.0, 46.0, 38800.0],
-                         [25.0, .502, 14599716.0, , , , , 456.0, 40.0, 32000.0]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"])
+    data = pd.DataFrame([[5.0, 6.4, 13344683, 2.22625, 620.56, "11/6/26 11:43 AM", 88.01, 11.35, .63, 332.0, 46.5, 40100.0], 
+                         [20.0, .2, 7714719, 3.97625, 758.54, "11/6/26 11:58 AM", 90.55, 9.27, .17, 622.0, 18.0, 12400.0],
+                         [10.0, .8, 8656621, 1.08125, 635.55, "11/6/26 12:14 PM", 89.34, 10.15, .51, 478.0, 24.7, 18100.0],
+                         [25.0, 3.2, 3027888, 4.07875, 866.67, "11/6/26 12:28 PM", 89.81, 10.19, 0.0, 13.0, 98.5, 238000.0],
+                         [15.0, .8, 5229196, 2.85875, 250.0, "11/6/26 12:47 PM", 89.72, 10.03, .25, 135.0, 46.0, 38800.0],
+                         [25.0, .4, 14599716, 4.94375, 760.0, "11/11/26 11:23 AM", 90.57, 9.43, 0.0, 456.0, 40.0, 32000.0]], columns=["voltage", "current", "x_counts", "comp_error", "acq_time", "datetime", "pct_Al", "pct_Si", "pct_Mg", "live_time", "pct_dead_time", "X_rate"])
 else:
     data = pd.read_csv(full_path)
 
