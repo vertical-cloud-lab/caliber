@@ -1,0 +1,103 @@
+1. (newbury2015performingelementalmicroanalysis pages 20-21): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+2. (batanova2018traceelementanalysis pages 3-6): V G Batanova, A V Sobolev, and V Magnin. Trace element analysis by epma in geosciences: detection limit, precision and accuracy. IOP Conference Series: Materials Science and Engineering, 304:012001, Jan 2018. URL: https://doi.org/10.1088/1757-899x/304/1/012001, doi:10.1088/1757-899x/304/1/012001. This article has 91 citations.
+
+3. (newbury2011isscanningelectron pages 2-3): Dale E. Newbury and Nicholas W. M. Ritchie. Is scanning electron microscopy/energy dispersive x-ray spectroscopy (sem/eds) quantitative? effect of specimen shape. SPIE Proceedings, 8036:803602, May 2011. URL: https://doi.org/10.1117/12.881040, doi:10.1117/12.881040. This article has 4 citations.
+
+4. (newbury2019electronexcitedxraymicroanalysis pages 5-6): Dale E. Newbury and Nicholas W.M. Ritchie. Electron-excited x-ray microanalysis by energy dispersive spectrometry at 50: analytical accuracy, precision, trace sensitivity, and quantitative compositional mapping. Microscopy and Microanalysis, 25:1075-1105, Oct 2019. URL: https://doi.org/10.1017/s143192761901482x, doi:10.1017/s143192761901482x. This article has 76 citations and is from a peer-reviewed journal.
+
+5. (newbury2019electronexcitedxraymicroanalysis pages 4-5): Dale E. Newbury and Nicholas W.M. Ritchie. Electron-excited x-ray microanalysis by energy dispersive spectrometry at 50: analytical accuracy, precision, trace sensitivity, and quantitative compositional mapping. Microscopy and Microanalysis, 25:1075-1105, Oct 2019. URL: https://doi.org/10.1017/s143192761901482x, doi:10.1017/s143192761901482x. This article has 76 citations and is from a peer-reviewed journal.
+
+6. (small2002theanalysisof pages 11-12): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+7. (small2002theanalysisof pages 6-7): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+8. (small2002theanalysisof pages 7-9): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+9. (small2002theanalysisof pages 2-6): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+10. (giunto2026accuratesemedsquantification pages 3-5): A. Giunto, Yu-Xing Fei, Pragnay Nevatia, Bernardus Rendy, N. Szymanski, and Gerbrand Ceder. Accurate sem-eds quantification, automation, and machine learning enable high-throughput compositional characterization of powders. Nature Communications, Aug 2026. URL: https://doi.org/10.1038/s41467-026-76633-x, doi:10.1038/s41467-026-76633-x. This article has 4 citations and is from a highest quality peer-reviewed journal.
+
+11. (giunto2026accuratesemedsquantification pages 1-3): A. Giunto, Yu-Xing Fei, Pragnay Nevatia, Bernardus Rendy, N. Szymanski, and Gerbrand Ceder. Accurate sem-eds quantification, automation, and machine learning enable high-throughput compositional characterization of powders. Nature Communications, Aug 2026. URL: https://doi.org/10.1038/s41467-026-76633-x, doi:10.1038/s41467-026-76633-x. This article has 4 citations and is from a highest quality peer-reviewed journal.
+
+12. (giunto2026accuratesemedsquantification pages 14-15): A. Giunto, Yu-Xing Fei, Pragnay Nevatia, Bernardus Rendy, N. Szymanski, and Gerbrand Ceder. Accurate sem-eds quantification, automation, and machine learning enable high-throughput compositional characterization of powders. Nature Communications, Aug 2026. URL: https://doi.org/10.1038/s41467-026-76633-x, doi:10.1038/s41467-026-76633-x. This article has 4 citations and is from a highest quality peer-reviewed journal.
+
+13. (trivedi2003dynamicalevolutionof pages 1-3): R. Trivedi, F. Jin, and I.E. Anderson. Dynamical evolution of microstructure in finely atomized droplets of al-si alloys. Acta Materialia, 51:289-300, Jan 2003. URL: https://doi.org/10.1016/s1359-6454(02)00226-4, doi:10.1016/s1359-6454(02)00226-4. This article has 117 citations and is from a highest quality peer-reviewed journal.
+
+14. (vanzetti2023designandcharacterization pages 7-10): Matteo Vanzetti, Michael J. Pavel, C. Jacob Williamson, Elisa Padovano, Lorena I. Pérez-Andrade, Mark Weaver, Luke N. Brewer, Federica Bondioli, and Paolo Fino. Design and characterization of innovative gas-atomized al-si-cu-mg alloys for additive manufacturing. Metals, 13:1845, Nov 2023. URL: https://doi.org/10.3390/met13111845, doi:10.3390/met13111845. This article has 12 citations.
+
+15. (albu2020microstructureevolutionduring pages 3-4): Mihaela Albu, Robert Krisper, Judith Lammer, Gerald Kothleitner, Jacopo Fiocchi, and Paola Bassani. Microstructure evolution during in-situ heating of alsi10mg alloy powders and additive manufactured parts. Additive manufacturing, 36:101605, Dec 2020. URL: https://doi.org/10.1016/j.addma.2020.101605, doi:10.1016/j.addma.2020.101605. This article has 102 citations and is from a highest quality peer-reviewed journal.
+
+16. (genau2004microstructuraldevelopmentin pages 12-18): Amber Lynn Genau. Microstructural development in al-si powder during rapid solidification. ArXiv, Dec 2004. URL: https://doi.org/10.2172/835374, doi:10.2172/835374. This article has 7 citations.
+
+17. (genau2004microstructuraldevelopmentin pages 60-66): Amber Lynn Genau. Microstructural development in al-si powder during rapid solidification. ArXiv, Dec 2004. URL: https://doi.org/10.2172/835374, doi:10.2172/835374. This article has 7 citations.
+
+18. (genau2004microstructuraldevelopmentin pages 7-12): Amber Lynn Genau. Microstructural development in al-si powder during rapid solidification. ArXiv, Dec 2004. URL: https://doi.org/10.2172/835374, doi:10.2172/835374. This article has 7 citations.
+
+19. (giunto2025harnessingautomatedsemeds pages 7-10): Andrea Giunto, Yuxing Fei, Pragnay Nevatia, Bernardus Rendy, Nathan Szymanski, and Gerbrand Ceder. Harnessing automated sem-eds and machine learning to unlock high-throughput compositional characterization of powder materials. Unknown journal, Oct 2025. URL: https://doi.org/10.21203/rs.3.rs-7837297/v1, doi:10.21203/rs.3.rs-7837297/v1.
+
+20. (neikov2019powdercharacterizationand pages 1-3): Oleg D. Neikov and Nikolay A. Yefimov. Powder characterization and testing. Handbook of Non-Ferrous Metal Powders, pages 3-62, Jan 2019. URL: https://doi.org/10.1016/b978-0-08-100543-9.00001-4, doi:10.1016/b978-0-08-100543-9.00001-4. This article has 109 citations.
+
+21. (neikov2019powdercharacterizationand pages 26-28): Oleg D. Neikov and Nikolay A. Yefimov. Powder characterization and testing. Handbook of Non-Ferrous Metal Powders, pages 3-62, Jan 2019. URL: https://doi.org/10.1016/b978-0-08-100543-9.00001-4, doi:10.1016/b978-0-08-100543-9.00001-4. This article has 109 citations.
+
+22. (newbury2019electronexcitedxraymicroanalysis pages 13-15): Dale E. Newbury and Nicholas W.M. Ritchie. Electron-excited x-ray microanalysis by energy dispersive spectrometry at 50: analytical accuracy, precision, trace sensitivity, and quantitative compositional mapping. Microscopy and Microanalysis, 25:1075-1105, Oct 2019. URL: https://doi.org/10.1017/s143192761901482x, doi:10.1017/s143192761901482x. This article has 76 citations and is from a peer-reviewed journal.
+
+23. (andersenUnknownyearascanningelectron pages 4-6): NL Andersen and H Winslow. A scanning electron microscope-energy dispersive spectrometry (sem-eds) method for the quantitative analysis of common volcanic phases. Unknown journal, Unknown year.
+
+24. (newbury2015performingelementalmicroanalysis pages 6-7): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+25. (newbury2015performingelementalmicroanalysis pages 1-2): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+26. (andersenUnknownyearascanningelectron pages 12-15): NL Andersen and H Winslow. A scanning electron microscope-energy dispersive spectrometry (sem-eds) method for the quantitative analysis of common volcanic phases. Unknown journal, Unknown year.
+
+27. (newbury2015performingelementalmicroanalysis pages 4-5): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+28. (tong2026measurementuncertaintiesof pages 21-24): V. Tong and K. Mingard. Measurement uncertainties of energy dispersive X-ray spectroscopy in the scanning electron microscope (SEM-EDX/EDS). National Physical Laboratory, Mar 2026. URL: https://doi.org/10.47120/npl.mat135, doi:10.47120/npl.mat135.
+
+29. (tong2026measurementuncertaintiesof pages 24-26): V. Tong and K. Mingard. Measurement uncertainties of energy dispersive X-ray spectroscopy in the scanning electron microscope (SEM-EDX/EDS). National Physical Laboratory, Mar 2026. URL: https://doi.org/10.47120/npl.mat135, doi:10.47120/npl.mat135.
+
+30. (tong2026measurementuncertaintiesof pages 1-8): V. Tong and K. Mingard. Measurement uncertainties of energy dispersive X-ray spectroscopy in the scanning electron microscope (SEM-EDX/EDS). National Physical Laboratory, Mar 2026. URL: https://doi.org/10.47120/npl.mat135, doi:10.47120/npl.mat135.
+
+31. (newbury2011isscanningelectron pages 10-13): Dale E. Newbury and Nicholas W. M. Ritchie. Is scanning electron microscopy/energy dispersive x-ray spectroscopy (sem/eds) quantitative? effect of specimen shape. SPIE Proceedings, 8036:803602, May 2011. URL: https://doi.org/10.1117/12.881040, doi:10.1117/12.881040. This article has 4 citations.
+
+32. (newbury2011isscanningelectron pages 13-16): Dale E. Newbury and Nicholas W. M. Ritchie. Is scanning electron microscopy/energy dispersive x-ray spectroscopy (sem/eds) quantitative? effect of specimen shape. SPIE Proceedings, 8036:803602, May 2011. URL: https://doi.org/10.1117/12.881040, doi:10.1117/12.881040. This article has 4 citations.
+
+33. (newbury2015performingelementalmicroanalysis pages 5-6): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+34. (giunto2025harnessingautomatedsemeds pages 4-6): Andrea Giunto, Yuxing Fei, Pragnay Nevatia, Bernardus Rendy, Nathan Szymanski, and Gerbrand Ceder. Harnessing automated sem-eds and machine learning to unlock high-throughput compositional characterization of powder materials. Unknown journal, Oct 2025. URL: https://doi.org/10.21203/rs.3.rs-7837297/v1, doi:10.21203/rs.3.rs-7837297/v1.
+
+35. (goldstein2018quantitativeanalysisthe pages 30-31): Joseph I. Goldstein, Dale E. Newbury, Joseph R. Michael, Nicholas W. M. Ritchie, John Henry J. Scott, and David C. Joy. Quantitative analysis: the sem/eds elemental microanalysis k-ratio procedure for bulk specimens, step-by-step. ArXiv, pages 309-339, Nov 2018. URL: https://doi.org/10.1007/978-1-4939-6676-9\_20, doi:10.1007/978-1-4939-6676-9\_20. This article has 10 citations.
+
+36. (giunto2025harnessingautomatedsemeds pages 20-22): Andrea Giunto, Yuxing Fei, Pragnay Nevatia, Bernardus Rendy, Nathan Szymanski, and Gerbrand Ceder. Harnessing automated sem-eds and machine learning to unlock high-throughput compositional characterization of powder materials. Unknown journal, Oct 2025. URL: https://doi.org/10.21203/rs.3.rs-7837297/v1, doi:10.21203/rs.3.rs-7837297/v1.
+
+37. (small2002theanalysisof pages 1-2): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+38. (small2002theanalysisof pages 9-11): J.A. Small. The analysis of particles at low accelerating voltages (&lt;= 10 kv) with energy dispersive x-ray spectroscopy (eds). Journal of Research of the National Institute of Standards and Technology, 107:555, Nov 2002. URL: https://doi.org/10.6028/jres.107.047, doi:10.6028/jres.107.047. This article has 66 citations and is from a peer-reviewed journal.
+
+39. (trivedi2003dynamicalevolutionof pages 3-4): R. Trivedi, F. Jin, and I.E. Anderson. Dynamical evolution of microstructure in finely atomized droplets of al-si alloys. Acta Materialia, 51:289-300, Jan 2003. URL: https://doi.org/10.1016/s1359-6454(02)00226-4, doi:10.1016/s1359-6454(02)00226-4. This article has 117 citations and is from a highest quality peer-reviewed journal.
+
+40. (genau2004microstructuraldevelopmentin pages 29-37): Amber Lynn Genau. Microstructural development in al-si powder during rapid solidification. ArXiv, Dec 2004. URL: https://doi.org/10.2172/835374, doi:10.2172/835374. This article has 7 citations.
+
+41. (balbaa2021roleofpowder pages 4-8): M.A. Balbaa, A. Ghasemi, E. Fereiduni, M.A. Elbestawi, S.D. Jadhav, and J.-P. Kruth. Role of powder particle size on laser powder bed fusion processability of alsi10mg alloy. Additive Manufacturing, 37:101630, Jan 2021. URL: https://doi.org/10.1016/j.addma.2020.101630, doi:10.1016/j.addma.2020.101630. This article has 249 citations and is from a highest quality peer-reviewed journal.
+
+42. (genau2004microstructuraldevelopmentin pages 51-56): Amber Lynn Genau. Microstructural development in al-si powder during rapid solidification. ArXiv, Dec 2004. URL: https://doi.org/10.2172/835374, doi:10.2172/835374. This article has 7 citations.
+
+43. (neikov2019powdercharacterizationand pages 3-4): Oleg D. Neikov and Nikolay A. Yefimov. Powder characterization and testing. Handbook of Non-Ferrous Metal Powders, pages 3-62, Jan 2019. URL: https://doi.org/10.1016/b978-0-08-100543-9.00001-4, doi:10.1016/b978-0-08-100543-9.00001-4. This article has 109 citations.
+
+44. (giunto2026accuratesemedsquantification pages 8-14): A. Giunto, Yu-Xing Fei, Pragnay Nevatia, Bernardus Rendy, N. Szymanski, and Gerbrand Ceder. Accurate sem-eds quantification, automation, and machine learning enable high-throughput compositional characterization of powders. Nature Communications, Aug 2026. URL: https://doi.org/10.1038/s41467-026-76633-x, doi:10.1038/s41467-026-76633-x. This article has 4 citations and is from a highest quality peer-reviewed journal.
+
+45. (vanzetti2023designandcharacterization pages 2-3): Matteo Vanzetti, Michael J. Pavel, C. Jacob Williamson, Elisa Padovano, Lorena I. Pérez-Andrade, Mark Weaver, Luke N. Brewer, Federica Bondioli, and Paolo Fino. Design and characterization of innovative gas-atomized al-si-cu-mg alloys for additive manufacturing. Metals, 13:1845, Nov 2023. URL: https://doi.org/10.3390/met13111845, doi:10.3390/met13111845. This article has 12 citations.
+
+46. (neikov2019powdercharacterizationand pages 12-13): Oleg D. Neikov and Nikolay A. Yefimov. Powder characterization and testing. Handbook of Non-Ferrous Metal Powders, pages 3-62, Jan 2019. URL: https://doi.org/10.1016/b978-0-08-100543-9.00001-4, doi:10.1016/b978-0-08-100543-9.00001-4. This article has 109 citations.
+
+47. (vanzetti2023designandcharacterization pages 10-14): Matteo Vanzetti, Michael J. Pavel, C. Jacob Williamson, Elisa Padovano, Lorena I. Pérez-Andrade, Mark Weaver, Luke N. Brewer, Federica Bondioli, and Paolo Fino. Design and characterization of innovative gas-atomized al-si-cu-mg alloys for additive manufacturing. Metals, 13:1845, Nov 2023. URL: https://doi.org/10.3390/met13111845, doi:10.3390/met13111845. This article has 12 citations.
+
+48. (mostafaei2018comparisonofcharacterization pages 1-5): Amir Mostafaei, Colleen Hilla, Erica L. Stevens, Peeyush Nandwana, Amy M. Elliott, and Markus Chmielus. Comparison of characterization methods for differently atomized nickel-based alloy 625 powders. Powder Technology, 333:180-192, Jun 2018. URL: https://doi.org/10.1016/j.powtec.2018.04.014, doi:10.1016/j.powtec.2018.04.014. This article has 53 citations and is from a domain leading peer-reviewed journal.
+
+49. (mostafaei2018comparisonofcharacterization pages 5-9): Amir Mostafaei, Colleen Hilla, Erica L. Stevens, Peeyush Nandwana, Amy M. Elliott, and Markus Chmielus. Comparison of characterization methods for differently atomized nickel-based alloy 625 powders. Powder Technology, 333:180-192, Jun 2018. URL: https://doi.org/10.1016/j.powtec.2018.04.014, doi:10.1016/j.powtec.2018.04.014. This article has 53 citations and is from a domain leading peer-reviewed journal.
+
+50. (newbury2015performingelementalmicroanalysis pages 11-13): Dale E. Newbury and Nicholas W. M. Ritchie. Performing elemental microanalysis with high accuracy and high precision by scanning electron microscopy/silicon drift detector energy-dispersive x-ray spectrometry (sem/sdd-eds). Journal of Materials Science, 50:493-518, Nov 2015. URL: https://doi.org/10.1007/s10853-014-8685-2, doi:10.1007/s10853-014-8685-2. This article has 642 citations and is from a peer-reviewed journal.
+
+51. (goldstein2018quantitativeanalysisthe pages 6-8): Joseph I. Goldstein, Dale E. Newbury, Joseph R. Michael, Nicholas W. M. Ritchie, John Henry J. Scott, and David C. Joy. Quantitative analysis: the sem/eds elemental microanalysis k-ratio procedure for bulk specimens, step-by-step. ArXiv, pages 309-339, Nov 2018. URL: https://doi.org/10.1007/978-1-4939-6676-9\_20, doi:10.1007/978-1-4939-6676-9\_20. This article has 10 citations.
+
+52. (newbury2019electronexcitedxraymicroanalysis pages 3-4): Dale E. Newbury and Nicholas W.M. Ritchie. Electron-excited x-ray microanalysis by energy dispersive spectrometry at 50: analytical accuracy, precision, trace sensitivity, and quantitative compositional mapping. Microscopy and Microanalysis, 25:1075-1105, Oct 2019. URL: https://doi.org/10.1017/s143192761901482x, doi:10.1017/s143192761901482x. This article has 76 citations and is from a peer-reviewed journal.
