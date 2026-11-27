@@ -1,0 +1,87 @@
+1. (weaver2021understandinganisotropictensile pages 10-12): JS Weaver, JS Weaver, and I Rosenthal. Understanding anisotropic tensile properties of laser powder bed fusion additive metals: a detailed review of select examples. ArXiv, Nov 2021. URL: https://doi.org/10.6028/nist.ams.100-44, doi:10.6028/nist.ams.100-44. This article has 42 citations.
+
+2. (weaver2021understandinganisotropictensile pages 8-10): JS Weaver, JS Weaver, and I Rosenthal. Understanding anisotropic tensile properties of laser powder bed fusion additive metals: a detailed review of select examples. ArXiv, Nov 2021. URL: https://doi.org/10.6028/nist.ams.100-44, doi:10.6028/nist.ams.100-44. This article has 42 citations.
+
+3. (iraki2024accuratedistancesmeasures pages 1-3): Tarek Iraki, Lukas Morand, Norbert Link, Stefan Sandfeld, and Dirk Helm. Accurate distances measures and machine learning of the texture-property relation for crystallographic textures represented by one-point statistics. May 2024. URL: https://doi.org/10.1088/1361-651x/ad4c81, doi:10.1088/1361-651x/ad4c81. This article has 4 citations and is from a peer-reviewed journal.
+
+4. (weaver2021understandinganisotropictensile pages 12-15): JS Weaver, JS Weaver, and I Rosenthal. Understanding anisotropic tensile properties of laser powder bed fusion additive metals: a detailed review of select examples. ArXiv, Nov 2021. URL: https://doi.org/10.6028/nist.ams.100-44, doi:10.6028/nist.ams.100-44. This article has 42 citations.
+
+5. (weaver2021understandinganisotropictensile pages 25-27): JS Weaver, JS Weaver, and I Rosenthal. Understanding anisotropic tensile properties of laser powder bed fusion additive metals: a detailed review of select examples. ArXiv, Nov 2021. URL: https://doi.org/10.6028/nist.ams.100-44, doi:10.6028/nist.ams.100-44. This article has 42 citations.
+
+6. (mingard2023theuseof pages 8-15): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+7. (flipon2021grainsizecharacterization pages 1-2): B. Flipon, V. Grand, B. Murgas, A. Gaillac, A. Nicolaÿ, N. Bozzolo, and M. Bernacki. Grain size characterization in metallic alloys using different microscopy and post-processing techniques. Materials Characterization, 174:110977, Apr 2021. URL: https://doi.org/10.1016/j.matchar.2021.110977, doi:10.1016/j.matchar.2021.110977. This article has 39 citations and is from a peer-reviewed journal.
+
+8. (flipon2021grainsizecharacterization pages 6-8): B. Flipon, V. Grand, B. Murgas, A. Gaillac, A. Nicolaÿ, N. Bozzolo, and M. Bernacki. Grain size characterization in metallic alloys using different microscopy and post-processing techniques. Materials Characterization, 174:110977, Apr 2021. URL: https://doi.org/10.1016/j.matchar.2021.110977, doi:10.1016/j.matchar.2021.110977. This article has 39 citations and is from a peer-reviewed journal.
+
+9. (mingard2023theuseof pages 24-29): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+10. (lakshmanan2022crystalplasticityconstitutive pages 138-143): Aaditya Lakshmanan. Crystal plasticity constitutive modeling of grain size-texture coupling with application to mg-4al. Unknown, Jan 2022. URL: https://doi.org/10.7302/4607, doi:10.7302/4607. This article has 0 citations.
+
+11. (mingard2023theuseof pages 15-20): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+12. (zhang2022effectsofgrain pages 4-6): Mingxian Zhang, Chenxin Zhang, Huan-chuan Wu, and Bin Yang. Effects of grain boundary engineering on the microstructure and corrosion fatigue properties of 316l austenitic stainless steel. Frontiers in Materials, Jun 2022. URL: https://doi.org/10.3389/fmats.2022.931848, doi:10.3389/fmats.2022.931848. This article has 27 citations.
+
+13. (barr2018trackingtheevolution pages 2-3): Christopher M. Barr, Sebastian Thomas, James L. Hart, Wayne Harlow, Elaf Anber, and Mitra L. Taheri. Tracking the evolution of intergranular corrosion through twin-related domains in grain boundary networks. npj Materials Degradation, 2:1-10, Apr 2018. URL: https://doi.org/10.1038/s41529-018-0032-7, doi:10.1038/s41529-018-0032-7. This article has 64 citations and is from a peer-reviewed journal.
+
+14. (zhang2022effectsofgrain pages 1-2): Mingxian Zhang, Chenxin Zhang, Huan-chuan Wu, and Bin Yang. Effects of grain boundary engineering on the microstructure and corrosion fatigue properties of 316l austenitic stainless steel. Frontiers in Materials, Jun 2022. URL: https://doi.org/10.3389/fmats.2022.931848, doi:10.3389/fmats.2022.931848. This article has 27 citations.
+
+15. (liu2019grainboundaryengineering pages 6-8): Tingguang Liu, Qin Bai, Xiangkun Ru, Shuang Xia, Xiangyu Zhong, Yonghao Lu, and Tetsuo Shoji. Grain boundary engineering for improving stress corrosion cracking of 304 stainless steel. Mar 2019. URL: https://doi.org/10.1080/02670836.2019.1570661, doi:10.1080/02670836.2019.1570661. This article has 28 citations and is from a peer-reviewed journal.
+
+16. (bettayeb2019combinedinsitu pages 9-13): Mohamed Bettayeb, Vincent Maurice, Lorena H. Klein, Linsey Lapeire, Kim Verbeken, and Philippe Marcusa. Combined in situ microstructural study of the relationships between local grain boundary structure and passivation on microcrystalline copper. Electrochimica Acta, Mar 2019. URL: https://doi.org/10.48550/arxiv.1903.05371, doi:10.48550/arxiv.1903.05371. This article has 22 citations and is from a domain leading peer-reviewed journal.
+
+17. (bettayeb2019combinedinsitu pages 13-18): Mohamed Bettayeb, Vincent Maurice, Lorena H. Klein, Linsey Lapeire, Kim Verbeken, and Philippe Marcusa. Combined in situ microstructural study of the relationships between local grain boundary structure and passivation on microcrystalline copper. Electrochimica Acta, Mar 2019. URL: https://doi.org/10.48550/arxiv.1903.05371, doi:10.48550/arxiv.1903.05371. This article has 22 citations and is from a domain leading peer-reviewed journal.
+
+18. (marquardt2018thestructureand pages 9-13): K. Marquardt, U. Faul, and U. Faul. The structure and composition of olivine grain boundaries: 40 years of studies, status and current developments. Physics and Chemistry of Minerals, 45:139-172, Jan 2018. URL: https://doi.org/10.1007/s00269-017-0935-9, doi:10.1007/s00269-017-0935-9. This article has 62 citations and is from a peer-reviewed journal.
+
+19. (marquardt2018thestructureand pages 6-9): K. Marquardt, U. Faul, and U. Faul. The structure and composition of olivine grain boundaries: 40 years of studies, status and current developments. Physics and Chemistry of Minerals, 45:139-172, Jan 2018. URL: https://doi.org/10.1007/s00269-017-0935-9, doi:10.1007/s00269-017-0935-9. This article has 62 citations and is from a peer-reviewed journal.
+
+20. (mingard2023theuseof pages 29-33): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+21. (mingard2023theuseof pages 33-41): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+22. (briffod2019effectofcrystallographic pages 1-4): Fabien Briffod, Alexandre Bleuset, Takayuki Shiraiwa, and Manabu Enoki. Effect of crystallographic orientation and geometrical compatibility on fatigue crack initiation and propagation in rolled ti-6al-4v alloy. Acta Materialia, 177:56-67, Sep 2019. URL: https://doi.org/10.1016/j.actamat.2019.07.025, doi:10.1016/j.actamat.2019.07.025. This article has 196 citations and is from a highest quality peer-reviewed journal.
+
+23. (snopinski2022evolutionofmicrostructure pages 4-6): Przemysław Snopiński, Anna Woźniak, Dariusz Łukowiec, Krzysztof Matus, Tomasz Tański, Stanislav Rusz, and Ondřej Hilšer. Evolution of microstructure, texture and corrosion properties of additively manufactured alsi10mg alloy subjected to equal channel angular pressing (ecap). Symmetry, 14:674, Mar 2022. URL: https://doi.org/10.3390/sym14040674, doi:10.3390/sym14040674. This article has 25 citations.
+
+24. (snopinski2022evolutionofmicrostructure pages 9-12): Przemysław Snopiński, Anna Woźniak, Dariusz Łukowiec, Krzysztof Matus, Tomasz Tański, Stanislav Rusz, and Ondřej Hilšer. Evolution of microstructure, texture and corrosion properties of additively manufactured alsi10mg alloy subjected to equal channel angular pressing (ecap). Symmetry, 14:674, Mar 2022. URL: https://doi.org/10.3390/sym14040674, doi:10.3390/sym14040674. This article has 25 citations.
+
+25. (roy2026themechanisticaspects pages 34-43): Ronit Roy, Johan E. Westraadt, and Janelle P. Wharry. The mechanistic aspects of chloride-induced stress corrosion cracking and internal pitting in stainless steel. Unknown journal, Aug 2026. URL: https://doi.org/10.21203/rs.3.rs-10491066/v1, doi:10.21203/rs.3.rs-10491066/v1.
+
+26. (roy2026themechanisticaspects pages 43-46): Ronit Roy, Johan E. Westraadt, and Janelle P. Wharry. The mechanistic aspects of chloride-induced stress corrosion cracking and internal pitting in stainless steel. Unknown journal, Aug 2026. URL: https://doi.org/10.21203/rs.3.rs-10491066/v1, doi:10.21203/rs.3.rs-10491066/v1.
+
+27. (briffod2019effectofcrystallographic pages 24-28): Fabien Briffod, Alexandre Bleuset, Takayuki Shiraiwa, and Manabu Enoki. Effect of crystallographic orientation and geometrical compatibility on fatigue crack initiation and propagation in rolled ti-6al-4v alloy. Acta Materialia, 177:56-67, Sep 2019. URL: https://doi.org/10.1016/j.actamat.2019.07.025, doi:10.1016/j.actamat.2019.07.025. This article has 196 citations and is from a highest quality peer-reviewed journal.
+
+28. (roy2026themechanisticaspects pages 11-15): Ronit Roy, Johan E. Westraadt, and Janelle P. Wharry. The mechanistic aspects of chloride-induced stress corrosion cracking and internal pitting in stainless steel. Unknown journal, Aug 2026. URL: https://doi.org/10.21203/rs.3.rs-10491066/v1, doi:10.21203/rs.3.rs-10491066/v1.
+
+29. (niessen2022parentgrainreconstruction pages 27-30): Frank Niessen, Tuomo Nyyssönen, Azdiar A. Gazder, and Ralf Hielscher. Parent grain reconstruction from partially or fully transformed microstructures in mtex. Journal of Applied Crystallography, 55:180-194, Apr 2022. URL: https://doi.org/10.48550/arxiv.2104.14603, doi:10.48550/arxiv.2104.14603. This article has 356 citations and is from a peer-reviewed journal.
+
+30. (niessen2022parentgrainreconstruction pages 22-27): Frank Niessen, Tuomo Nyyssönen, Azdiar A. Gazder, and Ralf Hielscher. Parent grain reconstruction from partially or fully transformed microstructures in mtex. Journal of Applied Crystallography, 55:180-194, Apr 2022. URL: https://doi.org/10.48550/arxiv.2104.14603, doi:10.48550/arxiv.2104.14603. This article has 356 citations and is from a peer-reviewed journal.
+
+31. (haines2025onthemartensitic pages 1-3): Michael P. Haines, Ehsan Farabi, Nima Haghdadi, and Sophie Primig. On the martensitic phase transformation and grain boundary character evolution in laser powder bed fusion 17-4 precipitation hardened stainless steel. Journal of Materials Science, 60:3430-3453, Jan 2025. URL: https://doi.org/10.1007/s10853-025-10645-8, doi:10.1007/s10853-025-10645-8. This article has 8 citations and is from a peer-reviewed journal.
+
+32. (niessen2022parentgrainreconstruction pages 1-4): Frank Niessen, Tuomo Nyyssönen, Azdiar A. Gazder, and Ralf Hielscher. Parent grain reconstruction from partially or fully transformed microstructures in mtex. Journal of Applied Crystallography, 55:180-194, Apr 2022. URL: https://doi.org/10.48550/arxiv.2104.14603, doi:10.48550/arxiv.2104.14603. This article has 356 citations and is from a peer-reviewed journal.
+
+33. (niessen2022parentgrainreconstruction pages 7-11): Frank Niessen, Tuomo Nyyssönen, Azdiar A. Gazder, and Ralf Hielscher. Parent grain reconstruction from partially or fully transformed microstructures in mtex. Journal of Applied Crystallography, 55:180-194, Apr 2022. URL: https://doi.org/10.48550/arxiv.2104.14603, doi:10.48550/arxiv.2104.14603. This article has 356 citations and is from a peer-reviewed journal.
+
+34. (haines2025onthemartensitic pages 21-23): Michael P. Haines, Ehsan Farabi, Nima Haghdadi, and Sophie Primig. On the martensitic phase transformation and grain boundary character evolution in laser powder bed fusion 17-4 precipitation hardened stainless steel. Journal of Materials Science, 60:3430-3453, Jan 2025. URL: https://doi.org/10.1007/s10853-025-10645-8, doi:10.1007/s10853-025-10645-8. This article has 8 citations and is from a peer-reviewed journal.
+
+35. (haines2025onthemartensitic pages 13-15): Michael P. Haines, Ehsan Farabi, Nima Haghdadi, and Sophie Primig. On the martensitic phase transformation and grain boundary character evolution in laser powder bed fusion 17-4 precipitation hardened stainless steel. Journal of Materials Science, 60:3430-3453, Jan 2025. URL: https://doi.org/10.1007/s10853-025-10645-8, doi:10.1007/s10853-025-10645-8. This article has 8 citations and is from a peer-reviewed journal.
+
+36. (dillon2022grainboundaryenergies pages 2-2): Shen J. Dillon, Yu‐Feng Shen, and Gregory S. Rohrer. Grain boundary energies in yttria‐stabilized zirconia. Journal of the American Ceramic Society, 105:2925-2931, Dec 2022. URL: https://doi.org/10.1111/jace.18283, doi:10.1111/jace.18283. This article has 16 citations and is from a domain leading peer-reviewed journal.
+
+37. (dillon2022grainboundaryenergies pages 1-2): Shen J. Dillon, Yu‐Feng Shen, and Gregory S. Rohrer. Grain boundary energies in yttria‐stabilized zirconia. Journal of the American Ceramic Society, 105:2925-2931, Dec 2022. URL: https://doi.org/10.1111/jace.18283, doi:10.1111/jace.18283. This article has 16 citations and is from a domain leading peer-reviewed journal.
+
+38. (wanni2024machinelearningenhanced pages 1-2): J. Wanni, C. A. Bronkhorst, and D. J. Thoma. Machine learning enhanced analysis of ebsd data for texture representation. npj Computational Materials, 10:1-11, Jun 2024. URL: https://doi.org/10.1038/s41524-024-01324-4, doi:10.1038/s41524-024-01324-4. This article has 18 citations and is from a peer-reviewed journal.
+
+39. (mingard2023theuseof pages 1-8): K P Mingard. The use of ebsd for analysis of additively manufactured materials. ArXiv, Feb 2023. URL: https://doi.org/10.47120/npl.mgpg152, doi:10.47120/npl.mgpg152. This article has 4 citations.
+
+40. (ball2023pergrainandneighbourhood pages 3-4): James A. D. Ball, Anna Kareer, Oxana V. Magdysyuk, Stefan Michalik, Thomas Connolley, and David M. Collins. Per-grain and neighbourhood stress interactions during deformation of a ferritic steel obtained using three-dimensional x-ray diffraction. Text, Jan 2023. URL: https://doi.org/10.48550/arxiv.2302.10711, doi:10.48550/arxiv.2302.10711. This article has 6 citations and is from a peer-reviewed journal.
+
+41. (dillon2022grainboundaryenergies pages 3-3): Shen J. Dillon, Yu‐Feng Shen, and Gregory S. Rohrer. Grain boundary energies in yttria‐stabilized zirconia. Journal of the American Ceramic Society, 105:2925-2931, Dec 2022. URL: https://doi.org/10.1111/jace.18283, doi:10.1111/jace.18283. This article has 16 citations and is from a domain leading peer-reviewed journal.
+
+42. (briffod2019effectofcrystallographic pages 7-11): Fabien Briffod, Alexandre Bleuset, Takayuki Shiraiwa, and Manabu Enoki. Effect of crystallographic orientation and geometrical compatibility on fatigue crack initiation and propagation in rolled ti-6al-4v alloy. Acta Materialia, 177:56-67, Sep 2019. URL: https://doi.org/10.1016/j.actamat.2019.07.025, doi:10.1016/j.actamat.2019.07.025. This article has 196 citations and is from a highest quality peer-reviewed journal.
+
+43. (lakshmanan2022crystalplasticityconstitutive pages 74-81): Aaditya Lakshmanan. Crystal plasticity constitutive modeling of grain size-texture coupling with application to mg-4al. Unknown, Jan 2022. URL: https://doi.org/10.7302/4607, doi:10.7302/4607. This article has 0 citations.
+
+44. (beladi2020fiveparametergrainboundary pages 1-4): Hossein Beladi, Alireza Ghaderi, and Gregory S. Rohrer. Five-parameter grain boundary characterisation of randomly textured az31 mg alloy. Philosophical Magazine, 100:456-466, Feb 2020. URL: https://doi.org/10.1080/14786435.2019.1692154, doi:10.1080/14786435.2019.1692154. This article has 14 citations and is from a peer-reviewed journal.
