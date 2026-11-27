@@ -1,0 +1,9 @@
+| Scenario | Assumed relative Mg loss (%) | Powder Mg (wt%) | Predicted as-built Mg (wt%) | Basis/rationale |
+|---|---:|---:|---:|---|
+| Conservative (minimal loss) | 0-5 | 0.05-0.07 | 0.047-0.070 | Near-zero measurable composition change reported for AlSi10Mg powder recycling and AlSi7Mg0.6 powder/bulk comparisons; consistent with low Mg volatility impact under stable Ar LPBF conditions (pqac-00000021, pqac-00000022, pqac-00000023) |
+| Moderate loss | 5-15 | 0.05-0.07 | 0.043-0.067 | Extrapolated from LPBF Al-Zn-Mg data showing Mg losses of ~9-17% at 2.3-3.34 wt% Mg, combined with Langmuir/activity scaling for dilute Mg in Al alloys (pqac-00000020, pqac-00000032, pqac-00000004, pqac-00000016) |
+| High loss (upper bound) | 15-25 | 0.05-0.07 | 0.038-0.060 | Upper-bound case representing hotter/aggressive conditions, higher effective superheat, or stronger vaporization; informed by highest measured LPBF Mg loss in Al-18Zn-4Mg and general energy-density trends (pqac-00000020, pqac-00000032, pqac-00000031) |
+| Best estimate | 0-10 | 0.05-0.07 | 0.045-0.070 | Typical AlSi10Mg LPBF window (~200-400 W, 1000-1600 mm/s, Ar) likely closer to negligible-to-small Mg loss than high-Mg alloy behavior; practical expectation centered near ~0.05-0.065 wt% Mg (pqac-00000021, pqac-00000022, pqac-00000023, pqac-00000031) |
+
+
+*Table: This table gives scenario-based predicted magnesium ranges for as-built LPBF parts starting from 0.05-0.07 wt% Mg powder. It is useful for estimating likely retained Mg under typical AlSi10Mg processing and for bounding uncertainty with literature-based loss assumptions.*
