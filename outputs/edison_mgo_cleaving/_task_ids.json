@@ -1,0 +1,12 @@
+{
+  "q1_procedure": {
+    "task_id": "bce9f574-483e-4809-a690-13cd84f97e7a",
+    "job": "job-futurehouse-paperqa3-high",
+    "query": "How is bulk single-crystal MgO (periclase, rock-salt structure) cleaved along {100} at room temperature in air, and how reliable is it for a 10 x 10 x 10 mm cube? (1) Does placing a single-edge razor blade or chisel on a {100} face parallel to a cube edge and tapping it with a small hammer reliably produce a {100} cleavage, as the crystal vendor SPI Supplies describes in its note 'Cleaving and Polishing MgO Crystal Substrates'? (2) What tool (razor blade, knife edge, chisel, wedge), impact (light tap vs. sharp blow, hammer mass), support (hard anvil vs. compliant mat), and geometry (splitting the crystal in half vs. taking a thin slab near an edge; minimum slab thickness) are recommended? (3) What are the documented causes of failed or poor cleaves in MgO, e.g., dull blade, plastic deformation and dislocation slip on {110}<1-10> under the blade, subgrain boundaries, impurities, crack deflection, chipping, cleavage steps? (4) Does pre-scoring or sawing a notch help or hurt cleavage initiation in MgO? Cite primary literature (e.g., Gilman's cleavage experiments; Stokes, Johnston and Li; Westwood) and vendor or laboratory procedures where available, and give quantitative values (fracture toughness, {100} cleavage surface energy, hardness) where possible."
+  },
+  "q2_sharpness": {
+    "task_id": "9c464786-f61c-42ae-976d-44c5d22f854c",
+    "job": "job-futurehouse-paperqa3-high",
+    "query": "In wedge or knife-edge cleaving of brittle ionic single crystals such as MgO, LiF, NaCl and mica, what makes a blade or crack starter 'sharp' enough to initiate cleavage? Give quantitative criteria where available: the edge (tip) radius of new versus used single-edge steel razor blades (in nm or um), wedge/bevel angle, how the edge radius compares with the critical flaw size from fracture mechanics (K_IC, Griffith), and how a blunted edge or a blunt saw notch changes the load needed and the tendency to indent or plastically deform the crystal instead of cleaving it. How does a sawn notch root radius compare with the notch tip radius required for valid fracture toughness tests of ceramics (e.g., SEVNB, ISO 23146, ASTM C1421)? Is a hardened steel razor blade hard enough relative to single-crystal MgO to act as a crack initiator without its edge dulling or deforming?"
+  }
+}
